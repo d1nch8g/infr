@@ -16,4 +16,4 @@ drone/*
 !gitea/gitea/conf/app.ini
 !gitea/gitea/templates/custom/body_outer_pre.tmpl
 !gitea/gitea/public/img
-
+!gitea/gitea/public/css/theme-earl-grey.css

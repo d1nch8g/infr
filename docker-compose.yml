@@ -30,8 +30,8 @@ services:
       GITEA__server__LFS_START_SERVER: true
       GITEA__server__LFS_JWT_SECRET: ***REMOVED***
       GITEA__server__OFFLINE_MODE: false
-      GITEA__ui__THEMES: gitea,arc-green,plex,aquamarine,dark,dracula,hotline,organizr,space-gray,hotpink,onedark,overseerr,nord
-      GITEA__ui__DEFAULT_THEME: onedark
+      GITEA__ui__THEMES: gitea,arc-green,plex,aquamarine,dark,dracula,hotline,organizr,space-gray,hotpink,onedark,overseerr,nord,earl-grey
+      GITEA__ui__DEFAULT_THEME: earl-grey
       GITEA__service_DISABLE_REGISTRATION: false
       GITEA__service_REQUIRE_SIGNIN_VIEW: false
       GITEA__service_REGISTER_EMAIL_CONFIRM: false
