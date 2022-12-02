@@ -10,6 +10,7 @@ go.work
 .lego/*
 gitea/*
 drone/*
+web/**
 
 *.pem
 

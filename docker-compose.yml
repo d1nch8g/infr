@@ -8,6 +8,7 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
       - ./.lego/certificates:/certs:ro
+      - ./web:/web:ro
     depends_on:
       - gitea
       - drone
