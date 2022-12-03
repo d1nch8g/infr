@@ -21,3 +21,4 @@ registry/**
 !gitea/gitea/public/css/theme-earl-grey.css
 
 backups/**
+portainer/**
