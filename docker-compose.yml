@@ -103,7 +103,7 @@ services:
     command: -H unix:///var/run/docker.sock
     restart: always
     environment:
-      - VIRTUAL_HOST=portainer.yourdomain.com
+      - VIRTUAL_HOST=portainer.dancheg97.ru
       - VIRTUAL_PORT=9000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
