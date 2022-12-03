@@ -11,6 +11,7 @@ go.work
 gitea/*
 drone/*
 web/**
+registry/**
 
 *.pem
 

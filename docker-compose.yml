@@ -2,6 +2,7 @@ services:
   nginx:
     image: nginx:1.23-alpine
     container_name: nginx
+    restart: unless-stopped
     ports:
       - 80:80
       - 443:443
@@ -88,3 +89,15 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     depends_on:
       - drone
+
+  registry:
+    image: registry:2
+    container_name: registry
+    ports:
+      - 5000:5000
+    environment:
+      REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY: /data
+    volumes:
+      - ./registry:/data
+    depends_on:
+      - drone-runner
