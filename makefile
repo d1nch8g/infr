@@ -17,3 +17,9 @@ earl-gray:
 	wget https://raw.githubusercontent.com/acoolstraw/earl-grey/master/theme-earl-grey.css
 	cp theme-earl-grey.css gitea/gitea/css/theme-earl-grey.css
 	rm theme-earl-grey.css
+
+.PHONY: backup
+backup:
+	mkdir backups/$(shell date +"%m-%d-%y")
+	scp -r dancheg97@192.168.1.69:~/Documents/composer ~/Documents/composer/backups/$(shell date +"%m-%d-%y")
+	rm -r ~/Documents/composer/backups/$(shell date +"%m-%d-%y")/composer/.git
