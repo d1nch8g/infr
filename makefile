@@ -25,3 +25,5 @@ backup:
 .PHONY: delgit
 delgit:
 	rm -r backups/$(shell date +"%m-%d-%y")/composer/.git
+
+# cd ~/Documents/composer;git pull;docker comopose down;docker compose up -d
