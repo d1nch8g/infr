@@ -101,3 +101,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./portainer:/data
+
+  dev:
+    image: templates/flutter_web:latest
+    container_name: dev
+    restart: always
