@@ -10,3 +10,5 @@ Basic infrastructure for setting up multiple services including:
 - Gitea - self hosted version control
 - Drone - CICD runner
 - Portainer - tool for managing and tracking containers
+
+Also this repo contains daemon for automatic updates when repo recieves some changes.
