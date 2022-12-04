@@ -106,3 +106,5 @@ services:
     image: templates/flutter_web:latest
     container_name: dev
     restart: always
+    environment:
+      PORT: 80
