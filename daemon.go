@@ -32,6 +32,9 @@ func main() {
 					if strings.Contains(src, `portainer/bin`) {
 						return true, nil
 					}
+					if strings.Contains(src, `portainer/compose`) {
+						return true, nil
+					}
 					return false, nil
 				},
 			})
