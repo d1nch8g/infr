@@ -19,6 +19,9 @@ earl-gray:
 
 .PHONY: backup
 backup:
-	mkdir backups/$(shell date +"%m-%d-%y")
-	scp -r dancheg97@192.168.1.69:~/Documents/composer ~/Documents/composer/backups/$(shell date +"%m-%d-%y")
-	rm -r ~/Documents/composer/backups/$(shell date +"%m-%d-%y")/composer/.git
+	mkdir -p backups/$(shell date +"%m-%d-%y")
+	scp -r dancheg97@192.168.1.69:~/Documents/composer backups/$(shell date +"%m-%d-%y")
+	
+.PHONY: delgit
+delgit:
+	rm -r backups/$(shell date +"%m-%d-%y")/composer/.git
