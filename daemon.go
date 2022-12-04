@@ -19,13 +19,16 @@ func main() {
 
 	i := 0
 	for {
+		i += 1
 		if i%backupTime == 0 {
 			err := copy.Copy(`.`, copyTo)
 			if err != nil {
-				fmt.Println(err)
+				fmt.Println(`unable to copy `, err)
+				time.Sleep(time.Second * 5)
 				continue
 			}
 		}
+		// /dev/sdb
 
 		var buf bytes.Buffer
 		cmd := exec.Command(`git`, `pull`)
@@ -33,7 +36,8 @@ func main() {
 
 		err := cmd.Run()
 		if err != nil {
-			fmt.Println(err)
+			fmt.Println(`unable to git pull`, err)
+			time.Sleep(time.Second * 5)
 			continue
 		}
 
