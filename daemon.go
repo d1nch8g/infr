@@ -11,21 +11,21 @@ import (
 	"github.com/otiai10/copy"
 )
 
-const backupTime = 60 * 60 * 24
+const (
+	backupTime = 60 * 60 * 24
+	copyto     = `/dev/sdb/backup`
+)
 
 func main() {
-	copyTo := os.Getenv(`COPY_TO`)
-	fmt.Println(`will be copying to: `, copyTo)
-
 	i := 0
 	for {
 		i += 1
 		if i%backupTime == 1 {
-			err := os.RemoveAll(copyTo)
+			err := os.RemoveAll(copyto)
 			if err != nil {
 				fmt.Println(`error removing all: `, err)
 			}
-			err = copy.Copy(`.`, copyTo)
+			err = copy.Copy(`.`, copyto)
 			if err != nil {
 				fmt.Println(`unable to copy `, err)
 				time.Sleep(time.Second * 5)
