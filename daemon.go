@@ -20,15 +20,19 @@ func main() {
 	i := 0
 	for {
 		i += 1
-		if i%backupTime == 0 {
-			err := copy.Copy(`.`, copyTo)
+		if i%backupTime == 1 {
+			err := os.RemoveAll(copyTo)
+			if err != nil {
+				fmt.Println(`error removing all: `, err)
+			}
+			err = copy.Copy(`.`, copyTo)
 			if err != nil {
 				fmt.Println(`unable to copy `, err)
 				time.Sleep(time.Second * 5)
 				continue
 			}
+			fmt.Println(`backup created`)
 		}
-		// /dev/sdb
 
 		var buf bytes.Buffer
 		cmd := exec.Command(`git`, `pull`)
@@ -41,7 +45,7 @@ func main() {
 			continue
 		}
 
-		if strings.Contains(string(buf.Bytes()), `up to date`) {
+		if strings.Contains(buf.String(), `up to date`) {
 			time.Sleep(time.Second * 5)
 			continue
 		}

@@ -3,9 +3,10 @@ services:
     build:
       context: .
     environment:
-      COPY_TO: /src
+      COPY_TO: /copyto
     volumes:
       - ~/Documents/composer:/repo
+      - /dev/sdb:/copyto
   # nginx:
   #   image: nginx:1.23-alpine
   #   container_name: nginx
