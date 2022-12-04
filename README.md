@@ -9,4 +9,4 @@ Basic infrastructure for setting up multiple services including:
 - Nginx - reverse proxy for setting up multiple subdomains
 - Gitea - self hosted version control
 - Drone - CICD runner
-- Registry - registry that will store docker containers from ci
+- Portainer - tool for managing and tracking containers
