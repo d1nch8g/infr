@@ -67,6 +67,7 @@ func main() {
 		if err != nil {
 			fmt.Println(`unable to restart, `, err)
 		}
+		fmt.Println(`restaring, changes recieved: `, buf.String())
 
 		time.Sleep(time.Minute)
 	}
