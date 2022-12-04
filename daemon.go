@@ -3,7 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
-	"os"
+	"io/fs"
 	"os/exec"
 	"strings"
 	"time"
@@ -21,11 +21,17 @@ func main() {
 	for {
 		i += 1
 		if i%backupTime == 1 {
-			err := os.RemoveAll(copyto)
-			if err != nil {
-				fmt.Println(`error removing all: `, err)
-			}
-			err = copy.Copy(`.`, copyto)
+			err := copy.Copy(`.`, copyto, copy.Options{
+				OnDirExists: func(src string, dest string) copy.DirExistsAction {
+					return copy.Replace
+				},
+				Skip: func(srcinfo fs.FileInfo, src string, dest string) (bool, error) {
+					if strings.Contains(src, `ssh`) {
+						return true, nil
+					}
+					return false, nil
+				},
+			})
 			if err != nil {
 				fmt.Println(`unable to copy `, err)
 				time.Sleep(time.Second * 5)
