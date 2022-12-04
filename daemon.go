@@ -29,6 +29,9 @@ func main() {
 					if strings.Contains(src, `ssh`) {
 						return true, nil
 					}
+					if strings.Contains(src, `portainer/bin`) {
+						return true, nil
+					}
 					return false, nil
 				},
 			})
