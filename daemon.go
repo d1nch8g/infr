@@ -13,7 +13,7 @@ import (
 
 const (
 	backupTime = 60 * 60 * 24
-	copyto     = `/dev/sdb/backup`
+	copyto     = `/dev/sdb/backup/`
 )
 
 func main() {
