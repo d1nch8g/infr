@@ -28,7 +28,7 @@ func main() {
 		}
 
 		var buf bytes.Buffer
-		cmd := exec.Command(`git`, `clone`)
+		cmd := exec.Command(`git`, `pull`)
 		cmd.Stdout = &buf
 
 		err := cmd.Run()
@@ -37,7 +37,17 @@ func main() {
 			continue
 		}
 
-		if strings.Contains()
-		time.Sleep(time.Second)
+		if strings.Contains(string(buf.Bytes()), `up to date`) {
+			time.Sleep(time.Second * 5)
+			continue
+		}
+
+		cmdDocker := exec.Command(`docker`, `compose`, `restart`)
+		err = cmdDocker.Run()
+		if err != nil {
+			fmt.Println(`unable to restart, `, err)
+		}
+
+		time.Sleep(time.Minute)
 	}
 }
