@@ -9,7 +9,6 @@ services:
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
       - ./.lego/certificates:/certs:ro
-      - ./web:/web:ro
     depends_on:
       - gitea
       - drone
@@ -101,17 +100,3 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./portainer:/data
-
-  syncthing:
-    image: syncthing/syncthing
-    hostname: syncthing.dancheg97.ru
-    environment:
-      - PUID=1000
-      - PGID=1000
-    volumes:
-      - /wherever/st-sync:/var/syncthing
-    ports:
-      - 22000:22000/tcp
-      - 22000:22000/udp
-      - 21027:21027/udp
-    restart: unless-stopped
