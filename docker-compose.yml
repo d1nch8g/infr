@@ -12,6 +12,7 @@ services:
     depends_on:
       - gitea
       - drone
+      - pocketbase
 
   gitea:
     image: gitea/gitea:1.17.3
@@ -93,10 +94,21 @@ services:
     image: portainer/portainer-ce:2.0.0
     container_name: portainer
     command: -H unix:///var/run/docker.sock
-    restart: always
+    restart: unless-stopped
     environment:
       - VIRTUAL_HOST=portainer.dancheg97.ru
       - VIRTUAL_PORT=9000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./portainer:/data
+
+  pocketbase:
+    image: ghcr.io/muchobien/pocketbase:latest
+    restart: unless-stopped
+    volumes:
+      - ./pocketbase:/pb_data
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:8090/api/health || exit 1
+      interval: 5s
+      timeout: 5s
+      retries: 5

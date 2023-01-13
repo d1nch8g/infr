@@ -22,3 +22,4 @@ registry/**
 
 backups/**
 portainer/**
+pocketbase/**
