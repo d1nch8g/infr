@@ -10,6 +10,7 @@ cert:
 	sudo lego --email="dangdancheg@gmail.com" --domains="gitea.dancheg97.ru" --http run
 	sudo lego --email="dangdancheg@gmail.com" --domains="drone.dancheg97.ru" --http run
 	sudo lego --email="dangdancheg@gmail.com" --domains="pocketbase.dancheg97.ru" --http run
+	sudo lego --email="dangdancheg@gmail.com" --domains="aur.dancheg97.ru" --http run
 	sudo chown -R dancheg97:dancheg97 .lego
 
 .PHONY: earl-gray
