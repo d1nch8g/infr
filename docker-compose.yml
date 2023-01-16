@@ -112,3 +112,9 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+
+  aur:
+    image: greyltc/archlinux-aur
+    restart: unless-stopped
+
+# docker run --name checkitout --pull=always --interactive --tty ghcr.io/greyltc-org/archlinux-aur bash
