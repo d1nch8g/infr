@@ -45,6 +45,7 @@ services:
       GITEA__service_DEFAULT_ENABLE_TIMETRACKING: true
       GITEA__service_NO_REPLY_ADDRESS: noreply.localhost
       GITEA__service_DEFAULT_USER_IS_RESTRICTED: true
+      GITEA__custom__DISABLE_GIT_HOOKS: false
     volumes:
       - ./gitea:/data
       - /etc/timezone:/etc/timezone:ro
@@ -112,10 +113,9 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-
   # aur:
   #   image: greyltc/archlinux-aur
   #   restart: unless-stopped
   #   command: bash /root/add-aur.sh "${AUR_USER}" "${HELPER}"
 
-# docker run --name checkitout --pull=always --interactive --tty ghcr.io/greyltc-org/archlinux-aur bash
+  # docker run --name checkitout --pull=always --interactive --tty ghcr.io/greyltc-org/archlinux-aur bash
