@@ -19,3 +19,4 @@ Also this repo contains daemon for automatic updates when repo recieves some cha
 - add uptime kuma
 - add builder with different colors
 - change drone to woodpecker
+- add container with docker and prepare it
