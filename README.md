@@ -12,3 +12,10 @@ Basic infrastructure for setting up multiple services including:
 - Portainer - tool for managing and tracking containers
 
 Also this repo contains daemon for automatic updates when repo recieves some changes.
+
+### Plan:
+
+- add public docker registry
+- add uptime kuma
+- add builder with different colors
+- change drone to woodpecker
