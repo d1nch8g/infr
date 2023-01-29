@@ -15,7 +15,6 @@ Also this repo contains daemon for automatic updates when repo recieves some cha
 
 ### Plan:
 
-- add public docker registry
 - add uptime kuma
 - add builder with different colors
 - change drone to woodpecker
