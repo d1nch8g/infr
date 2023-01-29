@@ -120,6 +120,6 @@ services:
     command: run
     environment:
       REPO: pacman.dancheg97.ru
-      INIT_PKGS: onlyoffice-bin yay
+      INIT_PKGS: onlyoffice-bin yay papirus-icon-theme ttf-droid linux-zen-headers rtw89-dkms-git adw-gtk-theme gnome-browser-connector visual-studio-code-bin
     ports:
       - 9080:9080
