@@ -45,7 +45,7 @@ services:
       GITEA__service_DEFAULT_ENABLE_TIMETRACKING: true
       GITEA__service_NO_REPLY_ADDRESS: noreply.localhost
       GITEA__service_DEFAULT_USER_IS_RESTRICTED: true
-      GITEA__custom__DISABLE_GIT_HOOKS: false
+      GITEA__security__DISABLE_GIT_HOOKS: false
     volumes:
       - ./gitea:/data
       - /etc/timezone:/etc/timezone:ro
