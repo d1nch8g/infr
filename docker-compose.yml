@@ -113,9 +113,13 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-  # aur:
-  #   image: greyltc/archlinux-aur
-  #   restart: unless-stopped
-  #   command: bash /root/add-aur.sh "${AUR_USER}" "${HELPER}"
 
-  # docker run --name checkitout --pull=always --interactive --tty ghcr.io/greyltc-org/archlinux-aur bash
+  pacman:
+    image: gitea.dancheg97.ru/dancheg97/go-pacman:latest
+    container_name: pacman
+    command: run
+    environment:
+      REPO: pacman.dancheg97.ru
+      INIT_PKGS: onlyoffice-bin yay
+    ports:
+      - 9080:9080

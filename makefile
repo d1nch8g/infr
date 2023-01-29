@@ -11,6 +11,7 @@ cert:
 	sudo lego --email="dangdancheg@gmail.com" --domains="drone.dancheg97.ru" --http run
 	sudo lego --email="dangdancheg@gmail.com" --domains="pocketbase.dancheg97.ru" --http run
 	sudo lego --email="dangdancheg@gmail.com" --domains="aur.dancheg97.ru" --http run
+	sudo lego --email="dangdancheg@gmail.com" --domains="pacman.dancheg97.ru" --http run
 	sudo chown -R dancheg97:dancheg97 .lego
 
 .PHONY: earl-gray
@@ -27,5 +28,3 @@ backup:
 .PHONY: delgit
 delgit:
 	rm -r backups/$(shell date +"%m-%d-%y")/composer/.git
-
-# cd ~/Documents/composer;git pull;docker comopose down;docker compose up -d
