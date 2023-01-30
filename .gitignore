@@ -23,3 +23,4 @@ registry/**
 backups/**
 portainer/**
 pocketbase/**
+go-pacman/**
