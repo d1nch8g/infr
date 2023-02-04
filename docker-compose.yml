@@ -113,3 +113,31 @@ services:
       INIT_PKGS: ttf-droid adw-gtk-theme papirus-icon-theme-git git yay chromium telegram-desktop dconf-editor gnome-calculator gnome-control-center gnome-disk-utility dbus gnome-keyring gnome-logs gnome-system-monitor gnome-shell-extensions xdg-user-dirs-gtk gedit gnome-tweaks docker go python-pip make docker-compose geary drawing gnome-shell-extension-dash-to-dock gnome-shell-extension-gtile visual-studio-code-bin rtw89-dkms-git gnome-browser-connector onlyoffice-bin
     ports:
       - 9080:9080
+
+  mail:
+    image: docker.io/mailserver/docker-mailserver:latest
+    container_name: mail
+    hostname: mail
+    domainname: dancheg97.ru
+    ports:
+      - 25:25
+      - 587:587
+      - 465:465
+    volumes:
+      - ./mail/dms/config/:/tmp/docker-mailserver/
+      - ./mail/dms/mail-data/:/var/mail/
+      - ./mail/dms/mail-state/:/var/mail-state/
+      - ./mail/dms/mail-logs/:/var/log/mail/
+      - ./mail/certs/:/etc/letsencrypt/
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - ENABLE_FAIL2BAN=1
+      - SSL_TYPE=letsencrypt
+      - PERMIT_DOCKER=network
+      - ONE_DIR=1
+      - ENABLE_POSTGREY=0
+      - ENABLE_CLAMAV=0
+      - ENABLE_SPAMASSASSIN=0
+      - SPOOF_PROTECTION=0
+    cap_add:
+      - NET_ADMIN
