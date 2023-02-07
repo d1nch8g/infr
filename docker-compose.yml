@@ -58,7 +58,7 @@ services:
     environment:
       DRONE_DATABASE_DRIVER: sqlite3
       DRONE_DATABASE_DATASOURCE: /data/database.sqlite
-      DRONE_GITEA_SERVER: https://gitea.dancheg97.ru/
+      DRONE_GITEA_SERVER: https://dancheg97.ru/
       DRONE_GIT_ALWAYS_AUTH: false
       DRONE_RPC_SECRET: ***REMOVED***
       DRONE_SERVER_PROTO: https
