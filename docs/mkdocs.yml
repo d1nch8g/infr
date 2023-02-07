@@ -1,0 +1,37 @@
+site_name: Всякий текст
+
+repo_url: https://dancheg97.ru/
+repo_name: dancheg97
+
+theme:
+  name: material
+  logo: assets/logo.png
+
+  icon:
+    edit: material/pencil
+    view: material/eye
+
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - git-revision-date-localized:
+      enable_creation_date: true
+
+  palette:
+    scheme: slate
+    accent: light blue
+
+plugins:
+  - search
+
+extra:
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+    - name: Russian
+      link: /ru/
+      lang: ru
+
+extra_css:
+  - stylesheets/extra.css
