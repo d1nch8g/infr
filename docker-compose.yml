@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: nginx:1.23-alpine
+    image: nginx
     container_name: nginx
     restart: unless-stopped
     ports:
@@ -15,7 +15,7 @@ services:
       - pocketbase
 
   gitea:
-    image: gitea/gitea:1.17.3
+    image: gitea/gitea
     container_name: gitea
     restart: unless-stopped
     environment:
@@ -52,7 +52,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
 
   drone:
-    image: drone/drone:2.15
+    image: drone/drone
     container_name: drone
     restart: unless-stopped
     environment:
@@ -74,7 +74,7 @@ services:
       - gitea
 
   drone-runner:
-    image: drone/drone-runner-docker:1.8.2
+    image: drone/drone-runner-docker
     container_name: droner
     restart: unless-stopped
     environment:
@@ -92,7 +92,7 @@ services:
       - drone
 
   pocketbase:
-    image: ghcr.io/muchobien/pocketbase:latest
+    image: ghcr.io/muchobien/pocketbase
     restart: unless-stopped
     volumes:
       - ./pocketbase:/pb_data
@@ -103,7 +103,7 @@ services:
       retries: 5
 
   pacman:
-    image: gitea.dancheg97.ru/dancheg97/go-pacman:latest
+    image: dancheg97.ru/dancheg97/go-pacman
     container_name: pacman
     command: run
     volumes:
@@ -119,31 +119,3 @@ services:
     container_name: docs
     volumes:
       - ./mkdocs:/docs
-
-  mail:
-    image: docker.io/mailserver/docker-mailserver:latest
-    container_name: mail
-    hostname: mail
-    domainname: dancheg97.ru
-    ports:
-      - 25:25
-      - 587:587
-      - 465:465
-    volumes:
-      - ./mail/dms/config/:/tmp/docker-mailserver/
-      - ./mail/dms/mail-data/:/var/mail/
-      - ./mail/dms/mail-state/:/var/mail-state/
-      - ./mail/dms/mail-logs/:/var/log/mail/
-      - ./mail/certs/:/etc/letsencrypt/
-      - /etc/localtime:/etc/localtime:ro
-    environment:
-      - ENABLE_FAIL2BAN=1
-      - SSL_TYPE=letsencrypt
-      - PERMIT_DOCKER=network
-      - ONE_DIR=1
-      - ENABLE_POSTGREY=0
-      - ENABLE_CLAMAV=0
-      - ENABLE_SPAMASSASSIN=0
-      - SPOOF_PROTECTION=0
-    cap_add:
-      - NET_ADMIN
