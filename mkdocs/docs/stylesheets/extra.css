@@ -3,6 +3,10 @@
   --md-sidebar-primary: #1d1f23;
 }
 
+[data-md-color-scheme="slate"] {
+  --md-typeset-a-color: #1f7295;
+}
+
 body {
   background: #24262b;
 }
