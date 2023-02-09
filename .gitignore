@@ -26,6 +26,7 @@ backups/**
 portainer/**
 pocketbase/**
 go-pacman/**
+kuma/**
 mail/certs/**
 mail/logs/**
 mail/dms/mail-data/**
