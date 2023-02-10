@@ -32,7 +32,7 @@ services:
       GITEA__server__LFS_START_SERVER: true
       GITEA__server__LFS_JWT_SECRET: ***REMOVED***
       GITEA__server__OFFLINE_MODE: false
-      GITEA__ui__THEMES: gitea,earl-grey
+      GITEA__ui__THEMES: earl-grey,gitea
       GITEA__ui__DEFAULT_THEME: earl-grey
       GITEA__service_DISABLE_REGISTRATION: false
       GITEA__service_REQUIRE_SIGNIN_VIEW: false
@@ -126,13 +126,8 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      DOZZLE_LEVEL: trace
-    healthcheck:
-      test: [ "CMD", "/dozzle", "healthcheck" ]
-      interval: 3s
-      timeout: 30s
-      retries: 5
-      start_period: 30s
+      DOZZLE_USERNAME: dancheg97
+      DOZZLE_PASSWORD: dozzlesecretveryhidden
 
   kuma:
     image: louislam/uptime-kuma:1
