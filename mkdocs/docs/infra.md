@@ -31,12 +31,16 @@
 <img src="/mkdocs.png"  height="360">
 </center>
 
-- [Uptime Kuma]() -  
+- [Uptime Kuma](https://github.com/louislam/uptime-kuma) - это простой инструмент для мониторинга и сбора статистики работоспособности других сервисов. Так же имеет функционал для отправки уведомлений в случае потери доступности какого-либо компонента.
 
 <center>
-<img src="/mkdocs.png"  height="360">
+<img src="/kuma.png"  height="360">
 </center>
 
-- [Dozzle]() - 
+- [Dozzle](https://github.com/amir20/dozzle) - 
+
+<center>
+<img src="/dozzle.png"  height="360">
+</center>
 
 - [Nginx]() - 

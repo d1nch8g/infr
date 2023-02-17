@@ -75,6 +75,7 @@ services:
 
   pocketbase:
     image: ghcr.io/muchobien/pocketbase
+    container_name: pocketbase
     restart: unless-stopped
     volumes:
       - ./pocketbase:/pb_data
