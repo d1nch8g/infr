@@ -1,4 +1,4 @@
-# Self-hosted инфраструктура за 5 минут
+# Self-hosted инфраструктура за 10 минут
 
 Всем привет!
 
@@ -54,23 +54,32 @@
 
 Далее мы воспользуемся утилитой [gen-tools](https://github.com/Dancheg97/gen-tools), которая позволяет быстро собрать необходимый `docker-compose` со всеми элементами инфраструктуры и подготовить необходимые конфигурации в `nginx` и остальных сервисах.
 
-Установить данную утилиту можно используя `go`, `docker` или `yay`:
+Установить данную утилиту можно используя `go`, `docker` или `yay`, я покажу вариант с `go`:
 
-```sh
-docker pull dancheg97.ru/dancheg97/gen-tools:latest
-```
 ```sh
 go install dancheg97.ru/dancheg97/gen-tools@latest
 ```
-```sh
-yay -Sy gen-tools
-```
 
-Далее после установки можно запустить команду для генерации сервисов (в зависимости от типа установки с использованием докер или без):
+Далее запустим команду для генерации конфигураций в пустой директории, вот пример:
 
 ```sh
-gen-tools infr --name Ctrl2Go --domain ctrl2go.su --user admin --pass password --email examoke@ctrl2go.su
+gen-tools infr --name ctrl2Go --domain ctrl2go.su --user admin --pass password --email example@ctrl2go.su
 ```
+
+После генерации необходимо получить сертификаты для возможности валидного доступа через `https`, достаточно запустить скрипт `certs.sh`, который сразу получит все сертификаты на все поддомены. Скрипт использует [lego](https://github.com/go-acme/lego), инструмент для получения сертификатов из [letcencrypt](https://letsencrypt.org/docs/client-options/).
+
 ```sh
-docker run --rm -it -v $(pwd):/wd -w /wd dancheg97.ru/dancheg97/gen-tools:latest gen-tools infr --name Ctrl2Go --domain ctrl2go.su --user admin --pass password --email examoke@ctrl2go.su
+sh certs.sh
 ```
+
+## Запуск сервисов
+
+После получения сертификатов мы должны увидеть папку `.lego`, которая содержит все необходимые файлы, далее можно запускать сервисы. Это можно сделать с командой:
+
+```sh
+docker compose up
+```
+
+После того, как все сервисы активны, нужно запустить старт `gitea`, подключить `drone`, и задать мониторинг `uptime-kuma`.
+
+Все эти действия ин
