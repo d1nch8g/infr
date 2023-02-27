@@ -28,6 +28,8 @@ services:
       GITEA__server__ROOT_URL: https://dancheg97.ru/
       GITEA__repository__MAX_CREATION_LIMIT: 0
       GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
+      GITEA__i18n__LANGS: en-US,ru-RU
+      GITEA__i18n__NAMES: English,Русский
     volumes:
       - ./gitea:/data
       - /etc/timezone:/etc/timezone:ro

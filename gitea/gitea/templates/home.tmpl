@@ -19,157 +19,193 @@
     <div class="line"></div>
 
     <div class="choices">
-
-        <h1 class="dbHeadName">{{.locale.Tr "startpage.databases"}}</h1>
-        <div class="choicesTable">
-            <div class="img-badge">
-                <a href='https://www.postgresql.org/'>
-                    <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png" />
-                </a>
-                <h2>PostgreSQL</h2>
-                <p>{{.locale.Tr "startpage.postgres"}}</p>
-            </div>
-            <div class="img-badge">
-                <a href='https://redis.io/'>
-                    <img
-                        src="https://camo.githubusercontent.com/4050472d0036e02ed3805e8329474f062eac6ae847ca0ac107d4889fa778711a/68747470733a2f2f6973332d73736c2e6d7a7374617469632e636f6d2f696d6167652f7468756d622f507572706c653132342f76342f31372f63642f61322f31376364613261302d623634312d633364302d336432322d3134313730346134306565662f49636f6e2e706e672f313230307836333062622e706e67" />
-                </a>
-                <h2>Redis</h2>
-                <p>{{.locale.Tr "startpage.redis"}}</p>
-            </div>
-            <div class="img-badge">
-                <a href='https://nats.io/'>
-                    <img
-                        src="https://raw.githubusercontent.com/docker-library/docs/ad703934a62fabf54452755c8486698ff6fc5cc2/nats/logo.png" />
-                </a>
-                <h2>Nats</h2>
-                <p>{{.locale.Tr "startpage.nats"}}</p>
-            </div>
-            <div class="img-badge">
-                <a href='https://github.com/google/leveldb'>
-                    <img src="https://cdn.freebiesupply.com/logos/large/2x/leveldb-logo-png-transparent.png" />
-                </a>
-                <h2>LevelDB</h2>
-                <p>{{.locale.Tr "startpage.leveldb"}}</p>
-            </div>
-        </div>
-
-        <div class="line2"></div>
-
         <h1 class="LOC">{{.locale.Tr "startpage.languages"}}<h1>
-
-                <div class="choicesTable">
-                    <div class="img-badge">
-                        <a href='https://go.dev/'>
-                            <img src="https://juststickers.in/wp-content/uploads/2016/07/go-programming-language.png" />
-                        </a>
-                        <h2>GO</h2>
-                        <p>{{.locale.Tr "startpage.go"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://www.python.org/'>
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" />
-                        </a>
-                        <h2>Python</h2>
-                        <p>{{.locale.Tr "startpage.python"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://dart.dev/'>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png" />
-                        </a>
-                        <h2>Dart</h2>
-                        <p>{{.locale.Tr "startpage.dart"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://www.typescriptlang.org/'>
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1024px-Typescript_logo_2020.svg.png" />
-                        </a>
-                        <h2>TypeScript</h2>
-                        <p>{{.locale.Tr "startpage.typescript"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://www.javascript.com/'>
-                            <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2752148-2284965.png" />
-                        </a>
-                        <h2>JavaScript</h2>
-                        <p>{{.locale.Tr "startpage.javascript"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://en.wikipedia.org/wiki/Bash_(Unix_shell)'>
-                            <img src="https://orion42.net/wp-content/uploads/2019/10/full_colored_dark_green42.png" />
-                        </a>
-                        <h2>Bash</h2>
-                        <p>{{.locale.Tr "startpage.bash"}}</p>
-                    </div>
+            <div class="choicesTable">
+                <div class="img-badge">
+                    <a href='https://go.dev/'>
+                        <img src="https://juststickers.in/wp-content/uploads/2016/07/go-programming-language.png" />
+                    </a>
+                    <h2>GO</h2>
+                    <p>{{.locale.Tr "startpage.go"}}</p>
                 </div>
-
-                <div class="line2"></div>
-
-                <h1>{{.locale.Tr "startpage.tools"}}</h1>
-                <div class="choicesTable">
-                    <div class="img-badge">
-                        <a href='https://git-scm.com/'>
-                            <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" />
-                        </a>
-                        <h2>Git SCM</h2>
-                        <p>{{.locale.Tr "startpage.git"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://www.docker.com/'>
-                            <img
-                                src="https://iconape.com/wp-content/files/fr/370801/svg/docker-icon-logo-icon-png-svg.png" />
-                        </a>
-                        <h2>Docker</h2>
-                        <p>{{.locale.Tr "startpage.docker"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://graphql.org/'>
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/2048px-GraphQL_Logo.svg.png" />
-                        </a>
-                        <h2>GraphQL</h2>
-                        <p>{{.locale.Tr "startpage.graphql"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://swagger.io/'>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png" />
-                        </a>
-                        <h2>Swagger</h2>
-                        <p>{{.locale.Tr "startpage.swagger"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://grpc.io/'>
-                            <img src="https://urbanonsoftware.com/assets/images/posts/grpc_in_dotnet/thumbnail2.png" />
-                        </a>
-                        <h2>GRPC</h2>
-                        <p>{{.locale.Tr "startpage.grpc"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://flutter.dev/'>
-                            <img src="https://static.tildacdn.com/tild6634-3236-4237-b765-636562373338/flutter.svg" />
-                        </a>
-                        <h2>Flutter</h2>
-                        <p>{{.locale.Tr "startpage.flutter"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://www.tensorflow.org/'>
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/1200px-Tensorflow_logo.svg.png" />
-                        </a>
-                        <h2>TensorFlow</h2>
-                        <p>{{.locale.Tr "startpage.tensorflow"}}</p>
-                    </div>
-                    <div class="img-badge">
-                        <a href='https://gitea.io/en-us/'>
-                            <img src="https://gitea.io/images/gitea.png" />
-                        </a>
-                        <h2>Gitea</h2>
-                        <p>{{.locale.Tr "startpage.gitea"}}</p>
-                    </div>
+                <div class="img-badge">
+                    <a href='https://www.python.org/'>
+                        <img src="https://i.pinimg.com/originals/95/91/ed/9591ed82caa8d20c30db96cb7298d3a9.png" />
+                    </a>
+                    <h2>Python</h2>
+                    <p>{{.locale.Tr "startpage.python"}}</p>
                 </div>
+                <div class="img-badge">
+                    <a href='https://dart.dev/'>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png" />
+                    </a>
+                    <h2>Dart</h2>
+                    <p>{{.locale.Tr "startpage.dart"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://www.typescriptlang.org/'>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1024px-Typescript_logo_2020.svg.png" />
+                    </a>
+                    <h2>TypeScript</h2>
+                    <p>{{.locale.Tr "startpage.typescript"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://www.javascript.com/'>
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2752148-2284965.png" />
+                    </a>
+                    <h2>JavaScript</h2>
+                    <p>{{.locale.Tr "startpage.javascript"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://en.wikipedia.org/wiki/Bash_(Unix_shell)'>
+                        <img src="https://orion42.net/wp-content/uploads/2019/10/full_colored_dark_green42.png" />
+                    </a>
+                    <h2>Bash</h2>
+                    <p>{{.locale.Tr "startpage.bash"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://en.wikipedia.org/wiki/Markdown'>
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/markdown-3629496-3031559.png" />
+                    </a>
+                    <h2>Markdown</h2>
+                    <p>{{.locale.Tr "startpage.markdown"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://en.wikipedia.org/wiki/SQL'>
+                        <img src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nextscape_blog/20210911/20210911000000.png" />
+                    </a>
+                    <h2>SQL</h2>
+                    <p>{{.locale.Tr "startpage.sql"}}</p>
+                </div>
+            </div>
+
+            <div class="line2"></div>
+
+            <h1>{{.locale.Tr "startpage.tools"}}</h1>
+            <div class="choicesTable">
+                <div class="img-badge">
+                    <a href='https://git-scm.com/'>
+                        <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" />
+                    </a>
+                    <h2>Git SCM</h2>
+                    <p>{{.locale.Tr "startpage.git"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://www.docker.com/'>
+                        <img
+                            src="https://iconape.com/wp-content/files/fr/370801/svg/docker-icon-logo-icon-png-svg.png" />
+                    </a>
+                    <h2>Docker</h2>
+                    <p>{{.locale.Tr "startpage.docker"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://www.postgresql.org/'>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/993px-Postgresql_elephant.svg.png" />
+                    </a>
+                    <h2>Postgres</h2>
+                    <p>{{.locale.Tr "startpage.postgres"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://redis.io/'>
+                        <img
+                            src="https://camo.githubusercontent.com/4050472d0036e02ed3805e8329474f062eac6ae847ca0ac107d4889fa778711a/68747470733a2f2f6973332d73736c2e6d7a7374617469632e636f6d2f696d6167652f7468756d622f507572706c653132342f76342f31372f63642f61322f31376364613261302d623634312d633364302d336432322d3134313730346134306565662f49636f6e2e706e672f313230307836333062622e706e67" />
+                    </a>
+                    <h2>Redis</h2>
+                    <p>{{.locale.Tr "startpage.redis"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://nats.io/'>
+                        <img src="https://raw.githubusercontent.com/docker-library/docs/ad703934a62fabf54452755c8486698ff6fc5cc2/nats/logo.png" />
+                    </a>
+                    <h2>Nats</h2>
+                    <p>{{.locale.Tr "startpage.nats"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://swagger.io/'>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png" />
+                    </a>
+                    <h2>Swagger</h2>
+                    <p>{{.locale.Tr "startpage.swagger"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://grpc.io/'>
+                        <img src="https://urbanonsoftware.com/assets/images/posts/grpc_in_dotnet/thumbnail2.png" />
+                    </a>
+                    <h2>GRPC</h2>
+                    <p>{{.locale.Tr "startpage.grpc"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://flutter.dev/'>
+                        <img src="https://static.tildacdn.com/tild6634-3236-4237-b765-636562373338/flutter.svg" />
+                    </a>
+                    <h2>Flutter</h2>
+                    <p>{{.locale.Tr "startpage.flutter"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://www.tensorflow.org/'>
+                        <img
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/1200px-Tensorflow_logo.svg.png" />
+                    </a>
+                    <h2>TensorFlow</h2>
+                    <p>{{.locale.Tr "startpage.tensorflow"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://numpy.org/'>
+                        <img src="https://camo.githubusercontent.com/90bc3e6d793fabf8375b76c851a27dc63562723b487fbf544d94bc47be12cbb7/68747470733a2f2f7365656b6c6f676f2e636f6d2f696d616765732f4e2f6e756d70792d6c6f676f2d343739433234454337392d7365656b6c6f676f2e636f6d2e706e67" />
+                    </a>
+                    <h2>Numpy</h2>
+                    <p>{{.locale.Tr "startpage.numpy"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://pillow.readthedocs.io/en/stable/'>
+                        <img
+                            src="https://raw.githubusercontent.com/python-pillow/pillow-logo/main/pillow-logo-248x250.png" />
+                    </a>
+                    <h2>Pillow</h2>
+                    <p>{{.locale.Tr "startpage.pillow"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://gitea.io/en-us/'>
+                        <img src="https://gitea.io/images/gitea.png" />
+                    </a>
+                    <h2>Gitea</h2>
+                    <p>{{.locale.Tr "startpage.gitea"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://www.drone.io/'>
+                        <img
+                            src="https://camo.githubusercontent.com/bd8efe8c593c1160fa27f9dc8e82867810eb7abb85e44ffae41456359a640549/68747470733a2f2f696d616765732e73616173776f727468792e636f6d2f64726f6e65696f5f31303139355f6c6f676f5f313632333835353139345f7232667a632e706e67" />
+                    </a>
+                    <h2>Drone</h2>
+                    <p>{{.locale.Tr "startpage.drone"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://github.com/louislam/uptime-kuma'>
+                        <img
+                            src="https://github.com/louislam/uptime-kuma/raw/master/public/icon.svg" />
+                    </a>
+                    <h2>Kuma</h2>
+                    <p>{{.locale.Tr "startpage.kuma"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://dozzle.dev/'>
+                        <img
+                            src="https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/img/dozzle.png" />
+                    </a>
+                    <h2>Dozzle</h2>
+                    <p>{{.locale.Tr "startpage.dozzle"}}</p>
+                </div>
+                <div class="img-badge">
+                    <a href='https://squidfunk.github.io/mkdocs-material/'>
+                        <img
+                            src="https://v4.mui.com/static/logo.png" />
+                    </a>
+                    <h2>Mkdocs</h2>
+                    <p>{{.locale.Tr "startpage.mkdocs"}}</p>
+                </div>
+            </div>
     </div>
 
 
