@@ -16,9 +16,8 @@
 
     <div class="arrow-8"></div>
 
-    <div class="line"></div>
-
     <div class="choices">
+        <div class="line-separator"></div>
         <h1 class="LOC">{{.locale.Tr "startpage.languages"}}<h1>
             <div class="choicesTable">
                 <div class="img-badge">
@@ -80,7 +79,7 @@
                 </div>
             </div>
 
-            <div class="line2"></div>
+            <div class="line-separator"></div>
 
             <h1>{{.locale.Tr "startpage.tools"}}</h1>
             <div class="choicesTable">
@@ -312,16 +311,7 @@
         }
     }
 
-    .line {
-        border: 0;
-        height: 1px;
-        background-image: -webkit-linear-gradient(left, #2480ff, #1d1f23, #2480ff);
-        position: relative;
-        top: 35px;
-        animation: lineH 5s 0s infinite linear;
-    }
-
-    .line2 {
+    .line-separator {
         border: 0;
         height: 1px;
         background-image: -webkit-linear-gradient(left, #2480ff, #1d1f23, #2480ff);

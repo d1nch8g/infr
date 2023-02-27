@@ -21,6 +21,7 @@ registry/**
 !gitea/gitea/public/css/theme-earl-grey.css
 !gitea/gitea/options/locale/locale_en-US.ini
 !gitea/gitea/options/locale/locale_ru-RU.ini
+!gitea/gitea/templates/base/head_navbar.tmpl
 
 backups/**
 portainer/**
