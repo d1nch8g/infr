@@ -13,6 +13,7 @@ services:
       - gitea
       - drone
       - pocketbase
+      - pacman
 
   gitea:
     image: gitea/gitea
