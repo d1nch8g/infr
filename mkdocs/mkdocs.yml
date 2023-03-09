@@ -25,14 +25,5 @@ theme:
 plugins:
   - search
 
-extra:
-  alternate:
-    - name: English
-      link: /en/
-      lang: en
-    - name: Russian
-      link: /ru/
-      lang: ru
-
 extra_css:
   - stylesheets/extra.css

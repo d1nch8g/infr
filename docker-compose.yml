@@ -107,8 +107,8 @@ services:
       - ./mkdocs:/docs
 
   dozzle:
-    container_name: dozzle
     image: amir20/dozzle:latest
+    container_name: dozzle
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
