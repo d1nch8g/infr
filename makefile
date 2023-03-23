@@ -33,3 +33,7 @@ delgit:
 mail:
 	docker run --rm -it -v "${PWD}/mail/certs/:/etc/letsencrypt/" -v "${PWD}/mail/logs/:/var/log/letsencrypt/" -p 80:80 certbot/certbot certonly --standalone -d mail.dancheg97.ru
 	docker run --rm -it docker.io/mailserver/docker-mailserver:latest doveadm pw -s SHA512-CRYPT -u dancheg97 -p mailpwd
+
+restart:
+	docker compose down
+	docker compose up -d

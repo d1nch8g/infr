@@ -89,16 +89,12 @@ services:
       retries: 5
 
   pacman:
-    image: dancheg97.ru/dancheg97/go-pacman
+    image: dancheg97.ru/dancheg97/ctlpkg
     container_name: pacman
     command: run
-    volumes:
-      - ./go-pacman:/var/cache/pacman/pkg
     environment:
-      REPO: pacman.dancheg97.ru
-      INIT_PKGS: ttf-droid adw-gtk-theme papirus-icon-theme-git git yay chromium telegram-desktop dconf-editor gnome-calculator gnome-control-center gnome-disk-utility dbus gnome-keyring gnome-logs gnome-system-monitor gnome-shell-extensions xdg-user-dirs-gtk gedit gnome-tweaks docker go python-pip make docker-compose geary drawing gnome-shell-extension-dash-to-dock gnome-shell-extension-gtile visual-studio-code-bin rtw89-dkms-git gnome-browser-connector onlyoffice-bin
-    ports:
-      - 9080:9080
+      CTLPKG_INIT_PKGS: geary
+      CTLPKG_LOGS_FMT: text
 
   docs:
     image: squidfunk/mkdocs-material
