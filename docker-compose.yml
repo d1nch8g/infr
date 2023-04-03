@@ -93,8 +93,10 @@ services:
     container_name: pacman
     command: run
     environment:
+      CTLPKG_API_ADRESS: https://pacman.dancheg97.ru/
       CTLPKG_INIT_PKGS: geary
-      CTLPKG_LOGS_FMT: text
+      CTLPKG_LOGS_FORMAT: text
+      CTLPKG_LOGINS: dancheg97|pacmanpassword
 
   docs:
     image: squidfunk/mkdocs-material

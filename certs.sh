@@ -7,5 +7,6 @@ sudo lego --email="dangdancheg@gmail.com" --domains="pocketbase.dancheg97.ru" --
 sudo lego --email="dangdancheg@gmail.com" --domains="pacman.dancheg97.ru" --http run
 sudo lego --email="dangdancheg@gmail.com" --domains="kuma.dancheg97.ru" --http run
 sudo lego --email="dangdancheg@gmail.com" --domains="dozzle.dancheg97.ru" --http run
+sudo lego --email="dangdancheg@gmail.com" --domains="fmtree.dancheg97.ru" --http run
 sudo chown -R dancheg97:dancheg97 .lego
 docker compose up
