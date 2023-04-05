@@ -94,7 +94,7 @@ services:
     command: run
     environment:
       CTLPKG_API_ADRESS: https://pacman.dancheg97.ru/
-      CTLPKG_INIT_PKGS: geary
+      CTLPKG_INIT_PKGS: yay
       CTLPKG_LOGS_FORMAT: text
       CTLPKG_LOGINS: dancheg97|pacmanpassword
 
@@ -111,7 +111,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       DOZZLE_USERNAME: dancheg97
-      DOZZLE_PASSWORD: dozzlesecretveryhidden
+      DOZZLE_PASSWORD: dozzlepassword
 
   kuma:
     image: louislam/uptime-kuma:1
