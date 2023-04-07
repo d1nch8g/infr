@@ -93,11 +93,11 @@ services:
     container_name: pacman
     command: run
     environment:
-      CTLPKG_REPO: pacman.dancheg97.ru
-      CTLPKG_API_ADRESS: https://pacman.dancheg97.ru/
-      CTLPKG_INIT_PKGS: adw-gtk-theme gnome-browser-connector gnome-shell-extension-dash-to-dock zsh-theme-powerlevel10k-bin-git zsh-autosuggestions zsh-syntax-highlighting ttf-meslo-nerd-font-powerlevel10k
-      CTLPKG_LOGS_FORMAT: text
-      CTLPKG_LOGINS: dancheg97|pacmanpassword
+      FLEUPKG_REPO: pacman.dancheg97.ru
+      FLEUPKG_API_ADRESS: https://pacman.dancheg97.ru/
+      FLEUPKG_INIT_PKGS: adw-gtk-theme gnome-browser-connector gnome-shell-extension-dash-to-dock zsh-theme-powerlevel10k-bin-git zsh-autosuggestions zsh-syntax-highlighting ttf-meslo-nerd-font-powerlevel10k
+      FLEUPKG_LOGS_FORMAT: text
+      FLEUPKG_LOGINS: dancheg97|pacmanpassword
 
   docs:
     image: squidfunk/mkdocs-material
