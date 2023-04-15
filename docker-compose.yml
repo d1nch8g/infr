@@ -12,8 +12,10 @@ services:
     depends_on:
       - gitea
       - drone
-      - pocketbase
-      - pacman
+      - kuma
+      - dozzle
+      - docs
+      # - pkg
 
   gitea:
     image: gitea/gitea
