@@ -80,7 +80,7 @@ services:
 
   fmnxpkg:
     image: fmnx.ru/dancheg97/fmnxpkg
-    container_name: pacman
+    container_name: fmnxpkg
     command: run
     environment:
       FMNXPKG_REPO: pacman.fmnx.ru
@@ -90,6 +90,13 @@ services:
       FMNXPKG_LOGINS: dancheg97|pacmanpassword
 
   docs:
+    image: squidfunk/mkdocs-material
+    container_name: docs
+    restart: unless-stopped
+    volumes:
+      - ./docs:/docs
+
+  tree:
     image: squidfunk/mkdocs-material
     container_name: docs
     restart: unless-stopped
