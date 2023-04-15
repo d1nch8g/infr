@@ -87,7 +87,7 @@ services:
       FMNXPKG_REPO: pkg.fmnx.ru
       FMNXPKG_API_ADRESS: https://pkg.fmnx.ru/
       FMNXPKG_INIT_PKGS: adw-gtk-theme gnome-browser-connector gnome-shell-extension-dash-to-dock zsh-theme-powerlevel10k-bin-git zsh-autosuggestions zsh-syntax-highlighting onlyoffice-bin telegram-desktop
-      FMNXPKG_INIT_PKGS_LINKS: fmnx-install-0.1-0.1-x86_64.pkg.tar.zst::https://fmnx.ru/attachments/b6657ff3-ea89-4ebe-a8d0-d124c2263a8d
+      FMNXPKG_INIT_PKGS_LINKS: fmnx-install-0.1-0.1-x86_64.pkg.tar.zst::https://fmnx.ru/attachments/722c0643-7c19-4c50-a90a-f2f42468f014
       FMNXPKG_LOGS_FORMAT: text
       FMNXPKG_LOGINS: dancheg97|pacmanpassword
     depends_on:
