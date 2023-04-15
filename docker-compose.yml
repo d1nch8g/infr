@@ -98,10 +98,10 @@ services:
 
   tree:
     image: squidfunk/mkdocs-material
-    container_name: docs
+    container_name: tree
     restart: unless-stopped
     volumes:
-      - ./docs:/docs
+      - ./tree:/docs
 
   dozzle:
     image: amir20/dozzle:latest
