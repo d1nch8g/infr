@@ -15,7 +15,7 @@ services:
       - kuma
       - dozzle
       - docs
-      # - pkg
+      - fmnxpkg
 
   gitea:
     image: gitea/gitea
@@ -78,16 +78,16 @@ services:
     depends_on:
       - drone
 
-  # pacman:
-  #   image: fmnx.ru/dancheg97/fleupkg
-  #   container_name: pacman
-  #   command: run
-  #   environment:
-  #     FLEUPKG_REPO: pacman.fmnx.ru
-  #     FLEUPKG_API_ADRESS: https://pkg.fmnx.ru/
-  #     FLEUPKG_INIT_PKGS: adw-gtk-theme gnome-browser-connector gnome-shell-extension-dash-to-dock zsh-theme-powerlevel10k-bin-git zsh-autosuggestions zsh-syntax-highlighting
-  #     FLEUPKG_LOGS_FORMAT: text
-  #     FLEUPKG_LOGINS: dancheg97|pacmanpassword
+  fmnxpkg:
+    image: fmnx.ru/dancheg97/fmnxpkg
+    container_name: pacman
+    command: run
+    environment:
+      FMNXPKG_REPO: pacman.fmnx.ru
+      FMNXPKG_API_ADRESS: https://pkg.fmnx.ru/
+      FMNXPKG_INIT_PKGS: adw-gtk-theme gnome-browser-connector gnome-shell-extension-dash-to-dock zsh-theme-powerlevel10k-bin-git zsh-autosuggestions zsh-syntax-highlighting onlyoffice-bin telegram-desktop
+      FMNXPKG_LOGS_FORMAT: text
+      FMNXPKG_LOGINS: dancheg97|pacmanpassword
 
   docs:
     image: squidfunk/mkdocs-material
