@@ -33,6 +33,7 @@ services:
       GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
       GITEA__i18n__LANGS: en-US,ru-RU
       GITEA__i18n__NAMES: English,Русский
+      GITEA__attachment__MAX_SIZE: 50
     volumes:
       - ./gitea:/data
       - /etc/timezone:/etc/timezone:ro
