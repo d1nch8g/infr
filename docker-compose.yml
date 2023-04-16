@@ -83,12 +83,8 @@ services:
     image: fmnx.ru/dancheg97/fmnxpkg
     container_name: fmnxpkg
     command: run
-    environment:
-      FMNXPKG_REPO: pkg.fmnx.ru
-      FMNXPKG_API_ADRESS: https://pkg.fmnx.ru/
-      FMNXPKG_INIT_PKGS: adw-gtk-theme gnome-browser-connector gnome-shell-extension-dash-to-dock zsh-theme-powerlevel10k-bin-git zsh-autosuggestions zsh-syntax-highlighting onlyoffice-bin telegram-desktop
-      FMNXPKG_LOGS_FORMAT: text
-      FMNXPKG_LOGINS: dancheg97|pacmanpassword
+    env_file:
+      - fmnxpkg/fmnxpkg.env
     depends_on:
       - gitea
 
@@ -112,9 +108,8 @@ services:
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      DOZZLE_USERNAME: dancheg97
-      DOZZLE_PASSWORD: dozzlepassword
+    env_file:
+      - dozzle/dozzle.env
 
   kuma:
     image: louislam/uptime-kuma:1
