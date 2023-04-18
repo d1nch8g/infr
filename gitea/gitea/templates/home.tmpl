@@ -261,6 +261,47 @@
         filter: blur(0);
     }
 
+    .main-page-preview-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 54px;
+    }
+    
+    .main-page-preview-table {
+        padding: 100px;
+        width: 600px;
+    }
+
+    @media(max-width: 400px) {
+        .main-page-preview-content {
+            flex-direction: column;
+        }
+        .main-page-preview-table {
+            width: 90%;
+        }    
+    }
+
+    .main-page-preview-image {
+        height: 320px;
+    }
+
+    .main-page-preview-text-logo {
+        color: white;
+        font-family: "Sofia Sans", sans-serif;
+        font-size: 32px;
+        font-weight: normal;
+    }
+
+    .main-page-preview-text-content {
+        color: rgb(197, 197, 197);
+        font-family: "Sofia Sans", sans-serif;
+        font-size: 24px;
+        font-weight: normal;
+        text-align: center;
+    }
+
     /* Анимация квадратов в начале экрана */
     .circles {
         position: absolute;
@@ -371,38 +412,6 @@
             opacity: 0;
             border-radius: 50%;
         }
-    }
-
-    .main-page-preview-content {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 54px;
-    }
-
-    .main-page-preview-table {
-        padding: 100px;
-        width: 600px;
-    }
-
-    .main-page-preview-image {
-        height: 320px;
-    }
-
-    .main-page-preview-text-logo {
-        color: white;
-        font-family: "Sofia Sans", sans-serif;
-        font-size: 32px;
-        font-weight: normal;
-    }
-
-    .main-page-preview-text-content {
-        color: rgb(197, 197, 197);
-        font-family: "Sofia Sans", sans-serif;
-        font-size: 24px;
-        font-weight: normal;
-        text-align: center;
     }
 </style>
 
