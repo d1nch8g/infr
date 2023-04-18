@@ -85,6 +85,8 @@ services:
     command: run
     env_file:
       - fmnxpkg/fmnxpkg.env
+    volumes:
+      - ./fmnxpkg/pkgs:/var/cache/pacman/pkg
     depends_on:
       - gitea
 

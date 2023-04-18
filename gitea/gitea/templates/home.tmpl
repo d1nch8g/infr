@@ -5,211 +5,141 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
-    <p class="features">{{.locale.Tr "startpage.footer_first"}}</p>
-    <div id="light">
-        <div id="lineh1"></div>
-    </div>
-    <img class="logo_main elem-hidden"
-        src="https://fmnx.ru/dancheg97/composer/media/branch/main/logo.gif" alt="logo of website">
+    <p class="main-page-welcome-text">{{.locale.Tr "startpage.footer_first"}}</p>
+    <img class="main-page-logo elem-hidden" src="https://fmnx.ru/dancheg97/composer/media/branch/main/logo.gif"
+        alt="logo">
 
-    <p class="features_two">{{.locale.Tr "startpage.footer_second"}}
-        <br> {{.locale.Tr "startpage.footer_third"}}
+    <p class="main-page-welcome-text-two">{{.locale.Tr "startpage.welcome_mes"}}
+        <br> {{.locale.Tr "startpage.glad_u_come"}}
     </p>
 
-    <div class="arrow-8"></div>
+    <div class="main-page-preview-arrow"></div>
 
-    <div class="choices">
-        <div class="line-separator"></div>
-        <h1>{{.locale.Tr "startpage.languages"}}<h1>
-                <div class="choicesTable">
-                    <div class="img-badge elem-hidden">
-                        <a href='https://go.dev/'>
-                            <img src="https://juststickers.in/wp-content/uploads/2016/07/go-programming-language.png" />
-                        </a>
-                        <h2>GO</h2>
-                        <p>{{.locale.Tr "startpage.go"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://www.python.org/'>
-                            <img src="https://i.pinimg.com/originals/95/91/ed/9591ed82caa8d20c30db96cb7298d3a9.png" />
-                        </a>
-                        <h2>Python</h2>
-                        <p>{{.locale.Tr "startpage.python"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://dart.dev/'>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Dart-logo.png" />
-                        </a>
-                        <h2>Dart</h2>
-                        <p>{{.locale.Tr "startpage.dart"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://www.typescriptlang.org/'>
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1024px-Typescript_logo_2020.svg.png" />
-                        </a>
-                        <h2>TypeScript</h2>
-                        <p>{{.locale.Tr "startpage.typescript"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://www.javascript.com/'>
-                            <img src="https://cdn.iconscout.com/icon/free/png-256/javascript-2752148-2284965.png" />
-                        </a>
-                        <h2>JavaScript</h2>
-                        <p>{{.locale.Tr "startpage.javascript"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://en.wikipedia.org/wiki/Bash_(Unix_shell)'>
-                            <img src="https://orion42.net/wp-content/uploads/2019/10/full_colored_dark_green42.png" />
-                        </a>
-                        <h2>Bash</h2>
-                        <p>{{.locale.Tr "startpage.bash"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://en.wikipedia.org/wiki/Markdown'>
-                            <img src="https://cdn.iconscout.com/icon/free/png-256/markdown-3629496-3031559.png" />
-                        </a>
-                        <h2>Markdown</h2>
-                        <p>{{.locale.Tr "startpage.markdown"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://en.wikipedia.org/wiki/SQL'>
-                            <img
-                                src="https://cdn-ak.f.st-hatena.com/images/fotolife/n/nextscape_blog/20210911/20210911000000.png" />
-                        </a>
-                        <h2>SQL</h2>
-                        <p>{{.locale.Tr "startpage.sql"}}</p>
-                    </div>
-                </div>
+    <div class="main-page-preview-separator"></div>
 
-                <div class="line-separator"></div>
-
-                <h1>{{.locale.Tr "startpage.tools"}}</h1>
-                <div class="choicesTable">
-                    <div class="img-badge elem-hidden">
-                        <a href='https://git-scm.com/'>
-                            <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" />
-                        </a>
-                        <h2>Git SCM</h2>
-                        <p>{{.locale.Tr "startpage.git"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://www.docker.com/'>
-                            <img
-                                src="https://iconape.com/wp-content/files/fr/370801/svg/docker-icon-logo-icon-png-svg.png" />
-                        </a>
-                        <h2>Docker</h2>
-                        <p>{{.locale.Tr "startpage.docker"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://www.postgresql.org/'>
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/993px-Postgresql_elephant.svg.png" />
-                        </a>
-                        <h2>Postgres</h2>
-                        <p>{{.locale.Tr "startpage.postgres"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://redis.io/'>
-                            <img
-                                src="https://camo.githubusercontent.com/4050472d0036e02ed3805e8329474f062eac6ae847ca0ac107d4889fa778711a/68747470733a2f2f6973332d73736c2e6d7a7374617469632e636f6d2f696d6167652f7468756d622f507572706c653132342f76342f31372f63642f61322f31376364613261302d623634312d633364302d336432322d3134313730346134306565662f49636f6e2e706e672f313230307836333062622e706e67" />
-                        </a>
-                        <h2>Redis</h2>
-                        <p>{{.locale.Tr "startpage.redis"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://nats.io/'>
-                            <img
-                                src="https://raw.githubusercontent.com/docker-library/docs/ad703934a62fabf54452755c8486698ff6fc5cc2/nats/logo.png" />
-                        </a>
-                        <h2>Nats</h2>
-                        <p>{{.locale.Tr "startpage.nats"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://swagger.io/'>
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Swagger-logo.png" />
-                        </a>
-                        <h2>Swagger</h2>
-                        <p>{{.locale.Tr "startpage.swagger"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://grpc.io/'>
-                            <img src="https://urbanonsoftware.com/assets/images/posts/grpc_in_dotnet/thumbnail2.png" />
-                        </a>
-                        <h2>GRPC</h2>
-                        <p>{{.locale.Tr "startpage.grpc"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://flutter.dev/'>
-                            <img src="https://static.tildacdn.com/tild6634-3236-4237-b765-636562373338/flutter.svg" />
-                        </a>
-                        <h2>Flutter</h2>
-                        <p>{{.locale.Tr "startpage.flutter"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://www.tensorflow.org/'>
-                            <img
-                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Tensorflow_logo.svg/1200px-Tensorflow_logo.svg.png" />
-                        </a>
-                        <h2>TensorFlow</h2>
-                        <p>{{.locale.Tr "startpage.tensorflow"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://numpy.org/'>
-                            <img
-                                src="https://camo.githubusercontent.com/90bc3e6d793fabf8375b76c851a27dc63562723b487fbf544d94bc47be12cbb7/68747470733a2f2f7365656b6c6f676f2e636f6d2f696d616765732f4e2f6e756d70792d6c6f676f2d343739433234454337392d7365656b6c6f676f2e636f6d2e706e67" />
-                        </a>
-                        <h2>Numpy</h2>
-                        <p>{{.locale.Tr "startpage.numpy"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://pillow.readthedocs.io/en/stable/'>
-                            <img
-                                src="https://raw.githubusercontent.com/python-pillow/pillow-logo/main/pillow-logo-248x250.png" />
-                        </a>
-                        <h2>Pillow</h2>
-                        <p>{{.locale.Tr "startpage.pillow"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://gitea.io/en-us/'>
-                            <img src="https://gitea.io/images/gitea.png" />
-                        </a>
-                        <h2>Gitea</h2>
-                        <p>{{.locale.Tr "startpage.gitea"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://www.drone.io/'>
-                            <img
-                                src="https://camo.githubusercontent.com/bd8efe8c593c1160fa27f9dc8e82867810eb7abb85e44ffae41456359a640549/68747470733a2f2f696d616765732e73616173776f727468792e636f6d2f64726f6e65696f5f31303139355f6c6f676f5f313632333835353139345f7232667a632e706e67" />
-                        </a>
-                        <h2>Drone</h2>
-                        <p>{{.locale.Tr "startpage.drone"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://github.com/louislam/uptime-kuma'>
-                            <img src="https://github.com/louislam/uptime-kuma/raw/master/public/icon.svg" />
-                        </a>
-                        <h2>Kuma</h2>
-                        <p>{{.locale.Tr "startpage.kuma"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://dozzle.dev/'>
-                            <img
-                                src="https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/img/dozzle.png" />
-                        </a>
-                        <h2>Dozzle</h2>
-                        <p>{{.locale.Tr "startpage.dozzle"}}</p>
-                    </div>
-                    <div class="img-badge elem-hidden">
-                        <a href='https://squidfunk.github.io/mkdocs-material/'>
-                            <img src="https://v4.mui.com/static/logo.png" />
-                        </a>
-                        <h2>Mkdocs</h2>
-                        <p>{{.locale.Tr "startpage.mkdocs"}}</p>
-                    </div>
-                </div>
+    <div class="main-page-preview-content elem-hidden">
+        <img class="main-page-preview-image" src="https://i.imgur.com/GJdG8SA.gif"></img>
+        <table class="main-page-preview-table">
+            <tr>
+                <td>
+                    <center>
+                        <p class="main-page-preview-text-logo">
+                            {{.locale.Tr "startpage.open_source"}}
+                        </p>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="main-page-preview-text-content">
+                        {{.locale.Tr "startpage.open_source_descr"}}
+                    </p>
+                </td>
+            </tr>
+        </table>
     </div>
 
+    <div class="main-page-preview-content elem-hidden">
+        <table class="main-page-preview-table">
+            <tr>
+                <td>
+                    <center>
+                        <p class="main-page-preview-text-logo">
+                            {{.locale.Tr "startpage.soft_pack"}}
+                        </p>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="main-page-preview-text-content">
+                        {{.locale.Tr "startpage.distr_aims"}}
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <img class="main-page-preview-image"
+            src="https://i.pinimg.com/originals/71/22/6e/71226e63be7afa7e92d68e4407fa853d.gif"></img>
+    </div>
+
+    <div class="main-page-preview-content elem-hidden">
+        <img class="main-page-preview-image" src="https://i.gifer.com/yy3.gif"></img>
+        <table class="main-page-preview-table">
+            <tr>
+                <td>
+                    <center>
+                        <p class="main-page-preview-text-logo">
+                            {{.locale.Tr "startpage.beautiful_descr"}}
+                        </p>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="main-page-preview-text-content">
+                        {{.locale.Tr "startpage.beautiful_descr_full"}}
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="main-page-preview-content elem-hidden">
+        <table class="main-page-preview-table">
+            <tr>
+                <td>
+                    <center>
+                        <p class="main-page-preview-text-logo">
+                            {{.locale.Tr "startpage.community_driven"}}
+                        </p>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="main-page-preview-text-content">
+                        {{.locale.Tr "startpage.community_driven_descr"}}
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <img class="main-page-preview-image"
+        src="https://matlensilver.com/wp-content/uploads/2021/06/Community2.gif"></img>
+    </div>
+
+    <div class="main-page-preview-separator"></div>
+    
+    <div class="main-page-preview-content elem-hidden">
+        <table class="main-page-preview-table">
+            <tr>
+                <td>
+                    <center>
+                        <p class="main-page-preview-text-logo">
+                            {{.locale.Tr "startpage.download_iso_image"}}
+                        </p>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="main-page-preview-text-content">
+                        {{.locale.Tr "startpage.iso_description"}}
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <center>
+                        <form method="get" action="file.doc">
+                            <button class="ui green button" type="submit">
+                                {{.locale.Tr "startpage.download_button"}}
+                            </button>
+                        </form>
+                    </center>
+                </td>
+            </tr>
+        </table>
+    </div>
 
     <div class="area">
         <ul class="circles">
@@ -228,7 +158,7 @@
 </div>
 
 <style>
-    @keyframes lineH {
+    @keyframes main-page-sep-line {
         0% {
             width: 0%;
         }
@@ -239,24 +169,24 @@
         }
     }
 
-    .logo_main {
+    .main-page-logo {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        margin-bottom: 40px;
-        margin-top: 40px;
-        width: 320px;
-        height: 320px;
+        margin-bottom: 80px;
+        margin-top: 80px;
+        width: 340px;
+        height: 340px;
     }
 
-    .features {
+    .main-page-welcome-text {
         text-align: center;
         font-size: 55px;
         margin-bottom: 0px;
         font-family: "Sofia Sans", sans-serif;
     }
 
-    .features_two {
+    .main-page-welcome-text-two {
         color: rgb(167, 167, 167);
         text-align: center;
         font-size: 28px;
@@ -264,15 +194,15 @@
         font-family: "Sofia Sans", sans-serif;
     }
 
-    .arrow-8 {
+    .main-page-preview-arrow {
         position: relative;
         width: 100px;
         height: 100px;
         margin: 30px auto 80px auto;
     }
 
-    .arrow-8:before,
-    .arrow-8:after {
+    .main-page-preview-arrow:before,
+    .main-page-preview-arrow:after {
         content: '';
         position: absolute;
         box-sizing: border-box;
@@ -280,14 +210,14 @@
         height: 100%;
         border-left: 26px solid #40AAFF;
         border-bottom: 26px solid #40AAFF;
-        animation: arrow-8 3s linear infinite;
+        animation: main-page-preview-arrow 3s linear infinite;
     }
 
-    .arrow-8:after {
-        animation: arrow-8 3s linear infinite -1.5s;
+    .main-page-preview-arrow:after {
+        animation: main-page-preview-arrow 3s linear infinite -1.5s;
     }
 
-    @keyframes arrow-8 {
+    @keyframes main-page-preview-arrow {
         0% {
             opacity: 0;
             transform: translate(0, -53px) rotate(-45deg);
@@ -309,140 +239,13 @@
         }
     }
 
-    .line-separator {
+    .main-page-preview-separator {
         border: 0;
         height: 1px;
         background-image: -webkit-linear-gradient(left, #40AAFF, #1d1f23, #40AAFF);
         position: relative;
         top: 10px;
-        animation: lineH 5s 0s infinite linear;
-    }
-
-    .choices .dbHeadName {
-        margin-top: 100px;
-    }
-
-    .choices {
-        text-align: center;
-        font-family: "Sofia Sans", sans-serif;
-    }
-
-    .choicesTable {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-
-    .choices p {
-        text-align: center;
-        font-size: 40px;
-        margin-bottom: 0px;
-        color: rgb(167, 167, 167);
-        font-size: 25px;
-    }
-
-    .choices h2 {
-        font-size: 40px;
-        font-weight: normal;
-        color: white;
-        font-family: "Sofia Sans", sans-serif;
-    }
-
-    .choices img {
-        width: 68px;
-        height: 68px;
-    }
-
-    .choices img:hover {
-        transition: all 0.1s ease-in-out;
-        transform: scale(1.2);
-    }
-
-    #light {
-        position: relative;
-        top: 150px;
-    }
-
-    h1 {
-        color: white;
-        font-family: "Sofia Sans", sans-serif;
-        font-size: 60px;
-        font-weight: normal;
-    }
-
-    @keyframes show {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-    .img-badge {
-        margin-bottom: 20px;
-        max-width: 300px;
-    }
-
-    .img-badge:nth-child(2) {
-        transition-delay: 50ms;
-    }
-
-    .img-badge:nth-child(3) {
-        transition-delay: 100ms;
-    }
-
-    .img-badge:nth-child(4) {
-        transition-delay: 150ms;
-    }
-
-    .img-badge:nth-child(5) {
-        transition-delay: 200ms;
-    }
-
-    .img-badge:nth-child(6) {
-        transition-delay: 250ms;
-    }
-
-    .img-badge:nth-child(7) {
-        transition-delay: 300ms;
-    }
-
-    .img-badge:nth-child(8) {
-        transition-delay: 350ms;
-    }
-
-    .img-badge:nth-child(9) {
-        transition-delay: 400ms;
-    }
-
-    .img-badge:nth-child(10) {
-        transition-delay: 450ms;
-    }
-
-    .img-badge:nth-child(11) {
-        transition-delay: 500ms;
-    }
-
-    .img-badge:nth-child(12) {
-        transition-delay: 550ms;
-    }
-
-    .img-badge:nth-child(13) {
-        transition-delay: 600ms;
-    }
-
-    .img-badge:nth-child(14) {
-        transition-delay: 650ms;
-    }
-
-    .img-badge:nth-child(15) {
-        transition-delay: 700ms;
-    }
-
-    .img-badge:nth-child(16) {
-        transition-delay: 750ms;
+        animation: main-page-sep-line 5s 0s infinite linear;
     }
 
     .elem-hidden {
@@ -456,15 +259,6 @@
         opacity: 1;
         transform: translateX(0);
         filter: blur(0);
-    }
-
-    #lineh1 {
-        position: absolute;
-        left: 0;
-        bottom: 160px;
-        height: 1px;
-        background-image: -webkit-linear-gradient(left, #40AAFF, #1d1f23, #40AAFF);
-        animation: lineH 5s 0s linear;
     }
 
     /* Анимация квадратов в начале экрана */
@@ -577,6 +371,38 @@
             opacity: 0;
             border-radius: 50%;
         }
+    }
+
+    .main-page-preview-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 54px;
+    }
+
+    .main-page-preview-table {
+        padding: 100px;
+        width: 600px;
+    }
+
+    .main-page-preview-image {
+        height: 320px;
+    }
+
+    .main-page-preview-text-logo {
+        color: white;
+        font-family: "Sofia Sans", sans-serif;
+        font-size: 32px;
+        font-weight: normal;
+    }
+
+    .main-page-preview-text-content {
+        color: rgb(197, 197, 197);
+        font-family: "Sofia Sans", sans-serif;
+        font-size: 24px;
+        font-weight: normal;
+        text-align: center;
     }
 </style>
 
