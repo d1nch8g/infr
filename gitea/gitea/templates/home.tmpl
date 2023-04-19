@@ -427,12 +427,17 @@
 </style>
 
 <script>
+    function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+    }
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("elem-show");
-            }
-        })
+        delay(344).then(() => {     
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("elem-show");
+                }
+            });
+        });
     });
     const hiddenElements = document.querySelectorAll(".elem-hidden");
     hiddenElements.forEach((elem) => observer.observe(elem));
