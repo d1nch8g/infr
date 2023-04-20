@@ -39,7 +39,7 @@
         </table>
     </div>
 
-    <div class="main-page-preview-content elem-hidden">
+    <div class="main-page-preview-content elem-hidden main-page-preview-content-second">
         <table class="main-page-preview-table">
             <tr>
                 <td>
@@ -84,7 +84,7 @@
         </table>
     </div>
 
-    <div class="main-page-preview-content elem-hidden">
+    <div class="main-page-preview-content elem-hidden main-page-preview-content-second">
         <table class="main-page-preview-table">
             <tr>
                 <td>
@@ -297,7 +297,7 @@
         width: 600px;
     }
 
-    @media(max-width: 300px) {
+    @media(max-width: 500px) {
         .main-page-preview-content {
             flex-direction: column;
         }
@@ -310,6 +310,13 @@
         .main-page-welcome-text {
             font-size: 32px;
             font-weight: bold;
+        }
+        .main-page-preview-content-second {
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+            align-items: center;
+            padding: 54px;
         }
     }
 
