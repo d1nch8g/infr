@@ -297,7 +297,7 @@
         width: 600px;
     }
 
-    @media(max-width: 400px) {
+    @media(max-width: 300px) {
         .main-page-preview-content {
             flex-direction: column;
         }
@@ -452,7 +452,7 @@
 
 <script>
     function delay(time) {
-    return new Promise(resolve => setTimeout(resolve, time));
+        return new Promise(resolve => setTimeout(resolve, time));
     }
     const observer = new IntersectionObserver((entries) => {
         delay(344).then(() => {     
