@@ -80,13 +80,11 @@ services:
       - drone
 
   fmnxpkg:
-    image: fmnx.ru/dancheg97/fmnxpkg
+    image: fmnx.ru/dancheg97/fmnx-pkg:latest
     container_name: fmnxpkg
     command: run
     env_file:
       - fmnxpkg/fmnxpkg.env
-    volumes:
-      - ./fmnxpkg/pkgs:/var/cache/pacman/pkg
     depends_on:
       - gitea
 

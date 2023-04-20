@@ -18,13 +18,13 @@
     <div class="main-page-preview-separator"></div>
 
     <div class="main-page-preview-content elem-hidden">
-        <img class="main-page-preview-image" src="https://i.imgur.com/GJdG8SA.gif"></img>
+        <img class="main-page-preview-image" src="https://fmnx.ru/dancheg97/local-gitea/raw/branch/main/images/open-source.png"></img>
         <table class="main-page-preview-table">
             <tr>
                 <td>
                     <center>
                         <p class="main-page-preview-text-logo">
-                            {{.locale.Tr "startpage.open_source"}}
+                            {{.locale.Tr "startpage.open_source_name"}}
                         </p>
                     </center>
                 </td>
@@ -45,7 +45,7 @@
                 <td>
                     <center>
                         <p class="main-page-preview-text-logo">
-                            {{.locale.Tr "startpage.soft_pack"}}
+                            {{.locale.Tr "startpage.applications_name"}}
                         </p>
                     </center>
                 </td>
@@ -53,23 +53,23 @@
             <tr>
                 <td>
                     <p class="main-page-preview-text-content">
-                        {{.locale.Tr "startpage.distr_aims"}}
+                        {{.locale.Tr "startpage.applications_descr"}}
                     </p>
                 </td>
             </tr>
         </table>
         <img class="main-page-preview-image"
-            src="https://i.pinimg.com/originals/71/22/6e/71226e63be7afa7e92d68e4407fa853d.gif"></img>
+            src="https://fmnx.ru/dancheg97/local-gitea/raw/branch/main/images/applicaitons.png"></img>
     </div>
 
     <div class="main-page-preview-content elem-hidden">
-        <img class="main-page-preview-image" src="https://i.gifer.com/yy3.gif"></img>
+        <img class="main-page-preview-image" src="https://fmnx.ru/dancheg97/local-gitea/raw/branch/main/images/style.png"></img>
         <table class="main-page-preview-table">
             <tr>
                 <td>
                     <center>
                         <p class="main-page-preview-text-logo">
-                            {{.locale.Tr "startpage.beautiful_descr"}}
+                            {{.locale.Tr "startpage.style_name"}}
                         </p>
                     </center>
                 </td>
@@ -77,7 +77,7 @@
             <tr>
                 <td>
                     <p class="main-page-preview-text-content">
-                        {{.locale.Tr "startpage.beautiful_descr_full"}}
+                        {{.locale.Tr "startpage.style_descr"}}
                     </p>
                 </td>
             </tr>
@@ -90,7 +90,7 @@
                 <td>
                     <center>
                         <p class="main-page-preview-text-logo">
-                            {{.locale.Tr "startpage.community_driven"}}
+                            {{.locale.Tr "startpage.hardware_name"}}
                         </p>
                     </center>
                 </td>
@@ -98,13 +98,36 @@
             <tr>
                 <td>
                     <p class="main-page-preview-text-content">
-                        {{.locale.Tr "startpage.community_driven_descr"}}
+                        {{.locale.Tr "startpage.hardware_descr"}}
                     </p>
                 </td>
             </tr>
         </table>
         <img class="main-page-preview-image"
-        src="https://i.pinimg.com/originals/8d/c4/68/8dc468e9a6bfee504dcce2af8ce6950c.gif"></img>
+        src="https://fmnx.ru/dancheg97/local-gitea/raw/branch/main/images/hardware.png"></img>
+    </div>
+
+    <div class="main-page-preview-content elem-hidden">
+        <img class="main-page-preview-image"
+        src="https://fmnx.ru/dancheg97/local-gitea/raw/branch/main/images/development.png"></img>
+        <table class="main-page-preview-table">
+            <tr>
+                <td>
+                    <center>
+                        <p class="main-page-preview-text-logo">
+                            {{.locale.Tr "startpage.development_name"}}
+                        </p>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="main-page-preview-text-content">
+                        {{.locale.Tr "startpage.development_descr"}}
+                    </p>
+                </td>
+            </tr>
+        </table>
     </div>
 
     <div class="main-page-preview-separator"></div>
@@ -128,10 +151,10 @@
                 </td>
             </tr>
             <tr>
-                <td>
+                <td class="main-page-button-padding">
                     <center>
                         <form method="get" action="https://fmnx.ru/attachments/bb73d9fb-c8fc-4f0d-b819-010e58c48214">
-                            <button class="ui green button main-page-button-padding" type="submit">
+                            <button class="ui green button" type="submit">
                                 {{.locale.Tr "startpage.download_button"}}
                             </button>
                         </form>
@@ -291,11 +314,8 @@
     }
 
     .main-page-preview-image {
-        height: 320px;
-    }
-
-    .main-page-button-padding {
-        padding: 32px;
+        height: 290px;
+        padding: 20px;
     }
 
     .main-page-preview-text-logo {
@@ -311,6 +331,10 @@
         font-size: 24px;
         font-weight: normal;
         text-align: center;
+    }
+
+    .main-page-button-padding {
+        padding: 32px;
     }
 
     /* Анимация квадратов в начале экрана */
