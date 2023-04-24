@@ -102,6 +102,13 @@ services:
     volumes:
       - ./tree:/docs
 
+  articles:
+    image: squidfunk/mkdocs-material
+    container_name: articles
+    restart: unless-stopped
+    volumes:
+      - ./articles:/docs
+
   dozzle:
     image: amir20/dozzle:latest
     container_name: dozzle
