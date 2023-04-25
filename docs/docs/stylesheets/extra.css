@@ -39,3 +39,11 @@ body {
   background-color: #50acd0;
   border-color: #107096;
 }
+
+
+@media(min-width: 700px) {
+  .install-box {
+      height: 260px;
+      width: 70%;
+  }
+}
