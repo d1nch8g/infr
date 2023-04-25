@@ -28,29 +28,3 @@ body {
   top: 0;
   z-index: 1;
 }
-
-.md-nav__link {
-  color: white;
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.625em;
-  overflow: hidden;
-  scroll-snap-align: start;
-  text-overflow: ellipsis;
-  transition: color 125ms;
-}
-
-.md-nav__link md-nav__link--active {
-  color: white;
-  align-items: center;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.625em;
-  overflow: hidden;
-  scroll-snap-align: start;
-  text-overflow: ellipsis;
-  transition: color 125ms;
-}
