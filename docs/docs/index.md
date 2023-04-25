@@ -4,9 +4,9 @@
 <img style="align: center; max-height: 25%; max-width: 25%" src="https://fmnx.ru/dancheg97/fmnx/media/branch/main/airootfs/usr/local/share/backgrounds/fmnx-linux.png" />
 </p>
 
-You can not win software race in this modern, distributed, open-source world if you are not able to accumulate and integrate different projects in end system, keeping it's cutting edge flow.
+You cannot win the software race in this modern, distributed, open-source world if you are not able to accumulate and integrate different projects into the end system, keeping its cutting edge flow.
 
-This distribution is built for developers, who want to use world's most advanced open-source tooling to instantly start building awesome projects.
+This distribution is built for developers who want to use the world's most advanced open-source tooling to instantly start building awesome projects.
 
 ---
 
@@ -77,7 +77,7 @@ Distribution is not forcing system or applications to have any specific color, b
 
 > Currently only gnome supported as desktop environment, but later we are gonna add different options to choose.
 
-Also, when it comes to styling system applications, we try to follow minimalism and material guidelines as main 
+Also, when it comes to styling system applications, we try to follow minimalism and material guidelines as main
 
 <!--
 
