@@ -28,3 +28,14 @@ body {
   top: 0;
   z-index: 1;
 }
+
+.md-typeset .md-button--primary {
+  background-color: #167ba3;
+  border-color:#107096;
+  color: var(--md-primary-bg-color);
+}
+
+.md-typeset:hover .md-button--primary:hover {
+  background-color: #50acd0;
+  border-color: #107096;
+}

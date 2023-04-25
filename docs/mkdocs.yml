@@ -23,6 +23,9 @@ theme:
     scheme: slate
     accent: light blue
 
+markdown_extensions:
+  - attr_list
+
 plugins:
   - search
 

@@ -60,8 +60,7 @@ Also, we provide [fmnx-dev](https://fmnx.ru/dancheg97/fmnx-dev) repository, whic
 
 - `vscode development extensions` - docker, git, prettier, flutter, etc...
 - `golang linters and formatters` - buf, golanglintci, gofumpt
-- `gRPC toolchain` - protoc compiler with go and dart plugins
-- `evans` - tool gRPC testing
+- `gRPC toolchain` - protoc compiler with go and dart plugins, `evans` and `grpclicker` for testing
 - `linux devtools` - tools, required for linux system development: qemu, archiso, archinstall, meson, ninja
 
 All this combined can speed-up developer integration - newcomers don't have to spend time adjusting environment, evrything is packed and ready to use.
@@ -78,7 +77,9 @@ Distribution is not forcing system or applications to have any specific color, b
 
 > Currently only gnome supported as desktop environment, but later we are gonna add different options to choose.
 
----
+Also, when it comes to styling system applications, we try to follow minimalism and material guidelines as main 
+
+<!--
 
 ## FMNX cli
 
@@ -86,6 +87,8 @@ Distribution is not forcing system or applications to have any specific color, b
 <img style="align: center; max-height: 35%; max-width: 35%" src="/code.png" />
 </p>
 
-Package managers and their capabilities are now 
+Also, we add
 
 > This part of system is under development stage and currently not included in system.
+
+-->
