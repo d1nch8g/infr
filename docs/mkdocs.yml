@@ -1,4 +1,4 @@
-site_name: Всякий текст
+site_name: FMNX Linux distribution
 
 repo_url: https://fmnx.ru/
 repo_name: fmnx
@@ -6,6 +6,7 @@ repo_name: fmnx
 theme:
   name: material
   logo: assets/logo.png
+  favicon: assets/favicon.png
 
   icon:
     edit: material/pencil
