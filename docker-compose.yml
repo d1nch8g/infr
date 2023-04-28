@@ -43,18 +43,8 @@ services:
     image: drone/drone
     container_name: drone
     restart: unless-stopped
-    environment:
-      DRONE_DATABASE_DRIVER: sqlite3
-      DRONE_DATABASE_DATASOURCE: /data/database.sqlite
-      DRONE_GITEA_SERVER: https://fmnx.io/
-      DRONE_GIT_ALWAYS_AUTH: false
-      DRONE_RPC_SECRET: ***REMOVED***
-      DRONE_SERVER_PROTO: https
-      DRONE_SERVER_HOST: ci.fmnx.io
-      DRONE_TLS_AUTOCERT: false
-      DRONE_USER_CREATE: username:dancheg97,machine:false,admin:true,token:55f24eb3d61ef6ac5e83d550178638dc
-      DRONE_GITEA_CLIENT_ID: ***REMOVED***
-      DRONE_GITEA_CLIENT_SECRET: ***REMOVED***
+    env_file:
+      - drone/drone.env
     volumes:
       - ./drone:/data
       - /var/run/docker.sock:/var/run/docker.sock
