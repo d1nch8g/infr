@@ -15,14 +15,14 @@ services:
       - kuma
       - dozzle
       - docs
-      # - fmnxpkg
+      - repo
 
   gitea:
     image: gitea/gitea
     container_name: gitea
     restart: unless-stopped
     environment:
-      GITEA__ui__THEMES: earl-grey,gitea
+      GITEA__ui__THEMES: earl-grey
       GITEA__ui__DEFAULT_THEME: earl-grey
       GITEA__server__APP_DATA_PATH: /data/gitea
       GITEA__server__DOMAIN: fmnx.io
@@ -31,8 +31,8 @@ services:
       GITEA__server__ROOT_URL: https://fmnx.io/
       GITEA__repository__MAX_CREATION_LIMIT: 0
       GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
-      GITEA__i18n__LANGS: en-US,ru-RU
-      GITEA__i18n__NAMES: English,Русский
+      GITEA__i18n__LANGS: en-US
+      GITEA__i18n__NAMES: English
       GITEA__attachment__MAX_SIZE: 1800000
     volumes:
       - ./gitea:/data
@@ -79,14 +79,14 @@ services:
     depends_on:
       - drone
 
-  # fmnxpkg:
-  #   image: fmnx.io/dancheg97/fmnx-pkg:latest
-  #   container_name: fmnxpkg
-  #   command: run
-  #   env_file:
-  #     - fmnxpkg/fmnxpkg.env
-  #   depends_on:
-  #     - gitea
+  repo:
+    image: fmnx.io/dev/repo:latest
+    container_name: repo
+    command: run
+    env_file:
+      - repo/repo.env
+    depends_on:
+      - gitea
 
   docs:
     image: squidfunk/mkdocs-material
