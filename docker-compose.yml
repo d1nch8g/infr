@@ -15,7 +15,7 @@ services:
       - kuma
       - dozzle
       - docs
-      - fmnxpkg
+      # - fmnxpkg
 
   gitea:
     image: gitea/gitea
@@ -25,10 +25,10 @@ services:
       GITEA__ui__THEMES: earl-grey,gitea
       GITEA__ui__DEFAULT_THEME: earl-grey
       GITEA__server__APP_DATA_PATH: /data/gitea
-      GITEA__server__DOMAIN: fmnx.ru
-      GITEA__server__SSH_DOMAIN: fmnx.ru
+      GITEA__server__DOMAIN: fmnx.io
+      GITEA__server__SSH_DOMAIN: fmnx.io
       GITEA__server__HTTP_PORT: 80
-      GITEA__server__ROOT_URL: https://fmnx.ru/
+      GITEA__server__ROOT_URL: https://fmnx.io/
       GITEA__repository__MAX_CREATION_LIMIT: 0
       GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
       GITEA__i18n__LANGS: en-US,ru-RU
@@ -46,11 +46,11 @@ services:
     environment:
       DRONE_DATABASE_DRIVER: sqlite3
       DRONE_DATABASE_DATASOURCE: /data/database.sqlite
-      DRONE_GITEA_SERVER: https://fmnx.ru/
+      DRONE_GITEA_SERVER: https://fmnx.io/
       DRONE_GIT_ALWAYS_AUTH: false
       DRONE_RPC_SECRET: ***REMOVED***
       DRONE_SERVER_PROTO: https
-      DRONE_SERVER_HOST: ci.fmnx.ru
+      DRONE_SERVER_HOST: ci.fmnx.io
       DRONE_TLS_AUTOCERT: false
       DRONE_USER_CREATE: username:dancheg97,machine:false,admin:true,token:55f24eb3d61ef6ac5e83d550178638dc
       DRONE_GITEA_CLIENT_ID: ***REMOVED***
@@ -79,14 +79,14 @@ services:
     depends_on:
       - drone
 
-  fmnxpkg:
-    image: fmnx.ru/dancheg97/fmnx-pkg:latest
-    container_name: fmnxpkg
-    command: run
-    env_file:
-      - fmnxpkg/fmnxpkg.env
-    depends_on:
-      - gitea
+  # fmnxpkg:
+  #   image: fmnx.io/dancheg97/fmnx-pkg:latest
+  #   container_name: fmnxpkg
+  #   command: run
+  #   env_file:
+  #     - fmnxpkg/fmnxpkg.env
+  #   depends_on:
+  #     - gitea
 
   docs:
     image: squidfunk/mkdocs-material
@@ -129,7 +129,7 @@ services:
   #   image: ghcr.io/docker-mailserver/docker-mailserver:latest
   #   container_name: mail
   #   restart: unless-stopped
-  #   hostname: mail.fmnx.ru
+  #   hostname: mail.fmnx.io
   #   env_file:
   #     - mail/mailserver.env
   #   volumes:

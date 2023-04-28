@@ -1,7 +1,7 @@
 # Our philosophy
 
 <p align="center">
-<img style="align: center; max-height: 25%; max-width: 25%" src="https://fmnx.ru/dancheg97/fmnx/media/branch/main/airootfs/usr/local/share/backgrounds/fmnx-linux.png" />
+<img style="align: center; max-height: 25%; max-width: 25%" src="https://fmnx.io/dancheg97/fmnx/media/branch/main/airootfs/usr/local/share/backgrounds/fmnx-linux.png" />
 </p>
 
 You cannot win the software race in this modern, distributed, open-source world if you are not able to accumulate and integrate existing software into the end system, keeping its cutting edge flow.
@@ -18,7 +18,7 @@ This distribution is providing world's most advanced open-source tooling, workin
 
 We provide a set of easy to deploy infrastructure services, that will help individuals and companies secure their data and software they use.
 
-We introduce [fmnx-pkg](https://fmnx.ru/dancheg97/fmnx-pkg) - self-hosted dockerized repository for arch packages. This project's goal is to provide ability for companies to deploy their own pacman repository in under 5 minutes in any docker container environment (docker/kubernetes/swarm/etc).
+We introduce [fmnx-pkg](https://fmnx.io/dancheg97/fmnx-pkg) - self-hosted dockerized repository for arch packages. This project's goal is to provide ability for companies to deploy their own pacman repository in under 5 minutes in any docker container environment (docker/kubernetes/swarm/etc).
 
 Project allows to install packages from AUR, `.pkg.tar.zst` files and automatically checks integrity using [yay](https://github.com/Jguer/yay) under the hood. Also includes material UI written in dart and `gRPC` public API.
 
@@ -32,7 +32,7 @@ Project allows to install packages from AUR, `.pkg.tar.zst` files and automatica
 
 Similarly, as [nuxt](https://nuxtjs.org/) is built on top of [vue](https://vuejs.org/), providing better development experience for complex project, this system goal is to prcisely choose the correct level of abstraction and build new projects on top of existing software.
 
-So, we built our installation UI: [fmnx-install](https://fmnx.ru/dancheg97/fmnx-install) on top of [archinstall](https://github.com/archlinux/archinstall) utility. This example shows our approach for choosing extensible open-source projects, and enhancing them with prettier look and feel, to gain competetive advantage over other projects.
+So, we built our installation UI: [fmnx-install](https://fmnx.io/dancheg97/fmnx-install) on top of [archinstall](https://github.com/archlinux/archinstall) utility. This example shows our approach for choosing extensible open-source projects, and enhancing them with prettier look and feel, to gain competetive advantage over other projects.
 
 Instead of rebuilding software from scratch, we focus on ability to reuse and accumulate existing experience and knowledge. By picking the modular architechture and correct abstraction complexity level for our projects, we concentrate on providing additional functionality and improving overall system experience.
 

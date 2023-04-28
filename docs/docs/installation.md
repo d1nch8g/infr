@@ -14,7 +14,7 @@ First, you have to download a file containing ISO image. You can download latest
 
 <center>
 
-[Download x86 ISO Image](https://fmnx.ru/attachments/ab793cc8-2908-4020-a207-500fb0743b95){ .md-button .md-button--primary }
+[Download x86 ISO Image](https://fmnx.io/attachments/ab793cc8-2908-4020-a207-500fb0743b95){ .md-button .md-button--primary }
 
 </center>
 
