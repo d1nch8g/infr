@@ -15,7 +15,7 @@ services:
       - kuma
       - dozzle
       - docs
-      - repo
+      # - repo
 
   gitea:
     image: gitea/gitea
@@ -69,14 +69,14 @@ services:
     depends_on:
       - drone
 
-  repo:
-    image: fmnx.io/dev/repo:latest
-    container_name: repo
-    command: run
-    env_file:
-      - repo/repo.env
-    depends_on:
-      - gitea
+  # repo:
+  #   image: fmnx.io/dev/repo:latest
+  #   container_name: repo
+  #   command: run
+  #   env_file:
+  #     - repo/repo.env
+  #   depends_on:
+  #     - gitea
 
   docs:
     image: squidfunk/mkdocs-material

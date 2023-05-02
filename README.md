@@ -4,6 +4,11 @@
 
 <h2 align="center">💾 Composer - open infrastructure 💾</h2>
 
+[![Generic badge](https://img.shields.io/badge/LICENSE-GPLv3-orange.svg)](https://fmnx.io/composer/fmnx/src/branch/main/LICENSE)
+[![Generic badge](https://img.shields.io/badge/GITEA-REPO-blue.svg)](https://fmnx.io/composer/fmnx)
+[![Generic badge](https://img.shields.io/badge/GITHUB-REPO-red.svg)](https://github.com/fmnx-io/composer)
+[![Build Status](https://ci.fmnx.io/api/badges/dev/composer/status.svg)](https://ci.fmnx.io/composer/fmnx)
+
 This repo contains all code, related to infrastructure building for fmnx project. Only open-source and self-hosted have been used, and the way they customized is stored over here.
 
 This repo contains following elements:
