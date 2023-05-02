@@ -9,16 +9,19 @@
     <img class="main-page-logo elem-hidden" src="https://fmnx.io/dancheg97/fmnx/media/branch/main/system.gif"
         alt="logo">
 
-    <p class="main-page-welcome-text-two">{{.locale.Tr "startpage.welcome_mes"}}
-        <br> {{.locale.Tr "startpage.glad_u_come"}}
-    </p>
+    <center>
+        <p class="main-page-welcome-text-two">{{.locale.Tr "startpage.welcome_mes"}}
+            <br> {{.locale.Tr "startpage.glad_u_come"}}
+        </p>
+    </center>
 
     <div class="main-page-preview-arrow"></div>
 
     <div class="main-page-preview-separator"></div>
 
     <div class="main-page-preview-content elem-hidden">
-        <img class="main-page-preview-image" src="https://fmnx.io/dancheg97/local-gitea/raw/branch/main/images/open-source.png"></img>
+        <img class="main-page-preview-image"
+            src="https://fmnx.io/dancheg97/local-gitea/raw/branch/main/images/open-source.png"></img>
         <table class="main-page-preview-table">
             <tr>
                 <td>
@@ -63,7 +66,8 @@
     </div>
 
     <div class="main-page-preview-content elem-hidden">
-        <img class="main-page-preview-image" src="https://fmnx.io/dancheg97/local-gitea/raw/branch/main/images/style.png"></img>
+        <img class="main-page-preview-image"
+            src="https://fmnx.io/dancheg97/local-gitea/raw/branch/main/images/style.png"></img>
         <table class="main-page-preview-table">
             <tr>
                 <td>
@@ -104,12 +108,12 @@
             </tr>
         </table>
         <img class="main-page-preview-image"
-        src="https://fmnx.io/dancheg97/local-gitea/raw/branch/main/images/hardware.png"></img>
+            src="https://fmnx.io/dancheg97/local-gitea/raw/branch/main/images/hardware.png"></img>
     </div>
 
     <div class="main-page-preview-content elem-hidden">
         <img class="main-page-preview-image"
-        src="https://fmnx.io/dancheg97/local-gitea/raw/branch/main/images/development.png"></img>
+            src="https://fmnx.io/dancheg97/local-gitea/raw/branch/main/images/development.png"></img>
         <table class="main-page-preview-table">
             <tr>
                 <td>
@@ -131,7 +135,7 @@
     </div>
 
     <div class="main-page-preview-separator"></div>
-    
+
     <div class="main-page-preview-content-load">
         <table class="main-page-preview-table">
             <tr>
@@ -177,7 +181,7 @@
             </tr>
         </table>
     </div>
-    
+
 
     <div class="area">
         <ul class="circles">
@@ -229,6 +233,8 @@
         color: rgb(167, 167, 167);
         text-align: center;
         font-size: 28px;
+        width: 60%;
+        position: center;
         margin-bottom: 60px;
         font-family: "Sofia Sans", sans-serif;
     }
@@ -322,7 +328,7 @@
         justify-content: center;
         align-items: center;
     }
-    
+
     .main-page-preview-table {
         width: 700px;
     }
@@ -331,18 +337,26 @@
         .main-page-preview-content {
             flex-direction: column;
         }
+
+        .main-page-welcome-text-two {
+            width: 90%;
+        }
+
         .main-page-preview-table {
             width: 90%;
         }
+
         .main-page-logo {
             width: 90%;
             margin-bottom: 20px;
             margin-top: 20px;
             min-height: 180px;
         }
+
         .main-page-welcome-text {
             font-size: 42px;
         }
+
         .main-page-preview-content-second {
             display: flex;
             flex-direction: column-reverse;
@@ -493,7 +507,7 @@
         return new Promise(resolve => setTimeout(resolve, time));
     }
     const observer = new IntersectionObserver((entries) => {
-        delay(344).then(() => {     
+        delay(344).then(() => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("elem-show");

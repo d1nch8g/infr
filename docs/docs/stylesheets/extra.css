@@ -1,9 +1,11 @@
 :root {
   --md-primary-fg-color: #1d1f23;
   --md-sidebar-primary: #1d1f23;
+  --md-primary-fg-color: #24262b;
 }
 
 [data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #24262b;
   --md-typeset-a-color: #1f7295;
 }
 
@@ -31,7 +33,7 @@ body {
 
 .md-typeset .md-button--primary {
   background-color: #167ba3;
-  border-color:#107096;
+  border-color: #107096;
   color: var(--md-primary-bg-color);
 }
 
@@ -43,7 +45,7 @@ body {
 
 @media(min-width: 700px) {
   .install-box {
-      height: 260px;
-      width: 70%;
+    height: 260px;
+    width: 70%;
   }
 }
