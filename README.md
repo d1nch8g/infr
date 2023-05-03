@@ -2,7 +2,7 @@
 <img style="align: center; padding-left: 10px; padding-right: 10px; padding-bottom: 10px;" width="238px" height="238px" src="logo.png" />
 </p>
 
-<h2 align="center">💾 Infr - open infrastructure 💾</h2>
+<h2 align="center">Infr - open infrastructure</h2>
 
 [![Generic badge](https://img.shields.io/badge/LICENSE-GPLv3-orange.svg)](https://fmnx.io/infr/fmnx/src/branch/main/LICENSE)
 [![Generic badge](https://img.shields.io/badge/GITEA-REPO-blue.svg)](https://fmnx.io/infr/fmnx)
