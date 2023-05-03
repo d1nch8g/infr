@@ -11,3 +11,4 @@ sudo lego --email="help@fmnx.io" --domains="articles.fmnx.ru" --http run
 docker run --rm -it -v "${PWD}/mail/certbot/certs/:/etc/letsencrypt/" -v "${PWD}/mail/certbot/logs/:/var/log/letsencrypt/" -p 80:80 certbot/certbot certonly --standalone -d mail.fmnx.io
 sudo chown -R dancheg97:dancheg97 .lego
 docker compose up
+# example account in mail: setup email add admin@example.com passwd123
