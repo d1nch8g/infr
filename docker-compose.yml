@@ -18,7 +18,7 @@ services:
       # - repo
 
   gitea:
-    image: gitea/gitea
+    image: gitea/gitea:1.19
     container_name: gitea
     restart: unless-stopped
     environment:
@@ -114,7 +114,6 @@ services:
     restart: unless-stopped
     volumes:
       - ./kuma:/app/data
-
   # mail:
   #   image: ghcr.io/docker-mailserver/docker-mailserver:latest
   #   container_name: mail
