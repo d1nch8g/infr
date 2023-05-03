@@ -61,7 +61,7 @@ services:
       DRONE_RPC_SECRET: ***REMOVED***
       DRONE_RUNNER_NAME: drone-runner
       DRONE_RUNNER_CAPACITY: 2
-      DRONE_RUNNER_NETWORKS: composer_default
+      DRONE_RUNNER_NETWORKS: infr_default
       DRONE_DEBUG: false
       DRONE_TRACE: false
     volumes:
