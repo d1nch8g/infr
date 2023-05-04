@@ -69,14 +69,15 @@ services:
     depends_on:
       - drone
 
-  # repo:
-  #   image: fmnx.io/dev/repo:latest
-  #   container_name: repo
-  #   command: run
-  #   env_file:
-  #     - repo/repo.env
-  #   depends_on:
-  #     - gitea
+  repo:
+    image: fmnx.io/core/repo:latest
+    container_name: repo
+    env_file:
+      - repo/repo.env
+    volumes:
+      - ./repo/pkg:/var/cache/pacman/pkg
+    depends_on:
+      - gitea
 
   docs:
     image: squidfunk/mkdocs-material
