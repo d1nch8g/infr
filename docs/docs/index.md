@@ -10,20 +10,6 @@ This distribution is providing world's most advanced open-source tooling, workin
 
 ---
 
-## Secure your software
-
-<p align="center">
-<img style="align: center; max-height: 35%; max-width: 35%" src="/security.png" />
-</p>
-
-We provide a set of easy to deploy infrastructure services, that will help individuals and companies secure their data and software they use.
-
-We introduce [fmnx-pkg](https://fmnx.io/dancheg97/fmnx-pkg) - self-hosted dockerized repository for arch packages. This project's goal is to provide ability for companies to deploy their own pacman repository in under 5 minutes in any docker container environment (docker/kubernetes/swarm/etc).
-
-Project allows to install packages from AUR, `.pkg.tar.zst` files and automatically checks integrity using [yay](https://github.com/Jguer/yay) under the hood. Also includes material UI written in dart and `gRPC` public API.
-
----
-
 ## Increase complexity
 
 <p align="center">
@@ -85,3 +71,56 @@ Also, we add
 > This part of system is under development stage and currently not included in system.
 
 -->
+
+--- 
+
+# Core projects for fmnx linux distribution.
+
+## 📦 [Pack](https://fmnx.io/core/pack) - git based package manager
+
+System provides package manager which main goal is to simplify process of package creation and distribution for developers accumulating power of both `pacman` and `git`. Pack has following features:
+
+- Install and update packages from git repositories
+- Compatible with all arch-based distros
+- Easy to write config `.pack.yml`
+
+# 💿 [Ainst](https://fmnx.io/core/ainst) - Installation utility
+
+We are building installation utility, which main aim is to provide fluent installation experience by using modern UI framework called flutter. Also we are trying to make it fully customizable at runtime via single yaml file. This will allow different distros to integrate this technology and provide the best installation experience for all linux users.
+
+- Fluent installation experience
+- 0 runtime dependencies
+- Made with accordance to material design guidelines
+- Configurable at runtime (in progress ⚒️⚒️⚒️)
+
+# 🔒 [Repo](https://fmnx.io/core/repo) - Pack repository
+
+This tool is made to help individuals and companies secure software we use. Repo is dockerzied repository for pacman&pack packages, which also allows installation from AUR and git links. This project goal is to provide ability for companies to deploy their own pacman repository in under 5 minutes in any docker container environment (docker/kubernetes/swarm/etc).
+
+Also provides material web UI written in flutter and `gRPC-web` API.
+
+- Install packages from pacman, `.pkg.tar.zst`, AUR or git links with `pack`
+- gRPC-web api and material ui for ease of maintanance and administration
+- View package description and overall package statistics
+- Cache packages between sessions
+- Check package integrity on installation
+
+## 🐾 Default gnome desktop environment
+
+At the moment distro comes only with default `gnome` as desktop environment, and not forcing any specific color palette or style. Currently we have added those gnome extensions:
+
+- dash2dock
+- gtile
+
+Also, we adjusted keyboard keymaps in such a way, that regular windows users could easily switch to this distro.
+
+## 🛟 System utilities
+
+Also distribution provides set of system utilities which might be very userfull development process:
+
+- Backups
+- Disks
+- Usage analyser
+- System monitor
+- Font exolorer
+- Emoji explorer
