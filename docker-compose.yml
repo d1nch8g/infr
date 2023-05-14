@@ -66,23 +66,6 @@ services:
     depends_on:
       - drone
 
-  repo:
-    image: fmnx.su/core/repo:latest
-    container_name: repo
-    env_file:
-      - repo/repo.env
-    volumes:
-      - ./repo/pkg:/var/cache/pacman/pkg
-    depends_on:
-      - gitea
-
-  kuma:
-    image: louislam/uptime-kuma:1
-    container_name: kuma
-    restart: unless-stopped
-    volumes:
-      - ./kuma:/app/data
-
   mailserver:
     image: docker.io/mailserver/docker-mailserver:latest
     container_name: mailserver
@@ -106,3 +89,19 @@ services:
     cap_add:
       - NET_ADMIN
     restart: always
+
+  kuma:
+    image: louislam/uptime-kuma:1
+    container_name: kuma
+    restart: unless-stopped
+    volumes:
+      - ./kuma:/app/data
+  # repo:
+  #   image: fmnx.su/core/repo:latest
+  #   container_name: repo
+  #   env_file:
+  #     - repo/repo.env
+  #   volumes:
+  #     - ./repo/pkg:/var/cache/pacman/pkg
+  #   depends_on:
+  #     - gitea
