@@ -1,0 +1,2 @@
+docker run --rm -it -v "${PWD}/mail/certbot/certs/:/etc/letsencrypt/" -v "${PWD}/mail/certbot/logs/:/var/log/letsencrypt/" -p 80:80 certbot/certbot certonly --standalone -d mail.fmnx.su
+# example account in mail: setup email add admin@example.com passwd123

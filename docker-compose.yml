@@ -13,9 +13,6 @@ services:
       - gitea
       - drone
       - kuma
-      - dozzle
-      - docs
-      # - repo
 
   gitea:
     image: gitea/gitea:1.19
@@ -25,10 +22,10 @@ services:
       GITEA__ui__THEMES: earl-grey
       GITEA__ui__DEFAULT_THEME: earl-grey
       GITEA__server__APP_DATA_PATH: /data/gitea
-      GITEA__server__DOMAIN: fmnx.io
-      GITEA__server__SSH_DOMAIN: fmnx.io
+      GITEA__server__DOMAIN: fmnx.su
+      GITEA__server__SSH_DOMAIN: fmnx.su
       GITEA__server__HTTP_PORT: 80
-      GITEA__server__ROOT_URL: https://fmnx.io/
+      GITEA__server__ROOT_URL: https://fmnx.su/
       GITEA__repository__MAX_CREATION_LIMIT: 0
       GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
       GITEA__i18n__LANGS: en-US
@@ -70,7 +67,7 @@ services:
       - drone
 
   repo:
-    image: fmnx.io/core/repo:latest
+    image: fmnx.su/core/repo:latest
     container_name: repo
     env_file:
       - repo/repo.env
@@ -78,36 +75,6 @@ services:
       - ./repo/pkg:/var/cache/pacman/pkg
     depends_on:
       - gitea
-
-  docs:
-    image: squidfunk/mkdocs-material
-    container_name: docs
-    restart: unless-stopped
-    volumes:
-      - ./docs:/docs
-
-  tree:
-    image: squidfunk/mkdocs-material
-    container_name: tree
-    restart: unless-stopped
-    volumes:
-      - ./tree:/docs
-
-  articles:
-    image: squidfunk/mkdocs-material
-    container_name: articles
-    restart: unless-stopped
-    volumes:
-      - ./articles:/docs
-
-  dozzle:
-    image: amir20/dozzle:latest
-    container_name: dozzle
-    restart: unless-stopped
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    env_file:
-      - dozzle/dozzle.env
 
   kuma:
     image: louislam/uptime-kuma:1
@@ -119,7 +86,7 @@ services:
   mailserver:
     image: docker.io/mailserver/docker-mailserver:latest
     container_name: mailserver
-    hostname: mail.fmnx.io
+    hostname: mail.fmnx.su
     ports:
       - "25:25"
       - "587:587"

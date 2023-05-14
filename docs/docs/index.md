@@ -1,7 +1,7 @@
 # Our philosophy
 
 <p align="center">
-<img style="align: center; max-height: 25%; max-width: 25%" src="https://fmnx.io/dancheg97/fmnx/media/branch/main/airootfs/usr/local/share/backgrounds/fmnx-linux.png" />
+<img style="align: center; max-height: 25%; max-width: 25%" src="https://fmnx.su/dancheg97/fmnx/media/branch/main/airootfs/usr/local/share/backgrounds/fmnx-linux.png" />
 </p>
 
 You cannot win the software race in this modern, distributed, open-source world if you are not able to accumulate and integrate existing software into the end system, keeping its cutting edge flow.
@@ -18,7 +18,7 @@ This distribution is providing world's most advanced open-source tooling, workin
 
 Similarly, as [nuxt](https://nuxtjs.org/) is built on top of [vue](https://vuejs.org/), providing better development experience for complex project, this system goal is to prcisely choose the correct level of abstraction and build new projects on top of existing software.
 
-So, we built our installation UI: [fmnx-install](https://fmnx.io/dancheg97/fmnx-install) on top of [archinstall](https://github.com/archlinux/archinstall) utility. This example shows our approach for choosing extensible open-source projects, and enhancing them with prettier look and feel, to gain competetive advantage over other projects.
+So, we built our installation UI: [fmnx-install](https://fmnx.su/dancheg97/fmnx-install) on top of [archinstall](https://github.com/archlinux/archinstall) utility. This example shows our approach for choosing extensible open-source projects, and enhancing them with prettier look and feel, to gain competetive advantage over other projects.
 
 Instead of rebuilding software from scratch, we focus on ability to reuse and accumulate existing experience and knowledge. By picking the modular architechture and correct abstraction complexity level for our projects, we concentrate on providing additional functionality and improving overall system experience.
 
@@ -76,7 +76,7 @@ Also, we add
 
 # Core projects for fmnx linux distribution.
 
-## 📦 [Pack](https://fmnx.io/core/pack) - git based package manager
+## 📦 [Pack](https://fmnx.su/core/pack) - git based package manager
 
 System provides package manager which main goal is to simplify process of package creation and distribution for developers accumulating power of both `pacman` and `git`. Pack has following features:
 
@@ -84,7 +84,7 @@ System provides package manager which main goal is to simplify process of packag
 - Compatible with all arch-based distros
 - Easy to write config `.pack.yml`
 
-# 💿 [Ainst](https://fmnx.io/core/ainst) - Installation utility
+# 💿 [Ainst](https://fmnx.su/core/ainst) - Installation utility
 
 We are building installation utility, which main aim is to provide fluent installation experience by using modern UI framework called flutter. Also we are trying to make it fully customizable at runtime via single yaml file. This will allow different distros to integrate this technology and provide the best installation experience for all linux users.
 
@@ -93,7 +93,7 @@ We are building installation utility, which main aim is to provide fluent instal
 - Made with accordance to material design guidelines
 - Configurable at runtime (in progress ⚒️⚒️⚒️)
 
-# 🔒 [Repo](https://fmnx.io/core/repo) - Pack repository
+# 🔒 [Repo](https://fmnx.su/core/repo) - Pack repository
 
 This tool is made to help individuals and companies secure software we use. Repo is dockerzied repository for pacman&pack packages, which also allows installation from AUR and git links. This project goal is to provide ability for companies to deploy their own pacman repository in under 5 minutes in any docker container environment (docker/kubernetes/swarm/etc).
 
