@@ -96,12 +96,13 @@ services:
     restart: unless-stopped
     volumes:
       - ./kuma:/app/data
-  # repo:
-  #   image: fmnx.su/core/repo:latest
-  #   container_name: repo
-  #   env_file:
-  #     - repo/repo.env
-  #   volumes:
-  #     - ./repo/pkg:/var/cache/pacman/pkg
-  #   depends_on:
-  #     - gitea
+
+  repo:
+    image: fmnx.su/core/repo:latest
+    container_name: repo
+    env_file:
+      - repo/repo.env
+    volumes:
+      - ./repo/pkg:/var/cache/pacman/pkg
+    depends_on:
+      - gitea
