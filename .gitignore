@@ -34,3 +34,4 @@ articles/**
 mail/**
 
 .env
+pwds
