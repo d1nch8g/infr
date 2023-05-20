@@ -26,6 +26,7 @@ services:
       GITEA__server__SSH_DOMAIN: fmnx.su
       GITEA__server__HTTP_PORT: 80
       GITEA__server__ROOT_URL: https://fmnx.su/
+      GITEA__server__LFS_JWT_SECRET: $GITEA__server__LFS_JWT_SECRET
       GITEA__repository__MAX_CREATION_LIMIT: 0
       GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
       GITEA__i18n__LANGS: en-US
