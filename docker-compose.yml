@@ -40,6 +40,18 @@ services:
     image: drone/drone
     container_name: drone
     restart: unless-stopped
+    environment:
+      DRONE_DATABASE_DRIVER: sqlite3
+      DRONE_DATABASE_DATASOURCE: /data/database.sqlite
+      DRONE_GITEA_SERVER: https://fmnx.su/
+      DRONE_GIT_ALWAYS_AUTH: false
+      DRONE_SERVER_PROTO: https
+      DRONE_SERVER_HOST: ci.fmnx.su
+      DRONE_TLS_AUTOCERT: false
+      DRONE_RPC_SECRET: $DRONE_RPC_SECRET
+      DRONE_USER_CREATE: $DRONE_USER_CREATE
+      DRONE_GITEA_CLIENT_ID: $DRONE_GITEA_CLIENT_ID
+      DRONE_GITEA_CLIENT_SECRET: $DRONE_GITEA_CLIENT_SECRET
     env_file:
       - drone/drone.env
     volumes:
@@ -55,7 +67,7 @@ services:
     environment:
       DRONE_RPC_PROTO: http
       DRONE_RPC_HOST: drone
-      DRONE_RPC_SECRET: ***REMOVED***
+      DRONE_RPC_SECRET: $DRONE_RPC_SECRET
       DRONE_RUNNER_NAME: drone-runner
       DRONE_RUNNER_CAPACITY: 2
       DRONE_RUNNER_NETWORKS: infr_default
@@ -70,10 +82,11 @@ services:
     image: docker.io/mailserver/docker-mailserver:latest
     container_name: mailserver
     hostname: mail.fmnx.su
-    ports:
-      - "25:25"
-      - "587:587"
-      - "465:465"
+    environment:
+      ENABLE_FAIL2BAN: 1
+      SSL_TYPE: letsencrypt
+      PERMIT_DOCKER: network
+      SPOOF_PROTECTION: 0
     volumes:
       - ./mail/mail-data/:/var/mail/
       - ./mail/mail-state/:/var/mail-state/
@@ -81,11 +94,10 @@ services:
       - ./mail/config/:/tmp/docker-mailserver/
       - ./mail/certbot/certs/:/etc/letsencrypt
       - /etc/localtime:/etc/localtime:ro
-    environment:
-      - ENABLE_FAIL2BAN=1
-      - SSL_TYPE=letsencrypt
-      - PERMIT_DOCKER=network
-      - SPOOF_PROTECTION=0
+    ports:
+      - "25:25"
+      - "587:587"
+      - "465:465"
     cap_add:
       - NET_ADMIN
     restart: always
