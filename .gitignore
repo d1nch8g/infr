@@ -33,3 +33,5 @@ repo/**
 tree/**
 articles/**
 mail/**
+
+.env
