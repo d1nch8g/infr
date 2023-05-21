@@ -1,6 +1,6 @@
 services:
   nginx:
-    image: nginx
+    image: docker.io/nginx:latest
     container_name: nginx
     restart: unless-stopped
     ports:
@@ -15,7 +15,7 @@ services:
       - kuma
 
   gitea:
-    image: gitea/gitea:1.19
+    image: docker.io/gitea/gitea:latest
     container_name: gitea
     restart: unless-stopped
     environment:
@@ -39,7 +39,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
 
   drone:
-    image: drone/drone
+    image: docker.io/drone/drone:latest
     container_name: drone
     restart: unless-stopped
     environment:
@@ -63,7 +63,7 @@ services:
       - gitea
 
   drone-runner:
-    image: drone/drone-runner-docker
+    image: docker.io/drone/drone-runner-docker:latest
     container_name: droner
     restart: unless-stopped
     environment:
@@ -105,7 +105,7 @@ services:
     restart: always
 
   kuma:
-    image: louislam/uptime-kuma:1
+    image: docker.io/louislam/uptime-kuma:1
     container_name: kuma
     restart: unless-stopped
     volumes:
@@ -117,7 +117,7 @@ services:
     environment:
       PACKREPO_REPO: pk.fmnx.su
       PACKREPO_API_ADRESS: https://pk.fmnx.su/
-      PACKREPO_INIT_PKGS: aur.archlinux.org/gnome-browser-connector aur.archlinux.org/gnome-shell-extension-dash-to-dock aur.archlinux.org/zsh-theme-powerlevel10k-bin-git aur.archlinux.org/zsh-syntax-highlighting-git aur.archlinux.org/adw-gtk3 aur.archlinux.org/visual-studio-code-bin aur.archlinux.org/neovim-git fmnx.su/pkg/flutter
+      PACKREPO_INIT_PKGS: aur.archlinux.org/gnome-browser-connector aur.archlinux.org/gnome-shell-extension-dash-to-dock aur.archlinux.org/zsh-theme-powerlevel10k-bin-git aur.archlinux.org/zsh-syntax-highlighting-git aur.archlinux.org/adw-gtk3 aur.archlinux.org/visual-studio-code-bin aur.archlinux.org/neovim-git
       PACKREPO_LOGS_FORMAT: text
       PACKREPO_REST: fmnx.su/pkg/adw-gtk-theme fmnx.su/pkg/papirus-icon-theme fmnx.su/core/ainst
       PACKREPO_LOGINS: $PACKREPO_LOGINS
