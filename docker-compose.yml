@@ -115,11 +115,10 @@ services:
     image: fmnx.su/core/repo:latest
     container_name: repo
     environment:
-      PACKREPO_REPO: pk.fmnx.su
+      PACKREPO_REPO: fmnx
       PACKREPO_API_ADRESS: https://pk.fmnx.su/
-      PACKREPO_INIT_PKGS: aur.archlinux.org/gnome-browser-connector aur.archlinux.org/gnome-shell-extension-dash-to-dock aur.archlinux.org/zsh-theme-powerlevel10k-bin-git aur.archlinux.org/zsh-syntax-highlighting-git aur.archlinux.org/adw-gtk3 aur.archlinux.org/visual-studio-code-bin aur.archlinux.org/neovim-git
-      PACKREPO_LOGS_FORMAT: text
-      PACKREPO_REST: fmnx.su/pkg/adw-gtk-theme fmnx.su/pkg/papirus-icon-theme fmnx.su/core/ainst
+      PACKREPO_INIT_PKGS: aur.archlinux.org/gnome-browser-connector aur.archlinux.org/gnome-shell-extension-dash-to-dock-git aur.archlinux.org/zsh-theme-powerlevel10k-git aur.archlinux.org/zsh-syntax-highlighting-git aur.archlinux.org/adw-gtk3 aur.archlinux.org/neovim-git aur.archlinux.org/hugo-git aur.archlinux.org/nvm
+      PACKREPO_REST: aur.archlinux.org/adw-gtk-theme aur.archlinux.org/papirus-icon-theme fmnx.su/core/ainst aur.archlinux.org/vscodium
       PACKREPO_LOGINS: $PACKREPO_LOGINS
     volumes:
       - ./repo:/var/cache/pacman/pkg
