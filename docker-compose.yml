@@ -12,7 +12,6 @@ services:
     depends_on:
       - gitea
       - drone
-      - kuma
 
   gitea:
     image: docker.io/gitea/gitea:latest
@@ -103,25 +102,3 @@ services:
     cap_add:
       - NET_ADMIN
     restart: always
-
-  kuma:
-    image: docker.io/louislam/uptime-kuma:1
-    container_name: kuma
-    restart: unless-stopped
-    volumes:
-      - ./kuma:/app/data
-
-  repo:
-    image: fmnx.su/core/repo:latest
-    container_name: repo
-    environment:
-      PACKREPO_REPO: fmnx
-      PACKREPO_API_ADRESS: https://pk.fmnx.su/
-      PACKREPO_INIT_PKGS: aur.archlinux.org/gnome-browser-connector aur.archlinux.org/gnome-shell-extension-dash-to-dock-git aur.archlinux.org/zsh-theme-powerlevel10k-git aur.archlinux.org/zsh-syntax-highlighting-git aur.archlinux.org/adw-gtk3 aur.archlinux.org/neovim-git aur.archlinux.org/hugo-git aur.archlinux.org/nvm aur.archlinux.org/bfg
-      PACKREPO_REST: aur.archlinux.org/adw-gtk-theme aur.archlinux.org/papirus-icon-theme fmnx.su/core/ainst aur.archlinux.org/vscodium
-      PACKREPO_LOGINS: $PACKREPO_LOGINS
-    volumes:
-      - ./repo:/var/cache/pacman/pkg
-    depends_on:
-      - gitea
-
