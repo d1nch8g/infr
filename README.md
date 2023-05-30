@@ -8,6 +8,7 @@
 [![Generic badge](https://img.shields.io/badge/fmnx-repo-006db0.svg)](https://fmnx.su/core/infr)
 [![Generic badge](https://img.shields.io/badge/codeberg-repo-45a3fb.svg)](https://codeberg.org/fmnx/infr)
 [![Generic badge](https://img.shields.io/badge/github-repo-red.svg)](https://github.com/fmnx-io/infr)
+[![Generic badge](https://img.shields.io/badge/flaticon-icons-03fca1.svg)](https://www.flaticon.com)
 [![Build Status](https://ci.fmnx.su/api/badges/core/infr/status.svg)](https://ci.fmnx.su/core/infr)
 
 This repo contains all code, related to infrastructure building for fmnx project. Only open-source and self-hosted have been used, and the way they customized is stored over here.
