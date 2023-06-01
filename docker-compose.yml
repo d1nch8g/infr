@@ -10,13 +10,16 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
       - ./.lego/certificates:/certs:ro
     depends_on:
-      - gitea
-      - drone
+      - forgejo
 
-  gitea:
-    image: docker.io/gitea/gitea:latest
-    container_name: gitea
+  forgejo:
+    image: codeberg.org/forgejo-experimental/forgejo:1.19
+    container_name: forgejo
     restart: unless-stopped
+    volumes:
+      - ./gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     environment:
       GITEA__ui__THEMES: earl-grey
       GITEA__ui__DEFAULT_THEME: earl-grey
@@ -32,52 +35,18 @@ services:
       GITEA__i18n__LANGS: en-US
       GITEA__i18n__NAMES: English
       GITEA__attachment__MAX_SIZE: 1800000
-    volumes:
-      - ./gitea:/data
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
+      FORGEJO__security__INSTALL_LOCK: true
+      FORGEJO__actions__ENABLED: true
 
-  drone:
-    image: docker.io/drone/drone:latest
-    container_name: drone
-    restart: unless-stopped
-    environment:
-      DRONE_DATABASE_DRIVER: sqlite3
-      DRONE_DATABASE_DATASOURCE: /data/database.sqlite
-      DRONE_GITEA_SERVER: https://fmnx.su/
-      DRONE_GIT_ALWAYS_AUTH: false
-      DRONE_SERVER_PROTO: https
-      DRONE_SERVER_HOST: ci.fmnx.su
-      DRONE_TLS_AUTOCERT: false
-      DRONE_RPC_SECRET: $DRONE_RPC_SECRET
-      DRONE_USER_CREATE: $DRONE_USER_CREATE
-      DRONE_GITEA_CLIENT_ID: $DRONE_GITEA_CLIENT_ID
-      DRONE_GITEA_CLIENT_SECRET: $DRONE_GITEA_CLIENT_SECRET
-    env_file:
-      - drone/drone.env
-    volumes:
-      - ./drone:/data
-      - /var/run/docker.sock:/var/run/docker.sock
-    depends_on:
-      - gitea
-
-  drone-runner:
-    image: docker.io/drone/drone-runner-docker:latest
-    container_name: droner
-    restart: unless-stopped
-    environment:
-      DRONE_RPC_PROTO: http
-      DRONE_RPC_HOST: drone
-      DRONE_RPC_SECRET: $DRONE_RPC_SECRET
-      DRONE_RUNNER_NAME: drone-runner
-      DRONE_RUNNER_CAPACITY: 2
-      DRONE_RUNNER_NETWORKS: infr_default
-      DRONE_DEBUG: false
-      DRONE_TRACE: false
+  runner:
+    image: fmnx.su/mirr/runner
+    container_name: runner
+    entrypoint: sh
+    # command: -c 'forgejo-runner register --name runner --no-interactive --instance http://forgejo --token WwegRaavRmPpZZQnuILhmwqSjfR4Wvg8ozo2wF4j'
+    command: -c 'forgejo-runner register --name runner --no-interactive --instance http://forgejo --token WwegRaavRmPpZZQnuILhmwqSjfR4Wvg8ozo2wF4j && forgejo-runner daemon'
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    depends_on:
-      - drone
+      - ./runner/.runner:/.runner
 
   mailserver:
     image: docker.io/mailserver/docker-mailserver:latest

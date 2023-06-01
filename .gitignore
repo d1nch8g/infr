@@ -27,6 +27,7 @@ portainer/**
 pocketbase/**
 go-pacman/**
 kuma/**
+runner/**
 dozzle/**
 repo/**
 tree/**
