@@ -10,11 +10,12 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
       - ./.lego/certificates:/certs:ro
     depends_on:
-      - forgejo
+      - gitea
+      - woodpecker
 
-  forgejo:
-    image: codeberg.org/forgejo-experimental/forgejo:1.19
-    container_name: forgejo
+  gitea:
+    image: docker.io/gitea/gitea:latest
+    container_name: gitea
     restart: unless-stopped
     volumes:
       - ./gitea:/data
@@ -35,18 +36,34 @@ services:
       GITEA__i18n__LANGS: en-US
       GITEA__i18n__NAMES: English
       GITEA__attachment__MAX_SIZE: 1800000
-      FORGEJO__security__INSTALL_LOCK: true
-      FORGEJO__actions__ENABLED: true
 
-  runner:
-    image: fmnx.su/mirr/runner
-    container_name: runner
-    entrypoint: sh
-    # command: -c 'forgejo-runner register --name runner --no-interactive --instance http://forgejo --token WwegRaavRmPpZZQnuILhmwqSjfR4Wvg8ozo2wF4j'
-    command: -c 'forgejo-runner register --name runner --no-interactive --instance http://forgejo --token WwegRaavRmPpZZQnuILhmwqSjfR4Wvg8ozo2wF4j && forgejo-runner daemon'
+  woodpecker:
+    image: docker.io/woodpeckerci/woodpecker-server:latest
+    container_name: woodpecker
+    restart: unless-stopped
+    volumes:
+      - ./woodpecker:/var/lib/woodpecker
+    environment:
+      WOODPECKER_OPEN: true
+      WOODPECKER_HOST: https://ci.fmnx.su
+      WOODPECKER_AGENT_SECRET: ${WOODPECKER_AGENT_SECRET}
+      WOODPECKER_GITEA: true
+      WOODPECKER_GITEA_URL: https://fmnx.su
+      WOODPECKER_GITEA_CLIENT: ${WOODPECKER_GITEA_CLIENT}
+      WOODPECKER_GITEA_SECRET: ${WOODPECKER_GITEA_SECRET}
+
+  agent:
+    image: docker.io/woodpeckerci/woodpecker-agent:latest
+    container_name: agent
+    restart: unless-stopped
+    command: agent
+    depends_on:
+      - woodpecker
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./runner/.runner:/.runner
+    environment:
+      WOODPECKER_SERVER: woodpecker:9000
+      WOODPECKER_AGENT_SECRET: ${WOODPECKER_AGENT_SECRET}
 
   mailserver:
     image: docker.io/mailserver/docker-mailserver:latest

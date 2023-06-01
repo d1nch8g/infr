@@ -33,6 +33,7 @@ repo/**
 tree/**
 articles/**
 mail/**
+woodpecker/**
 
 .env
 pwds
