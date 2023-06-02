@@ -101,5 +101,6 @@ services:
     environment:
       REPO_PORT: 80
       REPO_NAME: pk.fmnx.su
-      REPO_USERS: user::password user2::password2
+      REPO_USERS: $REPO_USERS
       REPO_WORK_DIR: /home
+      REPO_MIRRORS: https://de.arch.mirror.kescher.at/core/os/x86_64/ https://de.arch.mirror.kescher.at/community/os/x86_64/ https://de.arch.mirror.kescher.at/multilib/os/x86_64/
