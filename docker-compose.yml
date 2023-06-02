@@ -16,7 +16,7 @@ services:
   gitea:
     image: docker.io/gitea/gitea:latest
     container_name: gitea
-    restart: unless-stopped
+    restart: unless-stoppeda
     volumes:
       - ./gitea:/data
       - /etc/timezone:/etc/timezone:ro
@@ -51,6 +51,7 @@ services:
       WOODPECKER_GITEA_URL: https://fmnx.su
       WOODPECKER_GITEA_CLIENT: ${WOODPECKER_GITEA_CLIENT}
       WOODPECKER_GITEA_SECRET: ${WOODPECKER_GITEA_SECRET}
+      WOODPECKER_ADMIN: dancheg97,Dancheg97
 
   agent:
     image: docker.io/woodpeckerci/woodpecker-agent:latest
@@ -88,3 +89,14 @@ services:
     cap_add:
       - NET_ADMIN
     restart: always
+
+  repo:
+    image: fmnx.su/core/repo
+    container_name: repo
+    volumes:
+      - ./repo:/home/public
+    environment:
+      REPO_PORT: 80
+      REPO_NAME: pk.fmnx.su
+      REPO_USERS: user::password user2::password2
+      REPO_WORK_DIR: /home
