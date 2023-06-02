@@ -16,7 +16,7 @@ services:
   gitea:
     image: docker.io/gitea/gitea:latest
     container_name: gitea
-    restart: unless-stoppeda
+    restart: unless-stopped
     volumes:
       - ./gitea:/data
       - /etc/timezone:/etc/timezone:ro
@@ -66,29 +66,29 @@ services:
       WOODPECKER_SERVER: woodpecker:9000
       WOODPECKER_AGENT_SECRET: ${WOODPECKER_AGENT_SECRET}
 
-  mailserver:
-    image: docker.io/mailserver/docker-mailserver:latest
-    container_name: mailserver
-    hostname: mail.fmnx.su
-    environment:
-      ENABLE_FAIL2BAN: 1
-      SSL_TYPE: letsencrypt
-      PERMIT_DOCKER: network
-      SPOOF_PROTECTION: 0
-    volumes:
-      - ./mail/mail-data/:/var/mail/
-      - ./mail/mail-state/:/var/mail-state/
-      - ./mail/mail-logs/:/var/log/mail/
-      - ./mail/config/:/tmp/docker-mailserver/
-      - ./mail/certbot/certs/:/etc/letsencrypt
-      - /etc/localtime:/etc/localtime:ro
-    ports:
-      - "25:25"
-      - "587:587"
-      - "465:465"
-    cap_add:
-      - NET_ADMIN
-    restart: always
+  # mailserver:
+  #   image: docker.io/mailserver/docker-mailserver:latest
+  #   container_name: mailserver
+  #   hostname: mail.fmnx.su
+  #   environment:
+  #     ENABLE_FAIL2BAN: 1
+  #     SSL_TYPE: letsencrypt
+  #     PERMIT_DOCKER: network
+  #     SPOOF_PROTECTION: 0
+  #   volumes:
+  #     - ./mail/mail-data/:/var/mail/
+  #     - ./mail/mail-state/:/var/mail-state/
+  #     - ./mail/mail-logs/:/var/log/mail/
+  #     - ./mail/config/:/tmp/docker-mailserver/
+  #     - ./mail/certbot/certs/:/etc/letsencrypt
+  #     - /etc/localtime:/etc/localtime:ro
+  #   ports:
+  #     - "25:25"
+  #     - "587:587"
+  #     - "465:465"
+  #   cap_add:
+  #     - NET_ADMIN
+  #   restart: always
 
   repo:
     image: fmnx.su/core/repo
