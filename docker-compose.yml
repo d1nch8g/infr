@@ -4,14 +4,15 @@ services:
     container_name: nginx
     restart: unless-stopped
     ports:
-      - 80:80
-      - 443:443
+      - "80:80"
+      - "443:443"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf:ro
       - ./.lego/certificates:/certs:ro
     depends_on:
       - gitea
       - woodpecker
+      - repo
 
   gitea:
     image: docker.io/gitea/gitea:latest
@@ -52,6 +53,8 @@ services:
       WOODPECKER_GITEA_CLIENT: ${WOODPECKER_GITEA_CLIENT}
       WOODPECKER_GITEA_SECRET: ${WOODPECKER_GITEA_SECRET}
       WOODPECKER_ADMIN: dancheg97,Dancheg97
+    depends_on:
+      - gitea
 
   agent:
     image: docker.io/woodpeckerci/woodpecker-agent:latest
