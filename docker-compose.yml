@@ -11,11 +11,9 @@ services:
       - ./.lego/certificates:/certs:ro
     depends_on:
       - gitea
-      - woodpecker
-      - repo
 
   gitea:
-    image: docker.io/gitea/gitea:latest
+    image: fmnx.su/core/gitea:base
     container_name: gitea
     restart: unless-stopped
     volumes:
@@ -32,42 +30,11 @@ services:
       GITEA__server__ROOT_URL: https://fmnx.su/
       GITEA__server__LFS_JWT_SECRET: $GITEA__server__LFS_JWT_SECRET
       GITEA__secutrity__INTERNAL_TOKEN: $GITEA__secutrity__INTERNAL_TOKEN
-      GITEA__repository__MAX_CREATION_LIMIT: 0
+      GITEA__repository__MAX_CREATION_LIMIT: 5
       GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
       GITEA__i18n__LANGS: en-US
       GITEA__i18n__NAMES: English
       GITEA__attachment__MAX_SIZE: 1800000
-
-  woodpecker:
-    image: docker.io/woodpeckerci/woodpecker-server:latest
-    container_name: woodpecker
-    restart: unless-stopped
-    volumes:
-      - ./woodpecker:/var/lib/woodpecker
-    environment:
-      WOODPECKER_OPEN: true
-      WOODPECKER_HOST: https://ci.fmnx.su
-      WOODPECKER_AGENT_SECRET: ${WOODPECKER_AGENT_SECRET}
-      WOODPECKER_GITEA: true
-      WOODPECKER_GITEA_URL: https://fmnx.su
-      WOODPECKER_GITEA_CLIENT: ${WOODPECKER_GITEA_CLIENT}
-      WOODPECKER_GITEA_SECRET: ${WOODPECKER_GITEA_SECRET}
-      WOODPECKER_ADMIN: dancheg97,Dancheg97
-    depends_on:
-      - gitea
-
-  agent:
-    image: docker.io/woodpeckerci/woodpecker-agent:latest
-    container_name: agent
-    restart: unless-stopped
-    command: agent
-    depends_on:
-      - woodpecker
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      WOODPECKER_SERVER: woodpecker:9000
-      WOODPECKER_AGENT_SECRET: ${WOODPECKER_AGENT_SECRET}
 
   # mailserver:
   #   image: docker.io/mailserver/docker-mailserver:latest
@@ -92,15 +59,3 @@ services:
   #   cap_add:
   #     - NET_ADMIN
   #   restart: always
-
-  repo:
-    image: fmnx.su/core/repo
-    container_name: repo
-    volumes:
-      - ./repo:/home/public
-    environment:
-      REPO_PORT: 80
-      REPO_NAME: pk.fmnx.su
-      REPO_USERS: $REPO_USERS
-      REPO_WORK_DIR: /home
-      REPO_MIRRORS: https://de.arch.mirror.kescher.at/core/os/x86_64/ https://de.arch.mirror.kescher.at/community/os/x86_64/ https://de.arch.mirror.kescher.at/multilib/os/x86_64/
