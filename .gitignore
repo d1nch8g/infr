@@ -9,6 +9,7 @@ go.work
 
 .lego/*
 gitea/*
+giteax/**
 drone/*
 web/**
 registry/**

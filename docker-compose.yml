@@ -4,7 +4,6 @@ services:
     container_name: gitea
     restart: unless-stopped
     ports:
-      - "22:22"
       - "80:3000"
       - "443:3000"
     volumes:
@@ -13,26 +12,24 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     environment:
-      GITEA__ui__THEMES: earl-grey
-      GITEA__ui__DEFAULT_THEME: earl-grey
-      GITEA__server__APP_DATA_PATH: /data/gitea
-      GITEA__server__DOMAIN: fmnx.su
-      GITEA__server__SSH_DOMAIN: fmnx.su
-      GITEA__server__SSH_LISTEN_HOST: fmnx.su
-      GITEA__server__SSH_PORT: 22
-      GITEA__server__SSH_LISTEN_PORT: 22
-      GITEA__server__ROOT_URL: https://fmnx.su/
-      GITEA__server__LFS_JWT_SECRET: $GITEA__server__LFS_JWT_SECRET
-      GITEA__server__PROTOCOL: https
-      GITEA__server__CERT_FILE: /certs/fmnx.su.crt
-      GITEA__server__KEY_FILE: /certs/fmnx.su.key
-      # GITEA__packages__ARCH_MIRROR_LIST: https://mirror.f4st.host/archlinux/core/os/x86_64
-      GITEA__secutrity__INTERNAL_TOKEN: $GITEA__secutrity__INTERNAL_TOKEN
-      GITEA__repository__MAX_CREATION_LIMIT: 5
-      GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
+      APP_NAME: FMNX Project
       GITEA__i18n__LANGS: en-US
       GITEA__i18n__NAMES: English
+      GITEA__ui__THEMES: earl-grey
+      GITEA__ui__DEFAULT_THEME: earl-grey
+      GITEA__server__PROTOCOL: https
+      GITEA__server__DOMAIN: fmnx.su
+      GITEA__server__SSH_DOMAIN: fmnx.su
+      GITEA__server__ROOT_URL: https://fmnx.su/
+      GITEA__server__APP_DATA_PATH: /data/gitea
+      GITEA__server__CERT_FILE: /certs/fmnx.su.crt
+      GITEA__server__KEY_FILE: /certs/fmnx.su.key
       GITEA__attachment__MAX_SIZE: 1800000
+      GITEA__repository__MAX_CREATION_LIMIT: 5
+      GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
+      GITEA__server__LFS_JWT_SECRET: $GITEA__server__LFS_JWT_SECRET
+      GITEA__secutrity__INTERNAL_TOKEN: $GITEA__secutrity__INTERNAL_TOKEN
+      GITEA__packages__ARCH_MIRROR_LIST: https://mirror.truenetwork.ru/archlinux/core/os/x86_64 https://mirror.truenetwork.ru/archlinux/extra/os/x86_64 https://mirror.truenetwork.ru/archlinux/community/os/x86_64 https://mirror.truenetwork.ru/archlinux/multilib/os/x86_64
 
   # mailserver:
   #   image: docker.io/mailserver/docker-mailserver:latest
