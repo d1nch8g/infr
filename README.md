@@ -25,3 +25,19 @@ This repo contains following elements:
 - Repo for storing pacman packages
 
 Most part of configurations are open and stored right in this repo, only private keys are hidden from public.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
