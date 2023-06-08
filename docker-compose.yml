@@ -17,7 +17,7 @@ services:
       GITEA__i18n__LANGS: en-US
       GITEA__i18n__NAMES: English
 
-      GITEA__ui__THEMES: earl-grey
+      GITEA__ui__THEMES: earl-grey,gitea-modern
       GITEA__ui__DEFAULT_THEME: earl-grey
 
       GITEA__server__PROTOCOL: https
@@ -44,7 +44,10 @@ services:
       GITEA__openid__ENABLE_OPENID_SIGNIN: false
 
       GITEA__attachment__MAX_SIZE: 1800000
+
+      GITEA__repository__MAX_CREATION_LIMIT: 100
       GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
+      
       GITEA__server__LFS_JWT_SECRET: $GITEA__server__LFS_JWT_SECRET
       GITEA__secutrity__INTERNAL_TOKEN: $GITEA__secutrity__INTERNAL_TOKEN
 
