@@ -1,31 +1,31 @@
 {{template "base/head" .}}
 
-<div role="main" aria-label="{{if .IsSigned}}{{.locale.Tr " dashboard"}}{{else}}{{.locale.Tr "home" }}{{end}}"
-    class="page-content home">
+<div role="main" aria-label="{{if .IsSigned}}{{.locale.Tr " dashboard"}}{{else}}{{.locale.Tr "home"
+    }}{{end}}"class="page-content home">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300&display=swap" rel="stylesheet">
-    <p class="main-page-welcome-text">{{.locale.Tr "startpage.footer_first"}}</p>
-    <img class="main-page-logo elem-hidden" src="https://fmnx.su/dancheg97/fmnx/media/branch/main/system.gif"
-        alt="logo">
+
+    <p class="main-text">{{.locale.Tr "startpage.footer_first"}}</p>
+    <img class="screenshow hidden" src="https://fmnx.su/dancheg97/fmnx/media/branch/main/system.gif" alt="logo">
 
     <center>
-        <p class="main-page-welcome-text-two">{{.locale.Tr "startpage.welcome_mes"}}
+        <p class="description">{{.locale.Tr "startpage.welcome_mes"}}
             <br> {{.locale.Tr "startpage.glad_u_come"}}
         </p>
     </center>
 
-    <div class="main-page-preview-arrow"></div>
+    <div class="arrow"></div>
 
-    <div class="main-page-preview-separator"></div>
+    <div class="separator"></div>
 
-    <div class="main-page-preview-content elem-hidden">
-        <img class="main-page-preview-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/arch.png"></img>
-        <table class="main-page-preview-table">
+    <div class="flbar-content hidden">
+        <img class="flbar-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/arch.png"></img>
+        <table class="flbar-table">
             <tr>
                 <td>
                     <center>
-                        <p class="main-page-preview-text-logo">
+                        <p class="flbar-text-logo">
                             {{.locale.Tr "startpage.arch_name"}}
                         </p>
                     </center>
@@ -33,7 +33,7 @@
             </tr>
             <tr>
                 <td>
-                    <p class="main-page-preview-text-content">
+                    <p class="flbar-text-content">
                         {{.locale.Tr "startpage.arch_descr"}}
                     </p>
                 </td>
@@ -41,12 +41,12 @@
         </table>
     </div>
 
-    <div class="main-page-preview-content elem-hidden main-page-preview-content-second">
-        <table class="main-page-preview-table">
+    <div class="flbar-content hidden rotate">
+        <table class="flbar-table">
             <tr>
                 <td>
                     <center>
-                        <p class="main-page-preview-text-logo">
+                        <p class="flbar-text-logo">
                             {{.locale.Tr "startpage.pack_name"}}
                         </p>
                     </center>
@@ -54,22 +54,22 @@
             </tr>
             <tr>
                 <td>
-                    <p class="main-page-preview-text-content">
+                    <p class="flbar-text-content">
                         {{.locale.Tr "startpage.pack_descr"}}
                     </p>
                 </td>
             </tr>
         </table>
-        <img class="main-page-preview-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/pack.png"></img>
+        <img class="flbar-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/pack.png"></img>
     </div>
 
-    <div class="main-page-preview-content elem-hidden">
-        <img class="main-page-preview-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/ainst.png"></img>
-        <table class="main-page-preview-table">
+    <div class="flbar-content hidden">
+        <img class="flbar-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/ainst.png"></img>
+        <table class="flbar-table">
             <tr>
                 <td>
                     <center>
-                        <p class="main-page-preview-text-logo">
+                        <p class="flbar-text-logo">
                             {{.locale.Tr "startpage.ainst_name"}}
                         </p>
                     </center>
@@ -77,7 +77,7 @@
             </tr>
             <tr>
                 <td>
-                    <p class="main-page-preview-text-content">
+                    <p class="flbar-text-content">
                         {{.locale.Tr "startpage.ainst_descr"}}
                     </p>
                 </td>
@@ -86,12 +86,12 @@
     </div>
 
 
-    <div class="main-page-preview-content elem-hidden main-page-preview-content-second">
-        <table class="main-page-preview-table">
+    <div class="flbar-content hidden rotate">
+        <table class="flbar-table">
             <tr>
                 <td>
                     <center>
-                        <p class="main-page-preview-text-logo">
+                        <p class="flbar-text-logo">
                             {{.locale.Tr "startpage.infr_name"}}
                         </p>
                     </center>
@@ -99,22 +99,22 @@
             </tr>
             <tr>
                 <td>
-                    <p class="main-page-preview-text-content">
+                    <p class="flbar-text-content">
                         {{.locale.Tr "startpage.infr_descr"}}
                     </p>
                 </td>
             </tr>
         </table>
-        <img class="main-page-preview-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/infr.png"></img>
+        <img class="flbar-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/infr.png"></img>
     </div>
 
-    <div class="main-page-preview-content elem-hidden">
-        <img class="main-page-preview-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/vscodium.png"></img>
-        <table class="main-page-preview-table">
+    <div class="flbar-content hidden">
+        <img class="flbar-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/vscodium.png"></img>
+        <table class="flbar-table">
             <tr>
                 <td>
                     <center>
-                        <p class="main-page-preview-text-logo">
+                        <p class="flbar-text-logo">
                             {{.locale.Tr "startpage.vscodium_name"}}
                         </p>
                     </center>
@@ -122,7 +122,7 @@
             </tr>
             <tr>
                 <td>
-                    <p class="main-page-preview-text-content">
+                    <p class="flbar-text-content">
                         {{.locale.Tr "startpage.vscodium_descr"}}
                     </p>
                 </td>
@@ -130,12 +130,12 @@
         </table>
     </div>
 
-    <div class="main-page-preview-content elem-hidden main-page-preview-content-second">
-        <table class="main-page-preview-table">
+    <div class="flbar-content hidden rotate">
+        <table class="flbar-table">
             <tr>
                 <td>
                     <center>
-                        <p class="main-page-preview-text-logo">
+                        <p class="flbar-text-logo">
                             {{.locale.Tr "startpage.gnome_name"}}
                         </p>
                     </center>
@@ -143,22 +143,22 @@
             </tr>
             <tr>
                 <td>
-                    <p class="main-page-preview-text-content">
+                    <p class="flbar-text-content">
                         {{.locale.Tr "startpage.gnome_descr"}}
                     </p>
                 </td>
             </tr>
         </table>
-        <img class="main-page-preview-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/gnome.png"></img>
+        <img class="flbar-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/gnome.png"></img>
     </div>
 
-    <div class="main-page-preview-content elem-hidden">
-        <img class="main-page-preview-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/docker.png"></img>
-        <table class="main-page-preview-table">
+    <div class="flbar-content hidden">
+        <img class="flbar-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/docker.png"></img>
+        <table class="flbar-table">
             <tr>
                 <td>
                     <center>
-                        <p class="main-page-preview-text-logo">
+                        <p class="flbar-text-logo">
                             {{.locale.Tr "startpage.docker_name"}}
                         </p>
                     </center>
@@ -166,7 +166,7 @@
             </tr>
             <tr>
                 <td>
-                    <p class="main-page-preview-text-content">
+                    <p class="flbar-text-content">
                         {{.locale.Tr "startpage.docker_descr"}}
                     </p>
                 </td>
@@ -175,12 +175,12 @@
     </div>
 
 
-    <div class="main-page-preview-content elem-hidden main-page-preview-content-second">
-        <table class="main-page-preview-table">
+    <div class="flbar-content hidden rotate">
+        <table class="flbar-table">
             <tr>
                 <td>
                     <center>
-                        <p class="main-page-preview-text-logo">
+                        <p class="flbar-text-logo">
                             {{.locale.Tr "startpage.chromium_name"}}
                         </p>
                     </center>
@@ -188,23 +188,23 @@
             </tr>
             <tr>
                 <td>
-                    <p class="main-page-preview-text-content">
+                    <p class="flbar-text-content">
                         {{.locale.Tr "startpage.chromium_descr"}}
                     </p>
                 </td>
             </tr>
         </table>
-        <img class="main-page-preview-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/chromium.png"></img>
+        <img class="flbar-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/chromium.png"></img>
     </div>
 
-    <div class="main-page-preview-separator"></div>
+    <div class="separator"></div>
 
-    <div class="main-page-preview-content-load">
-        <table class="main-page-preview-table">
+    <div class="flbar-content-load">
+        <table class="flbar-table">
             <tr>
                 <td>
                     <center>
-                        <p class="main-page-preview-text-logo">
+                        <p class="flbar-text-logo">
                             {{.locale.Tr "startpage.download_iso_image"}}
                         </p>
                     </center>
@@ -212,7 +212,7 @@
             </tr>
             <tr>
                 <td>
-                    <p class="main-page-preview-text-content">
+                    <p class="flbar-text-content">
                         {{.locale.Tr "startpage.iso_description"}}
                     </p>
                 </td>
@@ -220,8 +220,8 @@
         </table>
     </div>
 
-    <div class="main-page-preview-content-buttons">
-        <table class="main-page-preview-table">
+    <div class="flbar-content-buttons">
+        <table class="flbar-table">
             <tr>
                 <td class="main-page-button-padding">
                     <center>
@@ -274,7 +274,7 @@
         }
     }
 
-    .main-page-logo {
+    .screenshow {
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -285,32 +285,38 @@
         box-shadow: 0px 0px 4px 4px #000000;
     }
 
-    .main-page-welcome-text {
+    .main-text {
         text-align: center;
         font-size: 55px;
         margin-bottom: 0px;
         font-family: "Sofia Sans", sans-serif;
     }
 
-    .main-page-welcome-text-two {
+    .description {
         color: rgb(167, 167, 167);
         text-align: center;
         font-size: 28px;
-        width: 60%;
+        width: 80%;
         position: center;
         margin-bottom: 60px;
         font-family: "Sofia Sans", sans-serif;
     }
 
-    .main-page-preview-arrow {
+    @media(max-width: 700px) {
+        .description {
+            width: 90%;
+        }
+    }
+
+    .arrow {
         position: relative;
         width: 100px;
         height: 100px;
         margin: 30px auto 80px auto;
     }
 
-    .main-page-preview-arrow:before,
-    .main-page-preview-arrow:after {
+    .arrow:before,
+    .arrow:after {
         content: '';
         position: absolute;
         box-sizing: border-box;
@@ -318,14 +324,14 @@
         height: 100%;
         border-left: 26px solid #40AAFF;
         border-bottom: 26px solid #40AAFF;
-        animation: main-page-preview-arrow 3s linear infinite;
+        animation: arrow 3s linear infinite;
     }
 
-    .main-page-preview-arrow:after {
-        animation: main-page-preview-arrow 3s linear infinite -1.5s;
+    .arrow:after {
+        animation: arrow 3s linear infinite -1.5s;
     }
 
-    @keyframes main-page-preview-arrow {
+    @keyframes arrow {
         0% {
             opacity: 0;
             transform: translate(0, -53px) rotate(-45deg);
@@ -347,7 +353,7 @@
         }
     }
 
-    .main-page-preview-separator {
+    .separator {
         border: 0;
         height: 1px;
         background-image: -webkit-linear-gradient(left, #40AAFF, #1d1f23, #40AAFF);
@@ -356,20 +362,20 @@
         animation: main-page-sep-line 5s 0s infinite linear;
     }
 
-    .elem-hidden {
+    .hidden {
         filter: blur(5px);
         transform: translateX(-10%);
         opacity: 0;
         transition: all 1s;
     }
 
-    .elem-show {
+    .show {
         opacity: 1;
         transform: translateX(0);
         filter: blur(0);
     }
 
-    .main-page-preview-content {
+    .flbar-content {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -377,50 +383,12 @@
         padding-bottom: 72px;
     }
 
-    .main-page-preview-content-load {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding-top: 32px;
-    }
-
-    .main-page-preview-content-buttons {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .main-page-preview-table {
-        width: 700px;
-    }
-
     @media(max-width: 700px) {
-        .main-page-preview-content {
+        .flbar-content {
             flex-direction: column;
         }
 
-        .main-page-welcome-text-two {
-            width: 90%;
-        }
-
-        .main-page-preview-table {
-            width: 90%;
-        }
-
-        .main-page-logo {
-            width: 90%;
-            margin-bottom: 20px;
-            margin-top: 20px;
-            min-height: 180px;
-        }
-
-        .main-page-welcome-text {
-            font-size: 42px;
-        }
-
-        .main-page-preview-content-second {
+        .rotate {
             display: flex;
             flex-direction: column-reverse;
             justify-content: center;
@@ -428,19 +396,56 @@
         }
     }
 
-    .main-page-preview-image {
+    .flbar-content-load {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-top: 32px;
+    }
+
+    .flbar-content-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flbar-table {
+        width: 700px;
+    }
+
+    @media(max-width: 700px) {
+        .flbar-table {
+            width: 90%;
+        }
+
+        .screenshow {
+            width: 90%;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            min-height: 180px;
+        }
+
+        .main-text {
+            font-size: 42px;
+        }
+
+    }
+
+    .flbar-image {
         height: 220px;
         padding: 20px;
     }
 
-    .main-page-preview-text-logo {
+    .flbar-text-logo {
         color: white;
         font-family: "Sofia Sans", sans-serif;
         font-size: 32px;
         font-weight: normal;
     }
 
-    .main-page-preview-text-content {
+    .flbar-text-content {
         color: rgb(197, 197, 197);
         font-family: "Sofia Sans", sans-serif;
         font-size: 24px;
@@ -573,12 +578,12 @@
         delay(344).then(() => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("elem-show");
+                    entry.target.classList.add("show");
                 }
             });
         });
     });
-    const hiddenElements = document.querySelectorAll(".elem-hidden");
+    const hiddenElements = document.querySelectorAll(".hidden");
     hiddenElements.forEach((elem) => observer.observe(elem));
 </script>
 
