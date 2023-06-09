@@ -14,8 +14,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
     environment:
       APP_NAME: FMNX Project
-      GITEA__i18n__LANGS: en-US
-      GITEA__i18n__NAMES: English
+      GITEA__i18n__LANGS: en-US,ru-RU
+      GITEA__i18n__NAMES: English,Russian
 
       GITEA__ui__THEMES: earl-grey,gitea-modern
       GITEA__ui__DEFAULT_THEME: earl-grey
