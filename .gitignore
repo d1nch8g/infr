@@ -22,6 +22,7 @@ registry/**
 !gitea/gitea/options/locale/locale_en-US.ini
 !gitea/gitea/options/locale/locale_ru-RU.ini
 !gitea/gitea/templates/custom/extra_links.tmpl
+!gitea/gitea/templates/base/footer_content.tmpl
 
 backups/**
 portainer/**

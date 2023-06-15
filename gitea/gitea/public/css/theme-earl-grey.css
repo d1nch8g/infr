@@ -268,6 +268,9 @@
   --color-placeholder-text: #6a737d;
   --color-editor-line-highlight: var(--color-primary-light-5);
   --color-project-board-bg: var(--color-secondary-light-2);
+
+  --color-nav-bg: #1D1F23;
+  --color-nav-hover-bg: #2C2F35;
 }
 ::-webkit-calendar-picker-indicator {
   filter: invert(0.8);
