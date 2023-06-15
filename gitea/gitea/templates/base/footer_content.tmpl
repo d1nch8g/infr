@@ -1,0 +1,19 @@
+<footer class="page-footer" role="group" aria-label="{{.locale.Tr "aria.footer"}}">
+	<div class="left-links" role="contentinfo" aria-label="{{.locale.Tr "aria.footer.software"}}">
+		<a style="color: #d5dbe6">Contact email:</a>
+		<a target="_blank" rel="noopener noreferrer" href="help@fmnx.su">help@fmnx.su</a>
+	</div>
+	<div class="right-links" role="group" aria-label="{{.locale.Tr "aria.footer.links"}}">
+		<div class="ui dropdown upward language">
+			<span>{{svg "octicon-globe"}} {{.locale.LangName}}</span>
+			<div class="menu language-menu">
+				{{range .AllLangs}}
+					<a lang="{{.Lang}}" data-url="{{AppSubUrl}}/?lang={{.Lang}}" class="item {{if eq $.locale.Lang .Lang}}active selected{{end}}">{{.Name}}</a>
+				{{end}}
+			</div>
+		</div>
+		<a href="{{AssetUrlPrefix}}/js/licenses.txt">{{.locale.Tr "licenses"}}</a>
+		{{if .EnableSwagger}}<a href="{{AppSubUrl}}/api/swagger">API</a>{{end}}
+		{{template "custom/extra_links_footer" .}}
+	</div>
+</footer>
