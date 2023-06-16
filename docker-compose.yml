@@ -1,6 +1,6 @@
 services:
   gitea:
-    image: fmnx.su/core/gitea:experimental
+    image: fmnx.su/core/gitea:latest
     container_name: gitea
     restart: unless-stopped
     ports:
