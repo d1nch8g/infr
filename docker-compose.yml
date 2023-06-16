@@ -14,6 +14,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
     environment:
       APP_NAME: FMNX Project
+      
       GITEA__ui__THEMES: earl-grey
       GITEA__ui__DEFAULT_THEME: earl-grey
 
