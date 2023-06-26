@@ -24,7 +24,6 @@
 .chroma .ln {
   margin-right: 0.4em;
   padding: 0 0.4em;
-  color: #7f7f7f;
 }
 .chroma .gs {
   font-weight: var(--font-weight-semibold);
@@ -33,16 +32,16 @@
   text-decoration: underline;
 }
 .chroma .bp {
-  color: #9daccc;
+  color: #fabd2f;
 }
 .chroma .c,
 .chroma .c1,
 .chroma .ch,
 .chroma .cm {
-  color: #6a737d;
+  color: #777e94;
 }
 .chroma .cp {
-  color: #7ca1c0;
+  color: #8ec07c;
 }
 .chroma .cpf {
   color: #649bc4;
@@ -51,14 +50,14 @@
   color: #9075cd;
 }
 .chroma .dl {
-  color: #1af;
+  color: #649bc4;
 }
 .chroma .gd {
   color: #fff;
   background-color: #5f3737;
 }
 .chroma .ge {
-  color: #30b2ee;
+  color: #ddee30;
 }
 .chroma .gh {
   color: #ffaa10;
@@ -86,28 +85,28 @@
   color: #b8bb26;
 }
 .chroma .il {
-  color: #1af;
+  color: #649bc4;
 }
 .chroma .k {
-  color: #f63;
+  color: #ff7540;
 }
 .chroma .kc {
-  color: #fa1;
+  color: #649bc4;
 }
 .chroma .kd {
-  color: #9daccc;
+  color: #ff7540;
 }
 .chroma .kn {
-  color: #fa1;
+  color: #ffaa10;
 }
 .chroma .kp {
   color: #5f8700;
 }
 .chroma .kr {
-  color: #f63;
+  color: #ff7540;
 }
 .chroma .kt {
-  color: #9daccc;
+  color: #ff7b72;
 }
 .chroma .m,
 .chroma .mb,
@@ -115,47 +114,47 @@
 .chroma .mh,
 .chroma .mi,
 .chroma .mo {
-  color: #1af;
+  color: #649bc4;
 }
 .chroma .n {
   color: #c9d1d9;
 }
 .chroma .na {
-  color: #8a8a8a;
+  color: #b8bb26;
 }
 .chroma .nb {
-  color: #93a6ce;
+  color: #fabd2f;
 }
 .chroma .nc {
-  color: #fa1;
+  color: #ffaa10;
 }
 .chroma .nd {
-  color: #9daccc;
+  color: #8ec07c;
 }
 .chroma .ne {
-  color: #af8700;
+  color: #ff7540;
 }
-.chroma .nf {
-  color: #9daccc;
-}
+.chroma .nf,
 .chroma .ni {
-  color: #fa1;
+  color: #fabd2f;
 }
-.chroma .nl,
+.chroma .nl {
+  color: #ff7540;
+}
 .chroma .nn {
-  color: #fa1;
+  color: #ffaa10;
 }
 .chroma .no {
-  color: rgb(228, 152, 13);
+  color: #649bc4;
 }
 .chroma .nt {
-  color: #9daccc;
+  color: #ff7540;
 }
 .chroma .nv {
-  color: #93969c;
+  color: #ebdbb2;
 }
 .chroma .nx {
-  color: #bdc6d8;
+  color: #b6bac5;
 }
 .chroma .o {
   color: #ff7540;
@@ -166,49 +165,47 @@
 .chroma .p {
   color: #d2d4db;
 }
-.chroma .s1 {
-  color: #40aaff;
-}
 .chroma .s,
+.chroma .s1,
 .chroma .s2 {
-  color: #40aaff;
+  color: #b8bb26;
 }
 .chroma .sa {
-  color: #1af;
+  color: #649bc4;
 }
 .chroma .sb {
-  color: #40aaff;
+  color: #b8bb26;
 }
 .chroma .sc {
-  color: #1af;
+  color: #649bc4;
 }
 .chroma .sd {
-  color: #6a737d;
+  color: #777e94;
 }
 .chroma .se {
-  color: #f63;
+  color: #ff7540;
 }
 .chroma .sh {
-  color: #1af;
+  color: #649bc4;
 }
 .chroma .si {
-  color: #fa1;
+  color: #ffaa10;
 }
 .chroma .sr {
-  color: #97c;
+  color: #9075cd;
 }
 .chroma .ss {
-  color: #fa1;
+  color: #ff7540;
 }
 .chroma .sx {
-  color: #fa1;
+  color: #ffaa10;
 }
 .chroma .vc {
-  color: #f81;
+  color: #ff7540;
 }
 .chroma .vg,
 .chroma .vi {
-  color: #fa1;
+  color: #ffaa10;
 }
 .chroma .w {
   color: #7f8699;
@@ -538,6 +535,7 @@
   filter: invert(100%) hue-rotate(180deg);
 }
 
+/* EARL GREY START */
 .chroma .hl {
   background-color: #3f424d;
 }
@@ -1032,10 +1030,6 @@ a.ui.ui.ui.green.label:hover {
 .ui.active.button:hover {
   background-color: #474b51;
   color: #dbdbdb;
-}
-.repository .navbar .active.item,
-.repository .navbar .active.item:hover {
-  border-color: transparent !important;
 }
 .ui .info.segment.top {
   background-color: var(--color-secondary) !important;
