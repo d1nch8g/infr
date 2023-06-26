@@ -9,35 +9,12 @@
 [![Generic badge](https://img.shields.io/badge/codeberg-repo-45a3fb.svg)](https://codeberg.org/fmnx/infr)
 [![Generic badge](https://img.shields.io/badge/github-repo-red.svg)](https://github.com/fmnx-io/infr)
 [![Generic badge](https://img.shields.io/badge/flaticon-icons-03fca1.svg)](https://www.flaticon.com)
-[![Build Status](https://ci.fmnx.su/api/badges/core/infr/status.svg)](https://ci.fmnx.su/core/infr)
 
-This repo contains all code, related to infrastructure building for fmnx project. Only open-source and self-hosted have been used, and the way they customized is stored over here.
+This repo contains all code, related to fmnx projectinfrastructure. Only free and open source projects are used for fmnx infrastructure.
 
 This repo contains following elements:
 
-- Gitea with customized theme and parameters.
-- Drone for ci and automation
-- Uptime kuma for monitoring
-- Mkdocs to provide perfect view of documentation
-- Nginx as reverse proxy/load balancer
-- Lego with script for certs updates
-- Dozzle for checking logs in containers
-- Repo for storing pacman packages
+- [Gitea](https://about.gitea.com/) with customized theme and parameters and API.
+- [Docker mail](https://github.com/docker-mailserver/docker-mailserver) server.
 
-Most part of configurations are open and stored right in this repo, only private keys are hidden from public.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+We use custom version of gitea which can accept packages directly from [pack](https://fmnx.su/core/pack), and acts as development environment and software buffer for our projects.
