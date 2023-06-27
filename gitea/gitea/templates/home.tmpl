@@ -19,7 +19,8 @@
 
     <div class="separator"></div>
 
-    <div class="flbar-content hidden rotate">
+    <div class="flbar-content hidden">
+        <img class="flbar-image" src="https://fmnx.su/core/pack/media/branch/main/logo.png"></img>
         <table class="flbar-table">
             <tr>
                 <td>
@@ -38,11 +39,9 @@
                 </td>
             </tr>
         </table>
-        <img class="flbar-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/pack.png"></img>
     </div>
 
-    <div class="flbar-content hidden">
-        <img class="flbar-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/ainst.png"></img>
+    <div class="flbar-content hidden rotate">
         <table class="flbar-table">
             <tr>
                 <td>
@@ -61,10 +60,11 @@
                 </td>
             </tr>
         </table>
+        <img class="flbar-image" src="https://fmnx.su/core/ainst/raw/branch/main/assets/ainst.png"></img>
     </div>
 
-
-    <div class="flbar-content hidden rotate">
+    <div class="flbar-content hidden">
+        <img class="flbar-image" src="https://fmnx.su/core/infr/media/branch/main/logo.png"></img>
         <table class="flbar-table">
             <tr>
                 <td>
@@ -83,7 +83,29 @@
                 </td>
             </tr>
         </table>
-        <img class="flbar-image" src="https://fmnx.su/core/infr/raw/branch/main/icons/infr.png"></img>
+    </div>
+
+
+    <div class="flbar-content hidden rotate">
+        <table class="flbar-table">
+            <tr>
+                <td>
+                    <center>
+                        <p class="flbar-text-logo">
+                            {{.locale.Tr "startpage.iso_name"}}
+                        </p>
+                    </center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="flbar-text-content">
+                        {{.locale.Tr "startpage.iso_descr"}}
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <img class="flbar-image" src="https://fmnx.su/core/iso/media/branch/main/logo.png"></img>
     </div>
 
     <div class="flbar-content hidden">
@@ -203,7 +225,7 @@
             <tr>
                 <td class="main-page-button-padding">
                     <center>
-                        <form method="get" action="https://fmnx.su/attachments/ab793cc8-2908-4020-a207-500fb0743b95">
+                        <form method="get" action="https://fmnx.su/core/iso/releases/download/0.1.0/fmnx-2023.06.27-x86_64.iso">
                             <button class="ui green button" type="submit">
                                 {{.locale.Tr "startpage.download_iso_button"}}
                             </button>
