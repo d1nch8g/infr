@@ -19,6 +19,8 @@ This repo contains following elements:
 - [Minio](https://min.io/) for blobs, files, packages and LFS.
 - [Docker mail](https://github.com/docker-mailserver/docker-mailserver) as gitea's mailer service.
 
+Also [certbot-docker](https://hub.docker.com/r/certbot/certbot) and [lego](https://github.com/go-acme/lego) are used to obtain certificates.
+
 ---
 
 ## Local setup
@@ -69,11 +71,13 @@ echo POSTGRES_PASSWORD=password >> .env
 echo POSTGRES_DB=db >> .env
 ```
 
-5. Start postgres with `docker-compose`.
+5. Start postgres with `docker-compose` and disconnect.
 
 ```sh
 docker compose up
 ```
+
+Verify, that postgres is up and running, by connecting with your client, i prefer [sqltools](https://open-vsx.org/extension/mtxr/sqltools) vscodium extension with postgres driver. Alternatively you can use [pgadmin](https://www.pgadmin.org/) or another postgres UI of your preference.
 
 ---
 
@@ -97,7 +101,7 @@ git clone https://fmnx.su/core/infr
 cd infr/minio
 ```
 
-4. Add postgres credentials to `.env` file.
+4. Add minio credentials to `.env` file.
 
 ```sh
 echo MINIO_ACCESS_KEY=123456 >> .env
@@ -135,10 +139,16 @@ cd infr/mail
 4. Obtain sertificates from letsencrypt. Before that you should ensure, that you have proper routing adjusted in your DNS server, and traffic from domain can reach the email VM. Script uses [letsencrypt](https://letsencrypt.org/) for obtaining TLS sertificates.
 
 ```sh
-docker run --rm -it -v "${PWD}/mail/certbot/certs/:/etc/letsencrypt/" -v "${PWD}/mail/certbot/logs/:/var/log/letsencrypt/" -p 80:80 certbot/certbot certonly --standalone -d mail.example.com
+docker run --rm -it -v "${PWD}/data/certbot/certs/:/etc/letsencrypt/" -v "${PWD}/data/certbot/logs/:/var/log/letsencrypt/" -p 80:80 docker.io/certbot/certbot certonly --standalone -d mail.example.com
 ```
 
-5. Sh into `docker-email` container and add email users.
+5. Start email docker container.
+
+```sh
+docker compose up
+```
+
+6. Sh into `docker-email` container and add new users.
 
 ```sh
 docker exec -it mail /bin/bash
@@ -148,4 +158,26 @@ docker exec -it mail /bin/bash
 
 ```sh
 setup email add admin@example.com passwd123
+```
+
+---
+
+### Setup gitea
+
+1. SSH into gitea vm.
+
+```sh
+ssh user@vm
+```
+
+2. Clone infrastructure repository.
+
+```sh
+git clone https://fmnx.su/core/infr
+```
+
+3. Cd into gitea-server folder.
+
+```sh
+cd infr/mail
 ```
