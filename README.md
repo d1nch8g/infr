@@ -10,11 +10,142 @@
 [![Generic badge](https://img.shields.io/badge/github-repo-red.svg)](https://github.com/fmnx-io/infr)
 [![Generic badge](https://img.shields.io/badge/flaticon-icons-03fca1.svg)](https://www.flaticon.com)
 
-This repo contains all code, related to fmnx projectinfrastructure. Only free and open source projects are used for fmnx infrastructure.
+This repository contains all code, related to fmnx project infrastructure. All infrastructure elements are containerized applications to reduce headache. Only free and open source docker containers have been used.
 
 This repo contains following elements:
 
 - [Gitea](https://about.gitea.com/) with customized theme and parameters and API.
-- [Docker mail](https://github.com/docker-mailserver/docker-mailserver) server.
+- [Postgres](https://www.postgresql.org/) for user data.
+- [Minio](https://min.io/) for blobs, files, packages and LFS.
+- [Docker mail](https://github.com/docker-mailserver/docker-mailserver) as gitea's mailer service.
 
-We use custom version of gitea which can accept packages directly from [pack](https://fmnx.su/core/pack), and acts as development environment and software buffer for our projects.
+---
+
+## Local setup
+
+Local version has all containers tied up in single docker-compose file. It can be used for local tests and UI adjustments.
+
+1. Clone the repository.
+
+```sh
+git clone https://fmnx.su/core/infr
+```
+
+2. Run containers with `docker-compose`.
+
+```sh
+docker compose up
+```
+
+If you are plannig to use infrastructure for a team, preferably run setup across multiple nodes.
+
+---
+
+## Setup postgres
+
+1. SSH into postgres vm.
+
+```sh
+ssh user@vm
+```
+
+2. Clone infrastructure repo.
+
+```sh
+git clone https://fmnx.su/core/infr
+```
+
+3. Cd into postgres folder.
+
+```sh
+cd infr/postgres
+```
+
+4. Add postgres credentials to `.env` file.
+
+```sh
+echo POSTGRES_USER=user >> .env
+echo POSTGRES_PASSWORD=password >> .env
+echo POSTGRES_DB=db >> .env
+```
+
+5. Start postgres with `docker-compose`.
+
+```sh
+docker compose up
+```
+
+---
+
+## Setup Minio
+
+1. SSH into minio vm.
+
+```sh
+ssh user@vm
+```
+
+2. Clone infrastructure repository.
+
+```sh
+git clone https://fmnx.su/core/infr
+```
+
+3. Cd into minio folder.
+
+```sh
+cd infr/minio
+```
+
+4. Add postgres credentials to `.env` file.
+
+```sh
+echo MINIO_ACCESS_KEY=123456 >> .env
+echo MINIO_SECRET_KEY=987654321 >> .env
+```
+
+5. Start minio with `docker-compose`.
+
+```sh
+docker compose up
+```
+
+---
+
+### Setup email
+
+1. SSH into email vm.
+
+```sh
+ssh user@vm
+```
+
+2. Clone infrastructure repository.
+
+```sh
+git clone https://fmnx.su/core/infr
+```
+
+3. Cd into email-server folder.
+
+```sh
+cd infr/mail
+```
+
+4. Obtain sertificates from letsencrypt. Before that you should ensure, that you have proper routing adjusted in your DNS server, and traffic from domain can reach the email VM. Script uses [letsencrypt](https://letsencrypt.org/) for obtaining TLS sertificates.
+
+```sh
+docker run --rm -it -v "${PWD}/mail/certbot/certs/:/etc/letsencrypt/" -v "${PWD}/mail/certbot/logs/:/var/log/letsencrypt/" -p 80:80 certbot/certbot certonly --standalone -d mail.example.com
+```
+
+5. Sh into `docker-email` container and add email users.
+
+```sh
+docker exec -it mail /bin/bash
+```
+
+6. Add email users.
+
+```sh
+setup email add admin@example.com passwd123
+```
