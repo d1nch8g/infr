@@ -1,0 +1,57 @@
+services:
+  gitea:
+    image: fmnx.su/core/gitea:latest
+    container_name: gitea
+    restart: unless-stopped
+    ports:
+      - "222:22"
+      - "80:3000"
+      - "443:3000"
+    volumes:
+      - ./data:/data
+      - ./.lego/certificates:/certs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      APP_NAME: FMNX Project
+
+      DB_TYPE: postgres
+      DB_HOST: postgres:5432
+      DB_NAME: $POSTGRES_DB
+      DB_USER: $POSTGRES_USER
+      DB_PASSWD: $POSTGRES_PASSWORD
+      
+      GITEA__ui__THEMES: earl-grey
+      GITEA__ui__DEFAULT_THEME: earl-grey
+
+      GITEA__server__PROTOCOL: https
+      GITEA__server__DOMAIN: fmnx.su
+      GITEA__server__SSH_DOMAIN: fmnx.su
+      GITEA__server__ROOT_URL: https://fmnx.su/
+      GITEA__server__APP_DATA_PATH: /data/gitea
+      GITEA__server__CERT_FILE: /certs/fmnx.su.crt
+      GITEA__server__KEY_FILE: /certs/fmnx.su.key
+
+      GITEA__mailer__ENABLED: true
+      GITEA__mailer__FROM: help@fmnx.su
+      GITEA__mailer__MAILER_TYPE: smtp
+      GITEA__mailer__SMTP_ADDR: mail.fmnx.su
+      GITEA__mailer__SMTP_PORT: 587
+      GITEA__mailer__IS_TLS_ENABLED: true
+      GITEA__mailer__USER: help@fmnx.su
+      GITEA__mailer__PASSWD: $GITEA__mailer__PASSWD
+
+      GITEA__service__ENABLE_CAPTCHA: true
+      GITEA__service__REGISTER_EMAIL_CONFIRM: true
+
+      GITEA__openid__ENABLE_OPENID_SIGNUP: false
+      GITEA__openid__ENABLE_OPENID_SIGNIN: false
+
+      GITEA__attachment__MAX_SIZE: 1800000
+
+      GITEA__repository__MAX_CREATION_LIMIT: 100
+      GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
+      
+      GITEA__server__LFS_JWT_SECRET: $GITEA__server__LFS_JWT_SECRET
+      GITEA__secutrity__INTERNAL_TOKEN: $GITEA__secutrity__INTERNAL_TOKEN
+

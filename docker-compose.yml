@@ -8,32 +8,43 @@ services:
       - "80:3000"
       - "443:3000"
     volumes:
-      - ./gitea:/data
-      - ./.lego/certificates:/certs
+      - ./gitea/data:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     environment:
       APP_NAME: FMNX Project
+
+      DB_TYPE: postgres
+      DB_HOST: postgres:5432
+      DB_NAME: db
+      DB_USER: user
+      DB_PASSWD: password
       
       GITEA__ui__THEMES: earl-grey
       GITEA__ui__DEFAULT_THEME: earl-grey
 
-      GITEA__server__PROTOCOL: https
-      GITEA__server__DOMAIN: fmnx.su
-      GITEA__server__SSH_DOMAIN: fmnx.su
-      GITEA__server__ROOT_URL: https://fmnx.su/
-      GITEA__server__APP_DATA_PATH: /data/gitea
-      GITEA__server__CERT_FILE: /certs/fmnx.su.crt
-      GITEA__server__KEY_FILE: /certs/fmnx.su.key
+      GITEA__server__LFS_START_SERVER: true
 
-      GITEA__mailer__ENABLED: true
-      GITEA__mailer__FROM: help@fmnx.su
-      GITEA__mailer__MAILER_TYPE: smtp
-      GITEA__mailer__SMTP_ADDR: mail.fmnx.su
-      GITEA__mailer__SMTP_PORT: 587
-      GITEA__mailer__IS_TLS_ENABLED: true
-      GITEA__mailer__USER: help@fmnx.su
-      GITEA__mailer__PASSWD: $GITEA__mailer__PASSWD
+      GITEA__lfs__STORAGE_TYPE: minio
+      GITEA__lfs__SERVE_DIRECT: false
+      GITEA__lfs__MINIO_ENDPOINT: minio:9000
+      GITEA__lfs__MINIO_ACCESS_KEY_ID: 123456
+      GITEA__lfs__MINIO_SECRET_ACCESS_KEY: 987654321
+      GITEA__lfs__MINIO_BUCKET: bucket
+      GITEA__lfs__MINIO_LOCATION: msk
+      GITEA__lfs__MINIO_BASE_PATH: /lfs
+      GITEA__lfs__MINIO_USE_SSL: false
+      
+      GITEA__attachment__MAX_SIZE: 1800000
+      GITEA__attachment__STORAGE_TYPE: minio
+      GITEA__attachment__SERVE_DIRECT: false
+      GITEA__attachment__MINIO_ENDPOINT: minio:9000
+      GITEA__attachment__MINIO_ACCESS_KEY_ID: 123456
+      GITEA__attachment__MINIO_SECRET_ACCESS_KEY: 987654321
+      GITEA__attachment__MINIO_BUCKET: bucket
+      GITEA__attachment__MINIO_LOCATION: msk
+      GITEA__attachment__MINIO_BASE_PATH: /attachment
+      GITEA__attachment__MINIO_USE_SSL: false
 
       GITEA__service__ENABLE_CAPTCHA: true
       GITEA__service__REGISTER_EMAIL_CONFIRM: true
@@ -41,35 +52,31 @@ services:
       GITEA__openid__ENABLE_OPENID_SIGNUP: false
       GITEA__openid__ENABLE_OPENID_SIGNIN: false
 
-      GITEA__attachment__MAX_SIZE: 1800000
-
       GITEA__repository__MAX_CREATION_LIMIT: 100
       GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
-      
-      GITEA__server__LFS_JWT_SECRET: $GITEA__server__LFS_JWT_SECRET
-      GITEA__secutrity__INTERNAL_TOKEN: $GITEA__secutrity__INTERNAL_TOKEN
 
-  mailserver:
-    image: docker.io/mailserver/docker-mailserver:latest
-    container_name: mailserver
-    hostname: mail.fmnx.su
-    environment:
-      ENABLE_FAIL2BAN: 1
-      SSL_TYPE: letsencrypt
-      PERMIT_DOCKER: network
-      SPOOF_PROTECTION: 0
-    volumes:
-      - ./mail/mail-data/:/var/mail/
-      - ./mail/mail-state/:/var/mail-state/
-      - ./mail/mail-logs/:/var/log/mail/
-      - ./mail/config/:/tmp/docker-mailserver/
-      - ./mail/certbot/certs/:/etc/letsencrypt
-      - /etc/localtime:/etc/localtime:ro
+  postgres:
+    image: docker.io/postgres:latest
+    container_name: postgres
+    restart: unless-stopped
     ports:
-      - "25:25"
-      - "587:587"
-      - "465:465"
-      - "993:993"
-    cap_add:
-      - NET_ADMIN
-    restart: always
+      - 5432:5432
+    volumes: 
+      - ./postgres/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: db
+
+  minio:
+    image: docker.io/minio/minio:latest
+    container_name: minio
+    restart: unless-stopped
+    command: server /data
+    ports:
+      - 9000:9000
+    volumes:
+      - ./minio/data:/data
+    environment:
+      MINIO_ACCESS_KEY: 123456
+      MINIO_SECRET_KEY: 987654321
