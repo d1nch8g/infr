@@ -19,7 +19,7 @@ This repo contains following elements:
 - [Minio](https://min.io/) for blobs, files, packages and LFS.
 - [Docker mail](https://github.com/docker-mailserver/docker-mailserver) as gitea's mailer service.
 
-Also [certbot-docker](https://hub.docker.com/r/certbot/certbot) and [lego](https://github.com/go-acme/lego) are used to obtain certificates.
+Also [certbot-docker](https://hub.docker.com/r/certbot/certbot) and [lego](https://github.com/go-acme/lego) are used for certificates.
 
 ---
 
@@ -63,7 +63,7 @@ git clone https://fmnx.su/core/infr
 cd infr/postgres
 ```
 
-4. Add postgres credentials to `.env` file.
+4. Add postgres credentials to `.env` file. Save credentials to apply to gitea lates.
 
 ```sh
 echo POSTGRES_USER=user >> .env
@@ -81,7 +81,7 @@ Verify, that postgres is up and running, by connecting with your client, i prefe
 
 ---
 
-## Setup Minio
+## Setup minio
 
 1. SSH into minio vm.
 
@@ -101,7 +101,7 @@ git clone https://fmnx.su/core/infr
 cd infr/minio
 ```
 
-4. Add minio credentials to `.env` file.
+4. Add minio credentials to `.env` file. Save credentials to apply to gitea lates.
 
 ```sh
 echo MINIO_ACCESS_KEY=123456 >> .env
@@ -148,7 +148,7 @@ docker run --rm -it -v "${PWD}/data/certbot/certs/:/etc/letsencrypt/" -v "${PWD}
 docker compose up
 ```
 
-6. Sh into `docker-email` container and add new users.
+6. Sh into `docker-email` container and add new users. Set up help or other user to pass it to gitea later.
 
 ```sh
 docker exec -it mail /bin/bash
@@ -176,8 +176,40 @@ ssh user@vm
 git clone https://fmnx.su/core/infr
 ```
 
-3. Cd into gitea-server folder.
+3. Cd into gitea folder.
 
 ```sh
-cd infr/mail
+cd infr/gitea
+```
+
+4. Obtain certificates secure connection with [lego](https://github.com/go-acme/lego).
+
+```sh
+go install github.com/go-acme/lego/v4/cmd/lego@latest
+sudo lego --email="name@example.com" --domains="example.com" --http run
+sudo chmod a+rwx -R .lego
+```
+
+5. Add parameters for gitea, postgres, minio and mailer.
+
+```sh
+echo POSTGRES_HOST=host:5432 >> .env
+echo POSTGRES_DB=db >> .env
+echo POSTGRES_USER=user >> .env
+echo POSTGRES_PASSWORD=password >> .env
+
+echo DOMAIN=example.com >> .env
+
+echo MAIL_ADDR=help@example.com >> .env
+echo MAIL_PASS=12345 >> .env
+
+echo MINIO_ENDPOINT=minio:9000 >> .env
+echo MINIO_ACCESS_KEY_ID=123456 >> .env
+echo MINIO_SECRET_ACCESS_KEY=987654321 >> .env
+```
+
+6. Run gitea with docker.
+
+```sh
+docker compose up
 ```

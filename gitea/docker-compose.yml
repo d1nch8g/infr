@@ -16,30 +16,52 @@ services:
       APP_NAME: FMNX Project
 
       DB_TYPE: postgres
-      DB_HOST: postgres:5432
+      DB_HOST: $POSTGRES_HOST
       DB_NAME: $POSTGRES_DB
       DB_USER: $POSTGRES_USER
       DB_PASSWD: $POSTGRES_PASSWORD
-      
-      GITEA__ui__THEMES: earl-grey
-      GITEA__ui__DEFAULT_THEME: earl-grey
 
       GITEA__server__PROTOCOL: https
-      GITEA__server__DOMAIN: fmnx.su
-      GITEA__server__SSH_DOMAIN: fmnx.su
-      GITEA__server__ROOT_URL: https://fmnx.su/
+      GITEA__server__DOMAIN: $DOMAIN
+      GITEA__server__SSH_DOMAIN: $DOMAIN
+      GITEA__server__ROOT_URL: https://$DOMAIN/
       GITEA__server__APP_DATA_PATH: /data/gitea
-      GITEA__server__CERT_FILE: /certs/fmnx.su.crt
-      GITEA__server__KEY_FILE: /certs/fmnx.su.key
+      GITEA__server__CERT_FILE: /certs/$DOMAIN.crt
+      GITEA__server__KEY_FILE: /certs/$DOMAIN.key
+      GITEA__server__LFS_START_SERVER: true
 
       GITEA__mailer__ENABLED: true
-      GITEA__mailer__FROM: help@fmnx.su
+      GITEA__mailer__FROM: $MAIL_ADDR
       GITEA__mailer__MAILER_TYPE: smtp
-      GITEA__mailer__SMTP_ADDR: mail.fmnx.su
+      GITEA__mailer__SMTP_ADDR: mail.$DOMAIN
       GITEA__mailer__SMTP_PORT: 587
       GITEA__mailer__IS_TLS_ENABLED: true
-      GITEA__mailer__USER: help@fmnx.su
-      GITEA__mailer__PASSWD: $GITEA__mailer__PASSWD
+      GITEA__mailer__USER: $MAIL_ADDR
+      GITEA__mailer__PASSWD: $MAIL_PASS
+
+      GITEA__lfs__STORAGE_TYPE: minio
+      GITEA__lfs__SERVE_DIRECT: false
+      GITEA__lfs__MINIO_ENDPOINT: $MINIO_ENDPOINT
+      GITEA__lfs__MINIO_ACCESS_KEY_ID: $MINIO_ACCESS_KEY_ID
+      GITEA__lfs__MINIO_SECRET_ACCESS_KEY: $MINIO_SECRET_ACCESS_KEY
+      GITEA__lfs__MINIO_BUCKET: bucket
+      GITEA__lfs__MINIO_LOCATION: local
+      GITEA__lfs__MINIO_BASE_PATH: /lfs
+      GITEA__lfs__MINIO_USE_SSL: false
+
+      GITEA__attachment__MAX_SIZE: 1800000
+      GITEA__attachment__STORAGE_TYPE: minio
+      GITEA__attachment__SERVE_DIRECT: false
+      GITEA__attachment__MINIO_ENDPOINT: $MINIO_ENDPOINT
+      GITEA__attachment__MINIO_ACCESS_KEY_ID: $MINIO_ACCESS_KEY_ID
+      GITEA__attachment__MINIO_SECRET_ACCESS_KEY: $MINIO_SECRET_ACCESS_KEY
+      GITEA__attachment__MINIO_BUCKET: bucket
+      GITEA__attachment__MINIO_LOCATION: local
+      GITEA__attachment__MINIO_BASE_PATH: /attachment
+      GITEA__attachment__MINIO_USE_SSL: false
+
+      GITEA__ui__THEMES: earl-grey
+      GITEA__ui__DEFAULT_THEME: earl-grey
 
       GITEA__service__ENABLE_CAPTCHA: true
       GITEA__service__REGISTER_EMAIL_CONFIRM: true
@@ -47,11 +69,5 @@ services:
       GITEA__openid__ENABLE_OPENID_SIGNUP: false
       GITEA__openid__ENABLE_OPENID_SIGNIN: false
 
-      GITEA__attachment__MAX_SIZE: 1800000
-
       GITEA__repository__MAX_CREATION_LIMIT: 100
       GITEA__repository__ALLOW_FORK_WITHOUT_MAXIMUM_LIMIT: false
-      
-      GITEA__server__LFS_JWT_SECRET: $GITEA__server__LFS_JWT_SECRET
-      GITEA__secutrity__INTERNAL_TOKEN: $GITEA__secutrity__INTERNAL_TOKEN
-
