@@ -10,20 +10,18 @@
 [![Generic badge](https://img.shields.io/badge/github-repo-red.svg)](https://github.com/fmnx-io/infr)
 [![Generic badge](https://img.shields.io/badge/flaticon-icons-03fca1.svg)](https://www.flaticon.com)
 
-This repository contains all code, related to fmnx project infrastructure. All infrastructure elements are containerized applications to reduce headache. Only free and open source docker containers have been used.
-
-This repo contains following elements:
+This repository contains `docker-compose` files for fmnx insfrastructure, which consists of following elements:
 
 - [Gitea](https://about.gitea.com/) with customized theme and parameters and API.
 - [Postgres](https://www.postgresql.org/) for user data.
 - [Minio](https://min.io/) for blobs, files, packages and LFS.
 - [Docker mail](https://github.com/docker-mailserver/docker-mailserver) as gitea's mailer service.
 
-Also [certbot-docker](https://hub.docker.com/r/certbot/certbot) and [lego](https://github.com/go-acme/lego) are used for certificates.
+Instructions for single-node local environment and multi-node public environment are provided below.
 
----
+[Certbot-docker](https://hub.docker.com/r/certbot/certbot) and [go-lego](https://github.com/go-acme/lego) are used to obtain TLS certificates.
 
-## Local setup
+## Single-node setup
 
 Local version has all containers tied up in single docker-compose file. It can be used for local tests and UI adjustments.
 
@@ -43,7 +41,11 @@ If you are plannig to use infrastructure for a team, preferably run setup across
 
 ---
 
-## Setup postgres
+## Multi-node setup
+
+If you are planning to set up gitea for large team or organization, it is reasonable to provide multiple nodes. In this instruction, we assume that all nodes are located in the same network and domain forwars traffic to node with gitea. Instruction consists of 4 parts: postgres, minio, mail and gitea.
+
+### 1. Postgres
 
 1. SSH into postgres vm.
 
@@ -79,9 +81,7 @@ docker compose up
 
 Verify, that postgres is up and running, by connecting with your client, i prefer [sqltools](https://open-vsx.org/extension/mtxr/sqltools) vscodium extension with postgres driver. Alternatively you can use [pgadmin](https://www.pgadmin.org/) or another postgres UI of your preference.
 
----
-
-## Setup minio
+### 2. Minio
 
 1. SSH into minio vm.
 
@@ -116,7 +116,7 @@ docker compose up
 
 ---
 
-### Setup email
+### 3. Docker-email
 
 1. SSH into email vm.
 
@@ -162,7 +162,7 @@ setup email add admin@example.com passwd123
 
 ---
 
-### Setup gitea
+### 4. Gitea
 
 1. SSH into gitea vm.
 
