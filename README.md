@@ -114,8 +114,6 @@ echo MINIO_SECRET_KEY=987654321 >> .env
 docker compose up
 ```
 
----
-
 ### 3. Docker-email
 
 1. SSH into email vm.
@@ -159,8 +157,6 @@ docker exec -it mail /bin/bash
 ```sh
 setup email add admin@example.com passwd123
 ```
-
----
 
 ### 4. Gitea
 
