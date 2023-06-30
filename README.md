@@ -193,7 +193,7 @@ sudo chmod a+rwx -R .lego
 5. Add parameters for gitea, postgres, minio and mailer.
 
 ```sh
-echo POSTGRES_HOST=host:5432 >> .env
+echo POSTGRES_HOST=postgres:5432 >> .env
 echo POSTGRES_DB=db >> .env
 echo POSTGRES_USER=user >> .env
 echo POSTGRES_PASSWORD=password >> .env
