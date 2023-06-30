@@ -34,7 +34,7 @@ git clone https://fmnx.su/core/infr
 2. Run containers with `docker-compose`.
 
 ```sh
-docker compose up
+cd infr && docker compose up
 ```
 
 If you are plannig to use infrastructure for a team, preferably run setup across multiple nodes.
