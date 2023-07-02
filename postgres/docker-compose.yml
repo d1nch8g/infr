@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     ports:
       - 5432:5432
-    volumes: 
+    volumes:
       - ./data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: $POSTGRES_USER

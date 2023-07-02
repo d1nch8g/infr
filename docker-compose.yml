@@ -58,6 +58,8 @@ services:
       - 9000:9000
     volumes:
       - ./minio/data:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     environment:
       MINIO_ACCESS_KEY: 123456
       MINIO_SECRET_KEY: 987654321
