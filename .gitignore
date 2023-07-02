@@ -5,6 +5,7 @@
 !gitea/gitea/options/locale/locale_ru-RU.ini
 !gitea/gitea/templates/custom/extra_links.tmpl
 !gitea/gitea/templates/base/footer_content.tmpl
+!gitea/data/gitea/templates/package/content/arch.tmpl
 
 !gitea/docker-compose.yml
 !minio/docker-compose.yml
