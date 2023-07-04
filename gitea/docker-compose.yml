@@ -58,6 +58,9 @@ services:
       GITEA__ui__THEMES: earl-grey
       GITEA__ui__DEFAULT_THEME: earl-grey
 
+      GITEA__federation__ENABLE: true
+      GITEA__federation__MAX_SIZE: 8
+
       GITEA__service__ENABLE_CAPTCHA: true
       GITEA__service__REGISTER_EMAIL_CONFIRM: true
 
