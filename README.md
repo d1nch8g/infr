@@ -39,17 +39,15 @@ cd infr/local && docker compose up
 
 ## Single-node setup
 
-> In progress, not complete.
-
-If you are planning to setup gitea for your organization, team or household, you can route the domain name to your static IP adress, obtain certificates and run it by following instructions:
+If you are planning to setup gitea for your organization, team or household, you can route the domain name to your static IP adress, obtain certificates and run it, by following instructions:
 
 1. Clone the repository.
 
 ```sh
-git clone https://fmnx.su/core/infr
+git clone https://fmnx.su/core/infr && cd infr
 ```
 
-2. Obtain certificates for gitea.
+2. Obtain certificates for gitea (requires go language to be installed).
 
 ```sh
 go install github.com/go-acme/lego/v4/cmd/lego@latest
@@ -57,24 +55,35 @@ sudo lego --email="name@example.com" --domains="example.com" --http run
 sudo chmod a+rwx -R .lego
 ```
 
-3. Obtain certificates for email and .
+3. Obtain certificates for email, add new user email accounts.
 
 ```sh
-go install github.com/go-acme/lego/v4/cmd/lego@latest
-sudo lego --email="name@example.com" --domains="example.com" --http run
-sudo chmod a+rwx -R .lego
+docker run --rm -it -v "${PWD}/data/certbot/certs/:/etc/letsencrypt/" -v "${PWD}/data/certbot/logs/:/var/log/letsencrypt/" -p 80:80 docker.io/certbot/certbot certonly --standalone -d mail.example.com
 ```
 
-3. Create `.env` file with parameters for your project.
+4. Attach shell to `docker-email` container, add new users.
 
 ```sh
-make params
+docker exec -it mail /bin/bash
 ```
 
-or
+```sh
+setup email add help@example.com password
+setup email add user@example.com password
+```
+
+3. Create `.env` file with parameters for your project. Adjust them for your project.
 
 ```sh
-
+echo APP_NAME=Awesome project >> .env
+echo DOMAIN=example.com >> .env
+echo MAIL_ADDR=help@example.com >> .env
+echo MAIL_PASS=password >> .env
+echo MINIO_ACCESS_KEY_ID=654321 >> .env
+echo MINIO_SECRET_ACCESS_KEY=123456789 >> .env
+echo POSTGRES_DB=db >> .env
+echo POSTGRES_USER=user >> .env
+echo POSTGRES_PASSWORD=password >> .env
 ```
 
 ---

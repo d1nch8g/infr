@@ -7,6 +7,3 @@ push:
 	git push
 	git push github
 	git push codeberg
-
-params:
-	
