@@ -2,7 +2,7 @@ services:
   mail:
     image: docker.io/mailserver/docker-mailserver:latest
     container_name: mail
-    hostname: mail.fmnx.su
+    hostname: mail.$DOMAIN
     restart: unless-stopped
     volumes:
       - ./data/mail-data/:/var/mail/

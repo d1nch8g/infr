@@ -13,7 +13,7 @@
 !mail/docker-compose.yml
 
 .env
-gitea/**
-postgres/**
-minio/**
-mail/**
+gitea/data/**
+postgres/data/**
+minio/data/**
+mail/data/**

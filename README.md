@@ -21,9 +21,9 @@ Instructions for single-node local environment and multi-node public environment
 
 [Certbot-docker](https://hub.docker.com/r/certbot/certbot) and [go-lego](https://github.com/go-acme/lego) are used to obtain TLS certificates.
 
-## Single-node setup
+## Local setup
 
-Local version has all containers tied up in single docker-compose file. It can be used for local tests and UI adjustments.
+Local version has all containers in a single `docker-compose`. It can be used for local tests and UI adjustments.
 
 1. Clone the repository.
 
@@ -34,16 +34,54 @@ git clone https://fmnx.su/core/infr
 2. Run containers with `docker-compose`.
 
 ```sh
-cd infr && docker compose up
+cd infr/local && docker compose up
 ```
 
-If you are plannig to use infrastructure for a team, preferably run setup across multiple nodes.
+## Single-node setup
+
+> In progress, not complete.
+
+If you are planning to setup gitea for your organization, team or household, you can route the domain name to your static IP adress, obtain certificates and run it by following instructions:
+
+1. Clone the repository.
+
+```sh
+git clone https://fmnx.su/core/infr
+```
+
+2. Obtain certificates for gitea.
+
+```sh
+go install github.com/go-acme/lego/v4/cmd/lego@latest
+sudo lego --email="name@example.com" --domains="example.com" --http run
+sudo chmod a+rwx -R .lego
+```
+
+3. Obtain certificates for email and .
+
+```sh
+go install github.com/go-acme/lego/v4/cmd/lego@latest
+sudo lego --email="name@example.com" --domains="example.com" --http run
+sudo chmod a+rwx -R .lego
+```
+
+3. Create `.env` file with parameters for your project.
+
+```sh
+make params
+```
+
+or
+
+```sh
+
+```
 
 ---
 
 ## Multi-node setup
 
-If you are planning to set up gitea for large team or organization, it is reasonable to provide multiple nodes. In this instruction, we assume that all nodes are located in the same network and domain forwars traffic to node with gitea. Instruction consists of 4 parts: postgres, minio, mail and gitea.
+If you are planning to set up gitea for large collective or organization, it is reasonable to have multiple nodes. In this instruction, we assume that all nodes are located in the same network. Instruction consists of 5 parts: postgres, minio, mail, gitea and gitea-runner.
 
 ### 1. Postgres
 
