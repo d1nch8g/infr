@@ -55,6 +55,13 @@
 			</tr>
 			{{end}}
 
+			{{range $key := .PackageDescriptor.Metadata.Distribution}}
+			<tr>
+				<td class="collapsing"><h5>Distribution</h5></td>
+				<td>{{$key}}</td>
+			</tr>
+			{{end}}
+
 			{{range $key := .PackageDescriptor.Metadata.Depends}}
 			<tr>
 				<td class="collapsing"><h5>Depends</h5></td>
