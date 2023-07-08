@@ -98,11 +98,11 @@ services:
     hostname: mail.$DOMAIN
     restart: unless-stopped
     volumes:
-      - ./data/mail-data/:/var/mail/
-      - ./data/mail-state/:/var/mail-state/
-      - ./data/mail-logs/:/var/log/mail/
-      - ./data/config/:/tmp/docker-mailserver/
-      - ./data/certbot/certs/:/etc/letsencrypt
+      - ./mail/data/mail-data/:/var/mail/
+      - ./mail/data/mail-state/:/var/mail-state/
+      - ./mail/data/mail-logs/:/var/log/mail/
+      - ./mail/data/config/:/tmp/docker-mailserver/
+      - ./mail/data/certbot/certs/:/etc/letsencrypt
       - /etc/localtime:/etc/localtime:ro
     cap_add:
       - NET_ADMIN
