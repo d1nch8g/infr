@@ -190,22 +190,18 @@ cd infr/mail
 docker run --rm -it -v "${PWD}/data/certbot/certs/:/etc/letsencrypt/" -v "${PWD}/data/certbot/logs/:/var/log/letsencrypt/" -p 80:80 docker.io/certbot/certbot certonly --standalone -d mail.example.com
 ```
 
-5. Start email docker container.
+5. Attach shell to `docker-email` container, add new users and obtain DKIM.
 
 ```sh
+docker exec -it mail setup email add help@example.com password
+docker exec -ti mail setup config dkim example.com
+```
+
+6. Restart setup with `docker-compose` for DKIM and email to start working properly.
+
+```sh
+docker compose down
 docker compose up
-```
-
-6. Sh into `docker-email` container and add new users. Set up help or other user to pass it to gitea later.
-
-```sh
-docker exec -it mail /bin/bash
-```
-
-6. Add email users.
-
-```sh
-setup email add admin@example.com passwd123
 ```
 
 ### 4. Gitea
