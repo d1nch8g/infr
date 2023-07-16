@@ -47,7 +47,7 @@ If you are planning to setup gitea for your organization, team or household, you
 git clone https://fmnx.su/core/infr && cd infr
 ```
 
-2. Obtain certificates for gitea (requires go language to be installed).
+2. Obtain certificates for gitea (requires go language to be installed, since [lego](https://github.com/go-acme/lego) is used to obtain certificates).
 
 ```sh
 go install github.com/go-acme/lego/v4/cmd/lego@latest
