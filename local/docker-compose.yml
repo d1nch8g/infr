@@ -20,18 +20,23 @@ services:
       DB_USER: user
       DB_PASSWD: password
 
-      GITEA__attachment__STORAGE_TYPE: minio
-      GITEA__attachment__MAX_SIZE: 1800000
-
-      GITEA__packages__STORAGE_TYPE: minio
-      GITEA__packages__MAX_SIZE: 1800000
-
       GITEA__storage.minio__MINIO_ENDPOINT: minio:9000
       GITEA__storage.minio__MINIO_ACCESS_KEY_ID: 123456
       GITEA__storage.minio__MINIO_SECRET_ACCESS_KEY: 987654321
       GITEA__storage.minio__MINIO_BUCKET: bucket
       GITEA__storage.minio__MINIO_LOCATION: infr
       GITEA__storage.minio__MINIO_USE_SSL: false
+
+      GITEA__attachment__STORAGE_TYPE: minio
+      GITEA__attachment__MAX_SIZE: 1800000
+      GITEA__lfs__STORAGE_TYPE: minio
+      GITEA__avatars__STORAGE_TYPE: minio
+      GITEA__repo-avatars__STORAGE_TYPE: minio
+      GITEA__repo-archive__STORAGE_TYPE: minio
+      GITEA__packages__STORAGE_TYPE: minio
+      GITEA__packages__MAX_SIZE: 1800000
+      GITEA__actions_log__STORAGE_TYPE: minio
+      GITEA__actions_artifacts__STORAGE_TYPE: minio
 
       GITEA__ui__THEMES: earl-grey
       GITEA__ui__DEFAULT_THEME: earl-grey
