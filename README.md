@@ -61,18 +61,7 @@ sudo chmod a+rwx -R .lego
 docker run --rm -it -v "${PWD}/data/certbot/certs/:/etc/letsencrypt/" -v "${PWD}/data/certbot/logs/:/var/log/letsencrypt/" -p 80:80 docker.io/certbot/certbot certonly --standalone -d mail.example.com
 ```
 
-4. Attach shell to `docker-email` container, add new users.
-
-```sh
-docker exec -it mail /bin/bash
-```
-
-```sh
-setup email add help@example.com password
-setup email add user@example.com password
-```
-
-3. Create `.env` file with parameters for your project. Adjust them for your project.
+4. Create `.env` file with parameters for your project. Adjust them for your project.
 
 ```sh
 echo APP_NAME=Awesome project >> .env
@@ -84,6 +73,20 @@ echo MINIO_SECRET_ACCESS_KEY=123456789 >> .env
 echo POSTGRES_DB=db >> .env
 echo POSTGRES_USER=user >> .env
 echo POSTGRES_PASSWORD=password >> .env
+```
+
+5. Attach shell to `docker-email` container, add new users and obtain DKIM.
+
+```sh
+docker exec -it mail setup email add help@example.com password
+docker exec -ti mail setup config dkim example.com
+```
+
+6. Restart setup with `docker-compose` for DKIM and email to start working properly.
+
+```sh
+docker compose down
+docker compose up
 ```
 
 ---
