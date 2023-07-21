@@ -47,11 +47,10 @@ If you are planning to setup gitea for your organization, team or household, you
 git clone https://fmnx.su/core/infr && cd infr
 ```
 
-2. Obtain certificates for gitea (requires go language to be installed, since [lego](https://github.com/go-acme/lego) is used to obtain certificates).
+2. Obtain certificates for gitea with [lego docker](https://hub.docker.com/r/goacme/lego/).
 
 ```sh
-go install github.com/go-acme/lego/v4/cmd/lego@latest
-sudo lego --email="name@example.com" --domains="example.com" --http run
+docker run --rm -it -p 80:80 -p 443:443 -w /wd -v $PWD:/wd docker.io/goacme/lego --email="name@example.com" --domains="example.com" --http run
 sudo chmod a+rwx -R .lego
 ```
 
@@ -224,11 +223,10 @@ git clone https://fmnx.su/core/infr
 cd infr/gitea
 ```
 
-4. Obtain certificates secure connection with [lego](https://github.com/go-acme/lego).
+4. Obtain certificates secure connection with [lego docker](https://hub.docker.com/r/goacme/lego/).
 
 ```sh
-go install github.com/go-acme/lego/v4/cmd/lego@latest
-sudo lego --email="name@example.com" --domains="example.com" --http run
+docker run --rm -it -p 80:80 -p 443:443 -w /wd -v $PWD:/wd docker.io/goacme/lego --email="name@example.com" --domains="example.com" --http run
 sudo chmod a+rwx -R .lego
 ```
 
