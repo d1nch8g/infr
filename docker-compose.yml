@@ -29,15 +29,6 @@ services:
       GITEA__server__KEY_FILE: /certs/$DOMAIN.key
       GITEA__server__LFS_START_SERVER: true
 
-      GITEA__mailer__ENABLED: true
-      GITEA__mailer__FROM: $MAIL_ADDR
-      GITEA__mailer__MAILER_TYPE: smtp
-      GITEA__mailer__SMTP_ADDR: mail.$DOMAIN
-      GITEA__mailer__SMTP_PORT: 587
-      GITEA__mailer__IS_TLS_ENABLED: true
-      GITEA__mailer__USER: $MAIL_ADDR
-      GITEA__mailer__PASSWD: $MAIL_PASS
-
       GITEA__attachment__STORAGE_TYPE: minio
       GITEA__attachment__MAX_SIZE: 1800000
       GITEA__lfs__STORAGE_TYPE: minio
