@@ -9,6 +9,7 @@ services:
       - "443:3000"
     volumes:
       - ./gitea/data:/data
+      - ./.lego/certificates:/certs
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     environment:

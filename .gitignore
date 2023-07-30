@@ -6,6 +6,7 @@ gitea/data/**
 postgres/data/**
 minio/data/**
 mail/data/**
+.lego/**
 
 .ENV
 .env

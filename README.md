@@ -50,14 +50,14 @@ git clone https://fmnx.su/core/infr && cd infr
 2. Obtain certificates for gitea with [lego docker](https://hub.docker.com/r/goacme/lego/).
 
 ```sh
-docker run --rm -it -p 80:80 -p 443:443 -w /wd -v $PWD:/wd docker.io/goacme/lego --email="name@example.com" --domains="example.com" --http run
+docker run --rm -it -p 80:80 -p 443:443 -w /wd -v $(pwd):/wd docker.io/goacme/lego --email="name@example.com" --domains="example.com" --http run
 sudo chmod a+rwx -R .lego
 ```
 
 3. Obtain certificates for email, add new user email accounts.
 
 ```sh
-docker run --rm -it -v "${PWD}/data/certbot/certs/:/etc/letsencrypt/" -v "${PWD}/data/certbot/logs/:/var/log/letsencrypt/" -p 80:80 docker.io/certbot/certbot certonly --standalone -d mail.example.com
+docker run --rm -it -v "$(pwd)/data/certbot/certs/:/etc/letsencrypt/" -v "$(pwd)/data/certbot/logs/:/var/log/letsencrypt/" -p 80:80 docker.io/certbot/certbot certonly --standalone -d mail.example.com
 ```
 
 4. Create `.env` file with parameters for your project. Adjust them for your project.
@@ -186,7 +186,7 @@ cd infr/mail
 4. Obtain sertificates from letsencrypt. Before that you should ensure, that you have proper routing adjusted in your DNS server, and traffic from domain can reach the email VM. Script uses [letsencrypt](https://letsencrypt.org/) for obtaining TLS sertificates.
 
 ```sh
-docker run --rm -it -v "${PWD}/data/certbot/certs/:/etc/letsencrypt/" -v "${PWD}/data/certbot/logs/:/var/log/letsencrypt/" -p 80:80 docker.io/certbot/certbot certonly --standalone -d mail.example.com
+docker run --rm -it -v "$(pwd)/data/certbot/certs/:/etc/letsencrypt/" -v "$(pwd)/data/certbot/logs/:/var/log/letsencrypt/" -p 80:80 docker.io/certbot/certbot certonly --standalone -d mail.example.com
 ```
 
 5. Attach shell to `docker-email` container, add new users and obtain DKIM.
