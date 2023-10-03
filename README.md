@@ -4,7 +4,7 @@
 
 <h2 align="center">Infr - open infrastructure</h2>
 
-[![Generic badge](https://img.shields.io/badge/license-gpl-orange.svg)](https://fmnx.su/infr/fmnx/src/branch/main/LICENSE)
+[![Generic badge](https://img.shields.io/badge/license-gpl-orange.svg)](https://fmnx.su/core/infr/src/branch/main/LICENSE)
 [![Generic badge](https://img.shields.io/badge/fmnx-repo-006db0.svg)](https://fmnx.su/core/infr)
 [![Generic badge](https://img.shields.io/badge/codeberg-repo-45a3fb.svg)](https://codeberg.org/fmnx/infr)
 [![Generic badge](https://img.shields.io/badge/github-repo-red.svg)](https://github.com/fmnx-io/infr)

@@ -27,6 +27,7 @@ services:
       GITEA__storage.minio__MINIO_LOCATION: infr
       GITEA__storage.minio__MINIO_USE_SSL: false
 
+      GITEA__server__PROTOCOL: http
       GITEA__attachment__STORAGE_TYPE: minio
       GITEA__attachment__MAX_SIZE: 1800000
       GITEA__lfs__STORAGE_TYPE: minio
